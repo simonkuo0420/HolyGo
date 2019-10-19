@@ -201,6 +201,20 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Css\animate.css" />
+    <Content Include="Assets\Css\bootstrap-4.1.2\bootstrap.min.css" />
+    <Content Include="Assets\Css\bootstrap-4.1.2\bootstrap.min.js" />
+    <Content Include="Assets\Css\bootstrap-4.1.2\popper.js" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Assets\Css\main_styles.css" />
+    <Content Include="Assets\Css\owl.carousel.css" />
+    <Content Include="Assets\Css\owl.theme.default.css" />
+    <Content Include="Assets\Css\responsive.css" />
+    <Content Include="Assets\Js\custom.js" />
+    <Content Include="Assets\Js\owl.carousel.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -211,6 +225,39 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Assets\Css\font-awesome-4.7.0\scss\_variables.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -259,6 +306,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

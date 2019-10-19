@@ -11,6 +11,11 @@ namespace HolyGo
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/js").Include(
+                        "~/Assets/Js/custom.js",
+                        "~/Assets/Js/owl.carousel.js",
+                        "~/Scripts/jquery-3.3.1.min.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
@@ -23,8 +28,15 @@ namespace HolyGo
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.css"));
+
+            bundles.Add(new StyleBundle("~/Content/holygo").Include(
+                      "~/Assets/Css/animate.css",
+                      "~/Assets/Css/main_styles.css",
+                      "~/Assets/Css/owl.carousel.css",
+                      "~/Assets/Css/owl.theme.default.css",
+                      "~/Assets/Css/responsive.css",
+                      "~/Assets/Css/font-awesome-4.7.0/css/font-awesome.min.css"));
         }
     }
 }
