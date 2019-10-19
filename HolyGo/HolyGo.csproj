@@ -52,6 +52,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime" />
     <Reference Include="System.Runtime.InteropServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Threading.Thread" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -178,8 +180,23 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetRole.cs" />
+    <Compile Include="Models\AspNetUser.cs" />
+    <Compile Include="Models\AspNetUserClaim.cs" />
+    <Compile Include="Models\AspNetUserLogin.cs" />
+    <Compile Include="Models\Favorite.cs" />
+    <Compile Include="Models\Guide.cs" />
+    <Compile Include="Models\HolyGoContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\Ticket_Combo.cs" />
+    <Compile Include="Models\Ticket_Comment.cs" />
+    <Compile Include="Models\Ticket_Order.cs" />
+    <Compile Include="Models\Travel.cs" />
+    <Compile Include="Models\Travel_Combo.cs" />
+    <Compile Include="Models\Travel_Comment.cs" />
+    <Compile Include="Models\Travel_Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
