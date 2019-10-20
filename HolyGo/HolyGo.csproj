@@ -201,17 +201,19 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Css\Home\Card\owl_card.css" />
     <Content Include="Assets\Css\Layout\animate.css" />
     <Content Include="Assets\Css\bootstrap-4.1.2\bootstrap.min.css" />
     <Content Include="Assets\Css\bootstrap-4.1.2\bootstrap.min.js" />
     <Content Include="Assets\Css\bootstrap-4.1.2\popper.js" />
-    <Content Include="Assets\Css\Home\Banner.css" />
+    <Content Include="Assets\Css\Home\Banner\Banner.css" />
     <Content Include="Assets\Css\Layout\main_styles.css" />
-    <Content Include="Assets\Css\Card\owl.carousel.css" />
-    <Content Include="Assets\Css\Card\owl.theme.default.css" />
+    <Content Include="Assets\Css\Home\Card\owl.carousel.css" />
+    <Content Include="Assets\Css\Home\Card\owl.theme.default.css" />
     <Content Include="Assets\Css\Layout\responsive.css" />
+    <Content Include="Assets\Js\Home\Card\owl_card.js" />
     <Content Include="Assets\Js\Layout\custom.js" />
-    <Content Include="Assets\Js\Card\owl.carousel.js" />
+    <Content Include="Assets\Js\Home\Card\owl.carousel.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -268,6 +270,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\_BannerPartial.cshtml" />
+    <Content Include="Views\Home\_TravelPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
