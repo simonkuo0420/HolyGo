@@ -202,6 +202,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Css\Home\Card\owl_card.css" />
+    <Content Include="Assets\Css\Home\Content\Content.css" />
     <Content Include="Assets\Css\Layout\animate.css" />
     <Content Include="Assets\Css\bootstrap-4.1.2\bootstrap.min.css" />
     <Content Include="Assets\Css\bootstrap-4.1.2\bootstrap.min.js" />
@@ -209,6 +210,13 @@
     <Content Include="Assets\Css\Home\Banner\Banner.css" />
     <Content Include="Assets\Css\Layout\main_styles.css" />
     <Content Include="Assets\Css\Layout\responsive.css" />
+    <Content Include="Assets\Images\destination-1.jpg" />
+    <Content Include="Assets\Images\destination-2.jpg" />
+    <Content Include="Assets\Images\destination-3.jpg" />
+    <Content Include="Assets\Images\destination-4.jpg" />
+    <Content Include="Assets\Images\destination-5.jpg" />
+    <Content Include="Assets\Images\destination-6.jpg" />
+    <Content Include="Assets\Images\sliderr1.png" />
     <Content Include="Assets\Js\Home\Card\owl_card.js" />
     <Content Include="Assets\Js\Layout\custom.js" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -268,10 +276,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\_BannerPartial.cshtml" />
     <Content Include="Views\Home\_TravelPartial.cshtml" />
+    <Content Include="Views\Home\_ContentPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
