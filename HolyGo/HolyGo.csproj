@@ -216,7 +216,6 @@
     <Content Include="Assets\Images\destination-4.jpg" />
     <Content Include="Assets\Images\destination-5.jpg" />
     <Content Include="Assets\Images\destination-6.jpg" />
-    <Content Include="Assets\Images\sliderr1.png" />
     <Content Include="Assets\Js\Home\Card\owl_card.js" />
     <Content Include="Assets\Js\Layout\custom.js" />
     <Content Include="Content\bootstrap-theme.css" />
