@@ -203,6 +203,8 @@
   <ItemGroup>
     <Content Include="Assets\Css\Home\Card\owl_card.css" />
     <Content Include="Assets\Css\Home\Content\Content.css" />
+    <Content Include="Assets\Css\Home\OurTeam\style.css" />
+    <Content Include="Assets\Css\Home\OurTeam\flexslider.css" />
     <Content Include="Assets\Css\Layout\animate.css" />
     <Content Include="Assets\Css\bootstrap-4.1.2\bootstrap.min.css" />
     <Content Include="Assets\Css\bootstrap-4.1.2\bootstrap.min.js" />
@@ -216,18 +218,24 @@
     <Content Include="Assets\Images\destination-4.jpg" />
     <Content Include="Assets\Images\destination-5.jpg" />
     <Content Include="Assets\Images\destination-6.jpg" />
+    <Content Include="Assets\Js\Home\Card\lightbox.js" />
     <Content Include="Assets\Js\Home\Card\owl_card.js" />
+    <Content Include="Assets\Js\Home\OurTeam\ourteamslide.js" />
     <Content Include="Assets\Js\Layout\custom.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\flexslider-icon.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\flexslider-icon.eot" />
+    <Content Include="fonts\flexslider-icon.ttf" />
+    <Content Include="fonts\flexslider-icon.woff" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -276,6 +284,7 @@
     <Content Include="Views\Home\_BannerPartial.cshtml" />
     <Content Include="Views\Home\_TravelPartial.cshtml" />
     <Content Include="Views\Home\_ContentPartial.cshtml" />
+    <Content Include="Views\Home\_OurTeamPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
