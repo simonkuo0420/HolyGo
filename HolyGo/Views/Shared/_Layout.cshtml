@@ -60,7 +60,7 @@
                 <div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
                     <nav class="main_nav">
                         <ul class="d-flex flex-row align-items-center justify-content-start">
-                            <li class="active">@Html.ActionLink("Home","Index","Home")</li>
+                            <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
                             <li><a href="#">About us</a></li>
                             <li><a href="#">Listings</a></li>
                             <li><a href="#">News</a></li>
@@ -149,8 +149,9 @@
     </footer>
 
     @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/js")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-    @Scripts.Render("~/bundles/js")
+
 </body>
 </html>

@@ -215,17 +215,15 @@ p {
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.7);
             letter-spacing: .2em;
+            font-weight: 700;
         }
 
         .site-blocks-cover h1 {
-            font-weight: 900;
+            font-weight: 500;
             color: #fff;
-            font-size: 3rem;
+            font-size: 2rem;
         }
 
-            .site-blocks-cover h1 strong {
-                font-weight: 900;
-            }
 
 @media (min-width: 768px) {
     .site-blocks-cover h1 {
@@ -288,7 +286,7 @@ p {
         -webkit-transition: .3s all ease;
         -o-transition: .3s all ease;
         transition: .3s all ease;
-        color: rgba(255, 255, 255, 0.4);
+        color: #FFF;
         font-size: 1rem;
     }
 
@@ -310,5 +308,5 @@ p {
         }
 
         .site-block-feature:hover p {
-            color: #F3F3F3;
+            color: #FFF;
         }

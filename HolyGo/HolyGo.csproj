@@ -201,27 +201,39 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Css\Home\Ticket\Ticket.css" />
+    <Content Include="Assets\Css\Home\Travel\Travel.css" />
+    <Content Include="Assets\Css\Home\OurTeam\style.css" />
+    <Content Include="Assets\Css\Home\OurTeam\flexslider.css" />
     <Content Include="Assets\Css\Layout\animate.css" />
     <Content Include="Assets\Css\bootstrap-4.1.2\bootstrap.min.css" />
     <Content Include="Assets\Css\bootstrap-4.1.2\bootstrap.min.js" />
     <Content Include="Assets\Css\bootstrap-4.1.2\popper.js" />
-    <Content Include="Assets\Css\Home\Banner.css" />
+    <Content Include="Assets\Css\Home\Banner\Banner.css" />
     <Content Include="Assets\Css\Layout\main_styles.css" />
-    <Content Include="Assets\Css\Card\owl.carousel.css" />
-    <Content Include="Assets\Css\Card\owl.theme.default.css" />
     <Content Include="Assets\Css\Layout\responsive.css" />
+    <Content Include="Assets\Images\destination-1.jpg" />
+    <Content Include="Assets\Images\destination-2.jpg" />
+    <Content Include="Assets\Images\destination-3.jpg" />
+    <Content Include="Assets\Images\destination-4.jpg" />
+    <Content Include="Assets\Images\destination-5.jpg" />
+    <Content Include="Assets\Images\destination-6.jpg" />
+    <Content Include="Assets\Js\Home\OurTeam\ourteamslide.js" />
     <Content Include="Assets\Js\Layout\custom.js" />
-    <Content Include="Assets\Js\Card\owl.carousel.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\flexslider-icon.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\flexslider-icon.eot" />
+    <Content Include="fonts\flexslider-icon.ttf" />
+    <Content Include="fonts\flexslider-icon.woff" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -268,10 +280,12 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\_BannerPartial.cshtml" />
+    <Content Include="Views\Home\_TravelPartial.cshtml" />
+    <Content Include="Views\Home\_OurTeamPartial.cshtml" />
+    <Content Include="Views\Home\_TicketPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
