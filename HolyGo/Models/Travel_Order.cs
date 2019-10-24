@@ -23,7 +23,7 @@ namespace HolyGo.Models
         [StringLength(3)]
         public string Status { get; set; }
 
-        public virtual AspNetUser AspNetUser { get; set; }
+        public virtual AspNetUsers AspNetUsers { get; set; }
 
         public virtual Travel_Combo Travel_Combo { get; set; }
     }

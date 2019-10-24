@@ -12,7 +12,7 @@ namespace HolyGo.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Travel()
         {
-            Favorites = new HashSet<Favorite>();
+            Favorite = new HashSet<Favorite>();
             Travel_Combo = new HashSet<Travel_Combo>();
         }
 
@@ -46,7 +46,7 @@ namespace HolyGo.Models
         public string Status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Favorite> Favorites { get; set; }
+        public virtual ICollection<Favorite> Favorite { get; set; }
 
         public virtual Guide Guide { get; set; }
 

@@ -18,7 +18,7 @@ namespace HolyGo.Models
 
         public Guid Travel_guid { get; set; }
 
-        public virtual AspNetUser AspNetUser { get; set; }
+        public virtual AspNetUsers AspNetUsers { get; set; }
 
         public virtual Travel Travel { get; set; }
     }

@@ -12,7 +12,7 @@ namespace HolyGo.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Guide()
         {
-            Travels = new HashSet<Travel>();
+            Travel = new HashSet<Travel>();
         }
 
         [Key]
@@ -56,6 +56,6 @@ namespace HolyGo.Models
         public string Status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Travel> Travels { get; set; }
+        public virtual ICollection<Travel> Travel { get; set; }
     }
 }
