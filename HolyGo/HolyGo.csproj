@@ -201,8 +201,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Css\Home\Card\owl_card.css" />
-    <Content Include="Assets\Css\Home\Content\Content.css" />
+    <Content Include="Assets\Css\Home\Ticket\Ticket.css" />
+    <Content Include="Assets\Css\Home\Travel\Travel.css" />
     <Content Include="Assets\Css\Home\OurTeam\style.css" />
     <Content Include="Assets\Css\Home\OurTeam\flexslider.css" />
     <Content Include="Assets\Css\Layout\animate.css" />
@@ -218,8 +218,6 @@
     <Content Include="Assets\Images\destination-4.jpg" />
     <Content Include="Assets\Images\destination-5.jpg" />
     <Content Include="Assets\Images\destination-6.jpg" />
-    <Content Include="Assets\Js\Home\Card\lightbox.js" />
-    <Content Include="Assets\Js\Home\Card\owl_card.js" />
     <Content Include="Assets\Js\Home\OurTeam\ourteamslide.js" />
     <Content Include="Assets\Js\Layout\custom.js" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -283,8 +281,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\_BannerPartial.cshtml" />
     <Content Include="Views\Home\_TravelPartial.cshtml" />
-    <Content Include="Views\Home\_ContentPartial.cshtml" />
     <Content Include="Views\Home\_OurTeamPartial.cshtml" />
+    <Content Include="Views\Home\_TicketPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
