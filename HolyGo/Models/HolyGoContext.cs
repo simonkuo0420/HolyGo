@@ -81,7 +81,7 @@ namespace HolyGo.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Ticket_Combo>()
-                .HasMany(e => e.Travel_Order)
+                .HasMany(e => e.Ticket_Order)
                 .WithRequired(e => e.Ticket_Combo)
                 .HasForeignKey(e => e.Combo_guid)
                 .WillCascadeOnDelete(false);
@@ -99,13 +99,13 @@ namespace HolyGo.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Travel_Combo>()
-                .HasMany(e => e.Ticket_Order)
+                .HasMany(e => e.Travel_Comment)
                 .WithRequired(e => e.Travel_Combo)
                 .HasForeignKey(e => e.Combo_guid)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Travel_Combo>()
-                .HasMany(e => e.Travel_Comment)
+                .HasMany(e => e.Travel_Order)
                 .WithRequired(e => e.Travel_Combo)
                 .HasForeignKey(e => e.Combo_guid)
                 .WillCascadeOnDelete(false);

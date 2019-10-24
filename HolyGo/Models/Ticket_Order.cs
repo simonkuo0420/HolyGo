@@ -25,6 +25,6 @@ namespace HolyGo.Models
 
         public virtual AspNetUser AspNetUser { get; set; }
 
-        public virtual Travel_Combo Travel_Combo { get; set; }
+        public virtual Ticket_Combo Ticket_Combo { get; set; }
     }
 }

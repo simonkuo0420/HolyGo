@@ -12,7 +12,7 @@ namespace HolyGo.Models
         public Ticket_Combo()
         {
             Ticket_Comment = new HashSet<Ticket_Comment>();
-            Travel_Order = new HashSet<Travel_Order>();
+            Ticket_Order = new HashSet<Ticket_Order>();
         }
 
         [Key]
@@ -35,6 +35,6 @@ namespace HolyGo.Models
         public virtual ICollection<Ticket_Comment> Ticket_Comment { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Travel_Order> Travel_Order { get; set; }
+        public virtual ICollection<Ticket_Order> Ticket_Order { get; set; }
     }
 }

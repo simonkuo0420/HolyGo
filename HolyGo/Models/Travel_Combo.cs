@@ -11,8 +11,8 @@ namespace HolyGo.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Travel_Combo()
         {
-            Ticket_Order = new HashSet<Ticket_Order>();
             Travel_Comment = new HashSet<Travel_Comment>();
+            Travel_Order = new HashSet<Travel_Order>();
         }
 
         [Key]
@@ -29,12 +29,12 @@ namespace HolyGo.Models
 
         public int Cost { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ticket_Order> Ticket_Order { get; set; }
-
         public virtual Travel Travel { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Travel_Comment> Travel_Comment { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Travel_Order> Travel_Order { get; set; }
     }
 }
