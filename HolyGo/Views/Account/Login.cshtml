@@ -1,11 +1,70 @@
 ﻿@using HolyGo.Models
 @model LoginViewModel
+
+<link rel="stylesheet" href="~/Assets/Css/Account/Login/LoginSwitchRegister.css" />
+
 @{
     ViewBag.Title = "登入";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
+@*<h2>@ViewBag.Title.</h2>*@
+<!-- main -->
+<div class="main-agile mt-5 pt-5 ml-3 pl-4">
+    <div id="w3ls_form" class="signin-form">
+
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @id = "signin" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="ribbon"><a href="#" id="flipToRecover" class="flipLink" title="Click Here to SignUp">Sign Up</a></div>
+            <h2>Sign In Form</h2>
+            @Html.TextBoxFor(model => model.Email, new { @placeholder = "Email", @required = "reduired" })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(model => model.Password, new { @type = "password", @placeholder = "Password", @required = "reduired" })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            <input data-val="true" id="brand" name="RememberMe" type="checkbox" value="true">
+            <label for="brand"><span></span> Remember me ?</label>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <input type="submit" value="登入">
+            <div class="signin-agileits-bottom">
+                <p><a href="#">Forgot Password ?</a></p>
+            </div>
+            <div class="social-grids">
+                <div class="social-text">
+                    <p>Or Sign in with</p>
+                </div>
+                <div class="social-icons">
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @id = "signup", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="ribbon"><a href="#" id="flipToRecover1" class="flipLink" title="Click Here to signin">Sign In</a></div>
+            <h3>Sign Up Form</h3>
+            <input type="text" value="姓氏" />
+            <input type="text" value="名字" />
+            <input type="text" value="國籍" />
+            <input type="text" value="地區" />
+            <input type="text" value="性別" />
+            <input type="text" value="生日" />
+            <input type="text" value="電話" />
+            <input type="text" value="電子信箱" />
+            <input type="password" value="密碼" />
+            <input type="password" value="確認密碼" />
+            <input type="checkbox" id="brand1" value="">
+            <label for="brand1"><span></span>I accept the terms of use</label>
+            <input type="submit" value="SIGN UP">
+        }
+    </div>
+</div>
+<!-- //main -->
+@*<div class="row">
     <div class="col-md-8">
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -43,21 +102,22 @@
                 </div>
                 <p>
                     @Html.ActionLink("以新使用者身分註冊", "Register")
-                </p>
-                @* 只要您的密碼重設功能能夠進行帳戶確認，就啟用此項
-                    <p>
-                        @Html.ActionLink("忘記密碼?", "ForgotPassword")
-                    </p>*@
-            }
-        </section>
-    </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
-</div>
+                </p>*@
+@* 只要您的密碼重設功能能夠進行帳戶確認，就啟用此項
+    <p>
+        @Html.ActionLink("忘記密碼?", "ForgotPassword")
+    </p>*@
+@*}
+            </section>
+        </div>
+        <div class="col-md-4">
+            <section id="socialLoginForm">
+                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            </section>
+        </div>
+    </div>*@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="~/Assets/Js/Account/Login/LoginSwtichRegister.js"></script>
 }

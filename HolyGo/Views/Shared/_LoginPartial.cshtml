@@ -16,7 +16,7 @@
 else
 {
     <ul class="d-flex flex-row align-items-center justify-content-start">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+        <li>@Html.ActionLink("Login/Register", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" ,@class = "pl-4"})</li>
     </ul>
 }
