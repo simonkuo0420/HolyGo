@@ -54,15 +54,15 @@ namespace HolyGo
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+            appId: "2301090346669995",
+            appSecret: "2f232674d20ec3bccc34c4378e7dd963");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "267655041566-6icllees45lbioera894n96p4vvpuu4m.apps.googleusercontent.com",
+                ClientSecret = "Tk28XnDmUohIZB7f1g9qsO3e"
+            });
         }
     }
 }

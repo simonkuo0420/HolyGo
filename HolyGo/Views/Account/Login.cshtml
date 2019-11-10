@@ -1,34 +1,110 @@
 ﻿@using HolyGo.Models
 @model LoginViewModel
 
-<link rel="stylesheet" href="~/Assets/Css/Account/Login/LoginSwitchRegister.css" />
-
+<link rel="stylesheet" href="~/Assets/Css/Account/Login/Login.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" />
 @{
     ViewBag.Title = "登入";
 }
 
 @*<h2>@ViewBag.Title.</h2>*@
-<!-- main -->
-<div class="main-agile mt-5 pt-5 ml-3 pl-4">
-    <div id="w3ls_form" class="signin-form">
 
-        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @id = "signin" }))
-        {
-            @Html.AntiForgeryToken()
-            <div class="ribbon"><a href="#" id="flipToRecover" class="flipLink" title="Click Here to SignUp">Sign Up</a></div>
-            <h2>Sign In Form</h2>
-            @Html.TextBoxFor(model => model.Email, new { @placeholder = "Email", @required = "reduired" })
-            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            @Html.TextBoxFor(model => model.Password, new { @type = "password", @placeholder = "Password", @required = "reduired" })
-            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-            <input data-val="true" id="brand" name="RememberMe" type="checkbox" value="true">
-            <label for="brand"><span></span> Remember me ?</label>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <input type="submit" value="登入">
-            <div class="signin-agileits-bottom">
-                <p><a href="#">Forgot Password ?</a></p>
+<div class="limiter">
+    <div class="container-login100 pt-5">
+        <div class="wrap-login100 p-5">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login100-form validate-form" }))
+            {
+                @Html.AntiForgeryToken()
+                <span class="login100-form-title pb-5">
+                    Login
+                </span>
+
+                <div class="wrap-input100 validate-input mb-3" data-validate="Username is reauired">
+                    <span class="label-input100">Username</span>
+                    @Html.TextBoxFor(model => model.Email, new { @placeholder = "Type your username", @class = "input100" })
+                    <span class="focus-input100" data-symbol="&#xf15a;"></span>
+                </div>
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <span class="label-input100">Password</span>
+                    @Html.TextBoxFor(model => model.Password, new { @type = "password", @placeholder = "Type your password", @class = "input100" })
+                    <span class="focus-input100" data-symbol="&#xf190;"></span>
+                </div>
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10 pt-3">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe, new { @class = "pl-2" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center pb-3">
+                    <a>
+                        @Html.ActionLink("忘記密碼?", "ForgotPassword")
+                    </a>
+                    <a class="ml-5">
+                        @Html.ActionLink("註冊使用者", "Register")
+                    </a>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button class="login100-form-btn" type="submit">
+                            Login
+                        </button>
+                    </div>
+                </div>
+
+                <div class="txt1 text-center py-3">
+                    <span>
+                        Or Sign Up Using
+                    </span>
+                </div>
+            }
+            <div class="flex-c-m">
+                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                <a href="#" class="login100-social-item bg2">
+                    <i class="fab fa-twitter"></i>
+                </a>
             </div>
-            <div class="social-grids">
+        </div>
+    </div>
+</div>
+
+<!-- main -->
+@*<div class="main-agile mt-5 pt-5 ml-3 pl-4">
+    <div id="w3ls_form" class="signin-form">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,new { @id = "signin"}))
+            {
+                @Html.AntiForgeryToken()
+                <h2> Login Form </h2>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.Email, new { @placeholder = "Email", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                @Html.PasswordFor(model => model.Password, new { @placeholder = "Password", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                <div class="checkbox p-0 my-3">
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe)
+                </div>
+                <div class="p-0 my-3">
+                    <p>
+                        @Html.ActionLink("以新使用者身分註冊", "Register")
+                    </p>
+                </div>
+
+                <input type="submit" value="登入">
+                <div class="signin-agileits-bottom">
+                    <p>
+                        @Html.ActionLink("忘記密碼?", "ForgotPassword")
+                    </p>
+                </div>*@
+                @*<div class="social-grids">
                 <div class="social-text">
                     <p>Or Sign in with</p>
                 </div>
@@ -39,30 +115,23 @@
                         <li><a href="#"><i class="fa fa-rss"></i></a></li>
                     </ul>
                 </div>
-            </div>
-        }
-
-        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @id = "signup", role = "form" }))
-        {
-            @Html.AntiForgeryToken()
-            <div class="ribbon"><a href="#" id="flipToRecover1" class="flipLink" title="Click Here to signin">Sign In</a></div>
-            <h3>Sign Up Form</h3>
-            <input type="text" value="姓氏" />
-            <input type="text" value="名字" />
-            <input type="text" value="國籍" />
-            <input type="text" value="地區" />
-            <input type="text" value="性別" />
-            <input type="text" value="生日" />
-            <input type="text" value="電話" />
-            <input type="text" value="電子信箱" />
-            <input type="password" value="密碼" />
-            <input type="password" value="確認密碼" />
-            <input type="checkbox" id="brand1" value="">
-            <label for="brand1"><span></span>I accept the terms of use</label>
-            <input type="submit" value="SIGN UP">
-        }
+            </div>*@
+            @*}
+            <div class="social-grids">
+                    <div class="social-text">
+                        <p>Or Sign in with</p>
+                    </div>
+                    <div class="social-icons">
+                        <ul>
+                            <li>
+                                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
     </div>
-</div>
+</div>*@
 <!-- //main -->
 @*<div class="row">
     <div class="col-md-8">
@@ -119,5 +188,4 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script type="text/javascript" src="~/Assets/Js/Account/Login/LoginSwtichRegister.js"></script>
 }

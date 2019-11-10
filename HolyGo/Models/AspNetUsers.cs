@@ -23,6 +23,7 @@ namespace HolyGo.Models
 
         [Required]
         [StringLength(30)]
+        [Display(Name ="©m¤ó")]
         public string FirstName { get; set; }
 
         [Required]

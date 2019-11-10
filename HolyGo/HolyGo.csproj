@@ -201,7 +201,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Css\Account\Login\LoginSwitchRegister.css" />
+    <Content Include="Assets\Css\Account\Login\Login.css" />
     <Content Include="Assets\Css\Home\Ticket\Ticket.css" />
     <Content Include="Assets\Css\Home\Travel\Travel.css" />
     <Content Include="Assets\Css\Home\OurTeam\style.css" />
@@ -219,7 +219,6 @@
     <Content Include="Assets\Images\destination-4.jpg" />
     <Content Include="Assets\Images\destination-5.jpg" />
     <Content Include="Assets\Images\destination-6.jpg" />
-    <Content Include="Assets\Js\Account\Login\LoginSwtichRegister.js" />
     <Content Include="Assets\Js\Home\OurTeam\ourteamslide.js" />
     <Content Include="Assets\Js\Layout\custom.js" />
     <Content Include="Content\bootstrap-theme.css" />
