@@ -11,7 +11,7 @@
 
 <div class="limiter">
     <div class="container-login100 pt-5">
-        <div class="wrap-login100 p-5">
+        <div class="wrap-login100 p-5 pt-5 mt-5">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login100-form validate-form" }))
             {
                 @Html.AntiForgeryToken()
