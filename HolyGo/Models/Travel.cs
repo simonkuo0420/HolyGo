@@ -28,7 +28,7 @@ namespace HolyGo.Models
         [Required]
         public string Contents { get; set; }
 
-        public DateTime Time { get; set; }
+        public int Time { get; set; }
 
         [Required]
         [StringLength(30)]
