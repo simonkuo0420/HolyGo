@@ -9,17 +9,27 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.WebPages;
 
 namespace HolyGo.Controllers
 {
     public class HomeController : Controller
     {
-        
+        public readonly HomeRepository _hr;
+
+        public HomeController()
+        {
+            _hr = new HomeRepository();
+        }
+
         public ActionResult Index()
         {
-            HomeRepository Home = new HomeRepository();
-            var Travel = Home.topTravel().ToList().Take(8);
-            return View(Travel);
+            var getTravelData = _hr.topTravel();
+            //ViewData.model = model物件
+
+            //ViewBag.model = model物件
+
+            return View();
         }
 
         public ActionResult About()
