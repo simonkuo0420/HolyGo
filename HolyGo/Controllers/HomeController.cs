@@ -1,5 +1,11 @@
-﻿using System;
+﻿using Dapper;
+using HolyGo.Repository;
+using HolyGo.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,9 +14,12 @@ namespace HolyGo.Controllers
 {
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
-            return View();
+            HomeRepository Home = new HomeRepository();
+            var Travel = Home.topTravel().ToList().Take(8);
+            return View(Travel);
         }
 
         public ActionResult About()
