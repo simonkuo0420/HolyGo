@@ -39,7 +39,7 @@ namespace HolyGo.Repository
             using (conn = new SqlConnection(connString))
             {
                 conn.Open();
-                string sql = @"SELECT * FROM Travel LEFT JOIN Travel_Combo ON Travel.Guid = Travel_Combo.Travel_guid;";
+                string sql = @"SELECT t.Title,t.Contents,t.Country,t.City,t.Time,t.Images,v.Cost FROM Travel t LEFT JOIN Travel_Combo v ON t.Guid = v.Travel_guid;";
                 getTopTravel = conn.Query<TopTravelViewModel>(sql).ToList();
             }
             //conn.Close();

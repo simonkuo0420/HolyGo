@@ -1503,11 +1503,11 @@ h6,
 
     .card-project .img {
         position: relative;
-        overflow: hidden;
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         -ms-border-radius: 4px;
         border-radius: 4px;
+        height:100%
     }
 
         .card-project .img div.vr {
@@ -1558,6 +1558,7 @@ h6,
     -webkit-transition: all 0.6s ease;
     -ms-transition: all 0.6s ease;
     transition: all 0.6s ease;
+
 }
 
 .card-project .text {
@@ -1679,4 +1680,18 @@ h6,
     .ftco-section {
         padding: 6em 0;
     }
+}
+
+.title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.content {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
