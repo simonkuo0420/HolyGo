@@ -82,6 +82,23 @@ section.team .flex-control-thumbs {
     width: 200px;
 }
 
+@media (max-width: 515px) {
+    .flex-control-thumbs img {
+        border-radius: 50%;
+        height: 50px;
+        opacity: 0.2;
+        width: 50px;
+    }
+    .flex-control-nav.flex-control-thumbs > li .flex-active {
+        border: 20px solid #fff;
+        box-shadow: 0 0 0 1px rgba(35, 31, 33, 0.1);
+        height: 100px;
+        margin-right: 0;
+        margin-top: -25px;
+        width: 100px;
+    }
+}
+
 section.team .flexslider .team-text p i {
     color: #90a4ae;
     font-size: 20px;

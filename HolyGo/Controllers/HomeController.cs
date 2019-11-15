@@ -25,10 +25,11 @@ namespace HolyGo.Controllers
         public ActionResult Index()
         {
             var getTravelData = _hr.topTravel();
+            var topTicketData = _hr.topTicket();
             //ViewData["key"] = model物件
             //ViewBag.model = model物件
             ViewData["topTravelData"] = _hr.topTravel();
-
+            ViewData["topTicketData"] = _hr.topTicket();
             return View();
         }
 

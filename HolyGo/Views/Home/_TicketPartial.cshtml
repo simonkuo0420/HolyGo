@@ -1,4 +1,6 @@
-﻿
+﻿@using HolyGo.Models
+@model IEnumerable<HolyGo.ViewModels.TopTicketViewModel>
+
 @{
     ViewBag.Title = "_TicketPartial";
 }
@@ -14,190 +16,27 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-3 ftco-animate">
-                <div class="card-project">
-                    <div class="img">
-                        <a href="destination.html"><img src="~/Assets/Images/destination-3.jpg" class="img-fluid" alt="Colorlib Template"></a>
-                    </div>
-                    <div class="text">
-                        <h4 class="price">$400</h4>
-                        <span>15 Days Tour</span>
-                        <h3><a href="destination.html">Gurtnellen, Swetzerland</a></h3>
-                        <div class="star d-flex clearfix">
-                            <div class="mr-auto float-left">
-                                StarCount
-                            </div>
-                            <div class="float-right">
-                                <span class="rate"><a href="#">(120)</a></span>
-                            </div>
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-md-4 col-lg-3 ftco-animate">
+                    <div class="card-project">
+                        <div class="img">
+                            <div class="vr"><span>Sale</span></div>
+                            <a href="destination.html"><img class="img-fluid justify-content-center align-items-center" src="@item.Images"></a>
+                        </div>
+                        <div class="text">
+                            <a href="destination.html">
+                                <h4 class="price">$@item.Cost</h4>
+                                <span> 行程時間 @item.Time 小時</span>
+                                <div class="float-right">
+                                    <span class="rate">@item.Country</span>
+                                </div>
+                                <h3 class="title">@item.Title</h3>
+                            </a>
                         </div>
                     </div>
-                    <a href="~/Assets/Images/destination-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
-                    </a>
                 </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 ftco-animate">
-                <div class="card-project">
-                    <div class="img">
-                        <a href="destination.html"><img src="~/Assets/Images/destination-4.jpg" class="img-fluid" alt="Colorlib Template"></a>
-                    </div>
-                    <div class="text">
-                        <h4 class="price">$400</h4>
-                        <span>15 Days Tour</span>
-                        <h3><a href="destination.html">Gurtnellen, Swetzerland</a></h3>
-                        <div class="star d-flex clearfix">
-                            <div class="mr-auto float-left">
-                                StarCount
-                            </div>
-                            <div class="float-right">
-                                <span class="rate"><a href="#">(120)</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="~/Assets/Images/destination-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 ftco-animate">
-                <div class="card-project">
-                    <div class="img">
-                        <a href="destination.html"><img src="~/Assets/Images/destination-5.jpg" class="img-fluid" alt="Colorlib Template"></a>
-                    </div>
-                    <div class="text">
-                        <h4 class="price">$400</h4>
-                        <span>15 Days Tour</span>
-                        <h3><a href="destination.html">Gurtnellen, Swetzerland</a></h3>
-                        <div class="star d-flex clearfix">
-                            <div class="mr-auto float-left">
-                                StarCount
-                            </div>
-                            <div class="float-right">
-                                <span class="rate"><a href="#">(120)</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="~/Assets/Images/destination-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 ftco-animate">
-                <div class="card-project">
-                    <div class="img">
-                        <a href="destination.html"><img src="~/Assets/Images/destination-6.jpg" class="img-fluid" alt="Colorlib Template"></a>
-                    </div>
-                    <div class="text">
-                        <h4 class="price">$400</h4>
-                        <span>15 Days Tour</span>
-                        <h3><a href="destination.html">Gurtnellen, Swetzerland</a></h3>
-                        <div class="star d-flex clearfix">
-                            <div class="mr-auto float-left">
-                                StarCount
-                            </div>
-                            <div class="float-right">
-                                <span class="rate"><a href="#">(120)</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="~/Assets/Images/destination-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 ftco-animate">
-                <div class="card-project">
-                    <div class="img">
-                        <a href="destination.html"><img src="~/Assets/Images/destination-3.jpg" class="img-fluid" alt="Colorlib Template"></a>
-                    </div>
-                    <div class="text">
-                        <h4 class="price">$400</h4>
-                        <span>15 Days Tour</span>
-                        <h3><a href="destination.html">Gurtnellen, Swetzerland</a></h3>
-                        <div class="star d-flex clearfix">
-                            <div class="mr-auto float-left">
-                                StarCount
-                            </div>
-                            <div class="float-right">
-                                <span class="rate"><a href="#">(120)</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="~/Assets/Images/destination-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 ftco-animate">
-                <div class="card-project">
-                    <div class="img">
-                        <a href="destination.html"><img src="~/Assets/Images/destination-4.jpg" class="img-fluid" alt="Colorlib Template"></a>
-                    </div>
-                    <div class="text">
-                        <h4 class="price">$400</h4>
-                        <span>15 Days Tour</span>
-                        <h3><a href="destination.html">Gurtnellen, Swetzerland</a></h3>
-                        <div class="star d-flex clearfix">
-                            <div class="mr-auto float-left">
-                                StarCount
-                            </div>
-                            <div class="float-right">
-                                <span class="rate"><a href="#">(120)</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="~/Assets/Images/destination-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 ftco-animate">
-                <div class="card-project">
-                    <div class="img">
-                        <a href="destination.html"><img src="~/Assets/Images/destination-5.jpg" class="img-fluid" alt="Colorlib Template"></a>
-                    </div>
-                    <div class="text">
-                        <h4 class="price">$400</h4>
-                        <span>15 Days Tour</span>
-                        <h3><a href="destination.html">Gurtnellen, Swetzerland</a></h3>
-                        <div class="star d-flex clearfix">
-                            <div class="mr-auto float-left">
-                                StarCount
-                            </div>
-                            <div class="float-right">
-                                <span class="rate"><a href="#">(120)</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="~/Assets/Images/destination-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 ftco-animate">
-                <div class="card-project">
-                    <div class="img">
-                        <a href="destination.html"><img src="~/Assets/Images/destination-6.jpg" class="img-fluid" alt="Colorlib Template"></a>
-                    </div>
-                    <div class="text">
-                        <h4 class="price">$400</h4>
-                        <span>15 Days Tour</span>
-                        <h3><a href="destination.html">Gurtnellen, Swetzerland</a></h3>
-                        <div class="star d-flex clearfix">
-                            <div class="mr-auto float-left">
-                                StarCount
-                            </div>
-                            <div class="float-right">
-                                <span class="rate"><a href="#">(120)</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="~/Assets/Images/destination-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
-                    </a>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </section>

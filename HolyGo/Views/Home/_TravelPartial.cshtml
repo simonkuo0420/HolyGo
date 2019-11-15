@@ -25,21 +25,18 @@
                             <a href="destination.html"><img class="img-fluid justify-content-center align-items-center" src="@item.Images"></a>
                         </div>
                         <div class="text">
-                            <h4 class="price">$@item.Cost</h4>
-                            <span> 行程時間 @item.Time 小時</span>
-                            <div class="float-right">
-                                <span class="rate">@item.Country</span>
-                            </div>
-                            <h3 class="title">@item.Title</h3>
-                            <div class="star d-flex clearfix">
-                                <div class="mr-auto float-left content">
-                                    @item.Contents
+                            <a href="destination.html">
+                                <h4 class="price">$@item.Cost</h4>
+                                <span> 行程時間 @item.Time 小時</span>
+                                <div class="float-right">
+                                    <span class="rate">@item.Country</span>
                                 </div>
-                            </div>
+                                <h3 class="title">@item.Title</h3>
+                            </a>
                         </div>
                     </div>
                 </div>
             }
-            </div>
         </div>
+    </div>
 </section>

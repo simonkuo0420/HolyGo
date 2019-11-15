@@ -28,6 +28,7 @@ namespace HolyGo.Repository
         }
         #endregion
 
+        #region 方法
         /// <summary>
         /// 搜尋前8筆旅遊
         /// </summary>
@@ -38,13 +39,26 @@ namespace HolyGo.Repository
             List<TopTravelViewModel> getTopTravel;
             using (conn = new SqlConnection(connString))
             {
-                string sql = @"SELECT top(8) t.Title,t.Contents,t.Country,t.City,t.Time,t.Images,v.Cost 
+                string sql = @"SELECT top(8) t.Title,t.Country,t.City,t.Time,t.Images,v.Cost 
                                FROM Travel t 
-                               LEFT JOIN Travel_Combo v ON t.Guid = v.Travel_guid;";
+                               LEFT JOIN Travel_Combo v ON t.Guid = v.Travel_guid";
                 getTopTravel = conn.Query<TopTravelViewModel>(sql).ToList();
             }
-            //conn.Close();
             return getTopTravel;
         }
+
+        public List<TopTicketViewModel> topTicket()
+        {
+            List<TopTicketViewModel> getTopTicket;
+            using (conn = new SqlConnection(connString))
+            {
+                string sql = @"SELECT top(8) t.Title,t.Country,t.City,t.Time,t.Images,v.Cost 
+                               FROM Ticket t 
+                               LEFT JOIN Ticket_Combo v ON t.Guid = v.Ticket_guid";
+                getTopTicket = conn.Query<TopTicketViewModel>(sql).ToList();
+            }
+            return getTopTicket;
+        }
+        #endregion
     }
 }

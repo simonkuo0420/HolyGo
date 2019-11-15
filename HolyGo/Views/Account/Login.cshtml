@@ -32,7 +32,7 @@
                     <span class="focus-input100" data-symbol="&#xf190;"></span>
                 </div>
                 @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-
+                @Html.ValidationSummary("", new { @class = "text-danger" })
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10 pt-3">
                         <div class="checkbox">
@@ -75,64 +75,6 @@
         </div>
     </div>
 </div>
-
-<!-- main -->
-@*<div class="main-agile mt-5 pt-5 ml-3 pl-4">
-    <div id="w3ls_form" class="signin-form">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,new { @id = "signin"}))
-            {
-                @Html.AntiForgeryToken()
-                <h2> Login Form </h2>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.TextBoxFor(model => model.Email, new { @placeholder = "Email", @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                @Html.PasswordFor(model => model.Password, new { @placeholder = "Password", @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                <div class="checkbox p-0 my-3">
-                    @Html.CheckBoxFor(m => m.RememberMe)
-                    @Html.LabelFor(m => m.RememberMe)
-                </div>
-                <div class="p-0 my-3">
-                    <p>
-                        @Html.ActionLink("以新使用者身分註冊", "Register")
-                    </p>
-                </div>
-
-                <input type="submit" value="登入">
-                <div class="signin-agileits-bottom">
-                    <p>
-                        @Html.ActionLink("忘記密碼?", "ForgotPassword")
-                    </p>
-                </div>*@
-                @*<div class="social-grids">
-                <div class="social-text">
-                    <p>Or Sign in with</p>
-                </div>
-                <div class="social-icons">
-                    <ul>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                    </ul>
-                </div>
-            </div>*@
-            @*}
-            <div class="social-grids">
-                    <div class="social-text">
-                        <p>Or Sign in with</p>
-                    </div>
-                    <div class="social-icons">
-                        <ul>
-                            <li>
-                                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-        </div>
-    </div>
-</div>*@
-<!-- //main -->
 @*<div class="row">
     <div class="col-md-8">
         <section id="loginForm">
