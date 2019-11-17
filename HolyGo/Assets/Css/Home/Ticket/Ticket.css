@@ -200,8 +200,9 @@ h6,
     overflow: hidden;
     z-index: 0;
     margin-bottom: 50px;
-    background-color: #F3F3F3;
+    background-color: #F8F8FF;
     border-radius: 0 0 5px 5px;
+    border: 1px solid #F5F5F5;
 }
 
     .card-project .img {
