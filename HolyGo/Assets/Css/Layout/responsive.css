@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 /* CSS Document */
 
@@ -57,9 +57,9 @@
 3. 1280px
 ************/
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1300px) {
     .main_nav ul li:not(:last-of-type) {
-        margin-right: 25px;
+        margin-right: 15px;
     }
     .log_reg {
         margin-left: 20px;
@@ -82,14 +82,44 @@
 4. 1100px
 ************/
 
-@media only screen and (max-width: 1100px) {}
+@media only screen and (max-width: 1100px) {
+    .container_custom .container {
+        max-width: 540px;
+    }
+
+    .log_reg ul li a {
+        font-size: 14px;
+    }
+
+    .menu_link {
+        display: block;
+    }
+
+    .home_slider_dots {
+        left: 30px;
+    }
+
+    .home_title h1 {
+        font-size: 56px;
+    }
+
+        .home_title h1 span::after {
+            top: 17px;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            font-size: 14px;
+        }
+}
 
 
 /************
 5. 1024px
 ************/
 
-@media only screen and (max-width: 1024px) {}
+@media only screen and (max-width: 1024px) {
+    
+}
 
 
 /************
