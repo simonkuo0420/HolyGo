@@ -97,7 +97,7 @@ img {
 *********************************/
 
 .header {
-    background: rgba(196, 196, 196, 0.9);
+    background: rgba(256, 256, 256, 0.87);
     position: fixed;
     top: 0;
     left: 0;
@@ -111,7 +111,7 @@ img {
 }
 
     .header.scrolled {
-        background: rgba(196, 196, 196, 0.9);
+        background: rgba(256, 256, 256, 1);
     }
 
     .header.active {
@@ -296,7 +296,7 @@ img {
 
 .ftco-footer {
     font-size: 14px;
-    background: #3535;
+    background: #333;
     padding: 6em 0;
 }
 
@@ -307,14 +307,14 @@ img {
 
     .ftco-footer .ftco-footer-widget h2 {
         font-weight: normal;
-        color: #3c312e;
+        color: #FFF;
         margin-bottom: 40px;
         font-size: 18px;
         font-weight: 400;
     }
 
-    .ftco-footer .ftco-footer-widget ul li a span {
-        color: #3c312e;
+    .ftco-footer .ftco-footer-widget ul li {
+        color: #FFF;
     }
 
     .ftco-footer .ftco-footer-widget .btn-primary {
@@ -328,15 +328,15 @@ img {
         }
 
     .ftco-footer p {
-        color: #3c312e;
+        color: #FFF;
     }
 
     .ftco-footer a {
-        color: #3c312e;
+        color: #FFF;
     }
 
         .ftco-footer a:hover {
-            color: #3c312e;
+            color: #F3F3F3;
         }
 
     .ftco-footer .ftco-heading-2 {
@@ -370,6 +370,7 @@ img {
     }
 
         .ftco-footer-social li a i {
+            color : #333;
             position: absolute;
             font-size: 26px;
             top: 50%;
@@ -392,3 +393,4 @@ img {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
+
