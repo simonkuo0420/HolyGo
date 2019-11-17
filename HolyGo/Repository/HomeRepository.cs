@@ -46,7 +46,10 @@ namespace HolyGo.Repository
             }
             return getTopTravel;
         }
-
+        /// <summary>
+        /// 搜尋前8筆旅遊
+        /// </summary>
+        /// <returns>前8筆旅遊</returns>
         public List<TopTicketViewModel> topTicket()
         {
             List<TopTicketViewModel> getTopTicket;

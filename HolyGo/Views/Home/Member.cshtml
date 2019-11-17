@@ -1,0 +1,161 @@
+﻿@{
+    ViewBag.Title = "Member";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+<link rel="stylesheet" href="~/Assets/Css/Home/Member/style.css" />
+
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-md-3 my-3">
+            <div class="card card-primary">
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="member-img img-fluid rounded-circle" src="https://static.newmobilelife.com/wp-content/uploads/2018/11/oppa1.jpg">
+                    </div>
+                    <h3 class="text-center">Guest</h3>
+                    <p class="text-muted text-center">a0988591269@gmail.com</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item text-center">
+                            <b>HolyGo 會員</b>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card my-3">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="fas fa-book mr-1"></i> @Html.ActionLink(" 帳號設定", "Member", "Home", new { @class = "text-dark" })</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="fas fa-map-marker-alt mr-1"></i>@Html.ActionLink(" 訂單管理", "Order", "Home", new { @class = "text-dark" })</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="fas fa-pencil-alt mr-1"></i>@Html.ActionLink(" 訊息管理", "Message", "Home", new { @class = "text-dark" })</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="far fa-file-alt mr-1"></i>@Html.ActionLink(" 我的收藏", "Favorite", "Home", new { @class = "text-dark" })</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9 my-3">
+            <div class="card">
+                <h3 class="m-3 p-0"><strong>帳號設定</strong></h3>
+                <div class="card-header p-0 bg-white">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link text-muted active" id="nav-first-tab" href="#nav-first" data-toggle="tab" aria-controls="nav-first"><strong>基本資料</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-muted" id="nav-second-tab" href="#nav-second" data-toggle="tab" aria-controls="nav-second"><strong>帳號安全</strong></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="nav-first" aria-labelledby="nav-first-tab">
+                            <form>
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputLastName"><strong>名</strong></label>
+                                        <div>
+                                            <input type="text" class="form-control" id="inputLastName" placeholder="戴">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputFirstName"><strong>姓</strong></label>
+                                        <div>
+                                            <input type="text" class="form-control" id="inputFirstName" placeholder="仁德">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputGender"><strong>性別</strong></label>
+                                        <div>
+                                            <select class="selectpicker form-control">
+                                                <option>-請選擇-</option>
+                                                <option>男</option>
+                                                <option>女</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="flatpickr"><strong>出生日期</strong></label>
+                                        <div>
+                                            <input type="text" class="form-control" id="flatpickr" placeholder="出生日期">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputCountry"><strong>國家</strong></label>
+                                        <div>
+                                            <input type="text" class="form-control" id="inputCountry" placeholder="台灣">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputPhone"><strong>電話號碼</strong></label>
+                                        <div>
+                                            <input type="text" class="form-control" id="inputPhone" placeholder="0912 345 678">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-8">
+                                        <label for="inputEmail"><strong>聯絡 E-mail</strong></label>
+                                        <div>
+                                            <input type="email" class="form-control" id="inputEmail" placeholder="HolyGo@gmail.com">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row float-right">
+                                    <div class="form-group col">
+                                        <div>
+                                            <button type="submit" class="btn btn-primary">儲存</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade show" id="nav-second" aria-labelledby="nav-second-tab">
+                            <form>
+                                <div class="form-group">
+                                    <label for="inputPassword">原密碼</label>
+                                    <div>
+                                        <input type="password" class="form-control " id="inputPassword " placeholder="原密碼 ">
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="inputNewPWD ">新密碼</label>
+                                    <div>
+                                        <input type="password" class="form-control " id="inputNewPWD " placeholder="新密碼 ">
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="comfirmNewPWD ">再次確認密碼</label>
+                                    <div>
+                                        <input type="password" class="form-control " id="comfirmNewPWD " placeholder="再次確認密碼 ">
+                                    </div>
+                                </div>
+                                <div class="form-group float-right ">
+                                    <div>
+                                        <button type="submit" class="btn btn-primary ">儲存</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script type="text/javascript" src="~/Assets/Js/Home/Member/datepicker.js"></script>
+}

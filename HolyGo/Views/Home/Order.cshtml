@@ -1,0 +1,194 @@
+﻿
+@{
+    ViewBag.Title = "Order";
+}
+
+<link rel="stylesheet" href="~/Assets/Css/Home/Member/style.css" />
+
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-md-3 my-3">
+            <div class="card card-primary">
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="member-img img-fluid rounded-circle" src="https://static.newmobilelife.com/wp-content/uploads/2018/11/oppa1.jpg">
+                    </div>
+                    <h3 class="text-center">Guest</h3>
+                    <p class="text-muted text-center">a0988591269@gmail.com</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item text-center">
+                            <b>HolyGo 會員</b>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card my-3">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="fas fa-book mr-1"></i> @Html.ActionLink(" 帳號設定", "Member", "Home", new { @class = "text-dark" })</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="fas fa-map-marker-alt mr-1"></i>@Html.ActionLink(" 訂單管理", "Order", "Home", new { @class = "text-dark" })</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="fas fa-pencil-alt mr-1"></i>@Html.ActionLink(" 訊息管理", "Message", "Home", new { @class = "text-dark" })</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="far fa-file-alt mr-1"></i>@Html.ActionLink(" 我的收藏", "Favorite", "Home", new { @class = "text-dark" })</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9 my-3">
+            <div class="card">
+                <h3 class="m-3 p-0"><strong>訂單管理</strong></h3>
+                <div class="card-header p-0 bg-white">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link text-muted active" id="nav-first-tab" href="#nav-first" data-toggle="tab" aria-controls="#nav-first"><strong>即將出發</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-muted" id="nav-second-tab" href="#nav-second" data-toggle="tab" aria-controls="#nav-second"><strong>已出發</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-muted" id="nav-third-tab" href="#nav-third" data-toggle="tab" aria-controls="#nav-third"><strong>已取消</strong></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="nav-first" aria-labelledby="#nav-first-tab">
+                            <form>
+                                <div class="product-list">
+                                    <a href="#" class="product-card">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="img-bg" style="background-image: url('https://image.kkday.com/v2/image/get/w_481%2Ch_358%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_23270/20190523014212_9JXyL/jpg');"></div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="product-detail">
+                                                    <h3 class="h5">【KKday獨家】AQUAFIELD</h3>
+                                                    <p class="product-content">
+                                                        預先購買首爾 AQUAFIELD 高陽汗蒸幕入場券，前進首爾近郊，在以享受與療癒為設計宗旨的高級環境，體驗道地的三溫暖、戶外足浴，另有高級扁柏木房、多媒體藝術房、雲朵房等特色汗蒸幕廂房，以及供旅客交流的愜意休息空間及餐飲區，頂樓更設有無邊際泳池、各式水療池，讓你徹底洗盡旅途疲憊，放鬆度過寧靜舒適的時光。
+                                                    </p>
+                                                    <div class="product-place">首爾</div>
+                                                    <div class="product-time">行程6小時</div>
+                                                    <div class="product-footer">
+                                                        <div class="float-left product-count">
+                                                            <span class="d-inline">TWD </span>3.5K+個已訂購
+                                                        </div>
+                                                        <div class="float-right product-price">
+                                                            <span class="d-inline">TWD</span>
+                                                            <h5 class="text-primary d-inline"> 6000</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="product-list">
+                                    <a href="#" class="product-card">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="img-bg" style="background-image: url('https://image.kkday.com/v2/image/get/w_481%2Ch_358%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_19643/20190612032252_qSzsZ/png');"></div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="product-detail">
+                                                    <h3 class="h5">【KKday獨家】AQUAFIELD</h3>
+                                                    <p class="product-content">
+                                                        預先購買首爾 AQUAFIELD 高陽汗蒸幕入場券，前進首爾近郊，在以享受與療癒為設計宗旨的高級環境，體驗道地的三溫暖、戶外足浴，另有高級扁柏木房、多媒體藝術房、雲朵房等特色汗蒸幕廂房，以及供旅客交流的愜意休息空間及餐飲區，頂樓更設有無邊際泳池、各式水療池，讓你徹底洗盡旅途疲憊，放鬆度過寧靜舒適的時光。
+                                                    </p>
+                                                    <div class="product-place">首爾</div>
+                                                    <div class="product-time">行程6小時</div>
+                                                    <div class="product-footer">
+                                                        <div class="float-left product-count">
+                                                            <span class="d-inline">TWD </span>3.5K+個已訂購
+                                                        </div>
+                                                        <div class="float-right product-price">
+                                                            <span class="d-inline">TWD</span>
+                                                            <h5 class="text-primary d-inline"> 6000</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="product-list">
+                                    <a href="#" class="product-card">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="img-bg" style="background-image: url('https://image.kkday.com/v2/image/get/w_481%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_9367/20170324052236_KdjLD/jpg');"></div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="product-detail">
+                                                    <h3 class="h5">【KKday獨家】AQUAFIELD</h3>
+                                                    <p class="product-content">
+                                                        預先購買首爾 AQUAFIELD 高陽汗蒸幕入場券，前進首爾近郊，在以享受與療癒為設計宗旨的高級環境，體驗道地的三溫暖、戶外足浴，另有高級扁柏木房、多媒體藝術房、雲朵房等特色汗蒸幕廂房，以及供旅客交流的愜意休息空間及餐飲區，頂樓更設有無邊際泳池、各式水療池，讓你徹底洗盡旅途疲憊，放鬆度過寧靜舒適的時光。
+                                                    </p>
+                                                    <div class="product-place">首爾</div>
+                                                    <div class="product-time">行程6小時</div>
+                                                    <div class="product-footer">
+                                                        <div class="float-left product-count">
+                                                            <span class="d-inline">TWD </span>3.5K+個已訂購
+                                                        </div>
+                                                        <div class="float-right product-price">
+                                                            <span class="d-inline">TWD</span>
+                                                            <h5 class="text-primary d-inline"> 6000</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade show" id="nav-second" aria-labelledby="#nav-second-tab">
+                            <form>
+                                <div class="product-list">
+                                    <a href="#" class="product-card">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="img-bg" style="background-image: url('https://image.kkday.com/v2/image/get/w_481%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_18532/20180420063712_OhUWh/jpg');"></div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="product-detail">
+                                                    <h3 class="h5">【KKday獨家】AQUAFIELD</h3>
+                                                    <p class="product-content">
+                                                        預先購買首爾 AQUAFIELD 高陽汗蒸幕入場券，前進首爾近郊，在以享受與療癒為設計宗旨的高級環境，體驗道地的三溫暖、戶外足浴，另有高級扁柏木房、多媒體藝術房、雲朵房等特色汗蒸幕廂房，以及供旅客交流的愜意休息空間及餐飲區，頂樓更設有無邊際泳池、各式水療池，讓你徹底洗盡旅途疲憊，放鬆度過寧靜舒適的時光。
+                                                    </p>
+                                                    <div class="product-place">首爾</div>
+                                                    <div class="product-time">行程6小時</div>
+                                                    <div class="product-footer">
+                                                        <div class="float-left product-count">
+                                                            <span class="d-inline">TWD </span>3.5K+個已訂購
+                                                        </div>
+                                                        <div class="float-right product-price">
+                                                            <span class="d-inline">TWD</span>
+                                                            <h5 class="text-primary d-inline"> 6000</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade show" id="nav-third" aria-labelledby="#nav-third-tab">
+                            <form>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+}

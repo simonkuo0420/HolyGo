@@ -46,5 +46,25 @@ namespace HolyGo.Controllers
 
             return View();
         }
+
+        public ActionResult Member()
+        {
+            return View();
+        }
+
+        public ActionResult Order()
+        {
+            return View();
+        }
+
+        public ActionResult Message()
+        {
+            return View();
+        }
+
+        public ActionResult Favorite()
+        {
+            return View();
+        }
     }
 }
