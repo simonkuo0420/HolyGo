@@ -24,6 +24,10 @@ namespace HolyGo.Controllers
 
         public ActionResult Index()
         {
+            //HomeRepository Home = new HomeRepository();
+            //var Travel = Home.topTravel().ToString();
+            //var Ticket = Home.topTicket().ToString();
+            //return View(Travel , Ticket);
             var getTravelData = _hr.topTravel();
             var topTicketData = _hr.topTicket();
             //ViewData["key"] = model物件
