@@ -207,21 +207,22 @@ h6,
 
     .card-project .img {
         position: relative;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        -ms-border-radius: 4px;
-        border-radius: 4px;
+        overflow: hidden;
         height: 200px;
+        -webkit-border-radius: 4px 4px 0 0;
+        -moz-border-radius: 4px 4px 0 0;
+        -ms-border-radius: 4px 4px 0 0;
+        border-radius: 4px 4px 0 0;
     }
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
     .card-project .img {
         position: relative;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        -ms-border-radius: 4px;
-        border-radius: 4px;
         height: 400px;
+        -webkit-border-radius: 4px 4px 0 0;
+        -moz-border-radius: 4px 4px 0 0;
+        -ms-border-radius: 4px 4px 0 0;
+        border-radius: 4px 4px 0 0;
     }
 }
 
