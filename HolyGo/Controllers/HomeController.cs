@@ -51,21 +51,25 @@ namespace HolyGo.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Member()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult Order()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult Message()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult Favorite()
         {
             return View();
