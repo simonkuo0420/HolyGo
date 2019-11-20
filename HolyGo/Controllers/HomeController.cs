@@ -22,6 +22,7 @@ namespace HolyGo.Controllers
             _hr = new HomeRepository();
         }
 
+        [AllowAnonymous]
         public ActionResult Index()
         {
             //HomeRepository Home = new HomeRepository();
@@ -37,6 +38,7 @@ namespace HolyGo.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -44,6 +46,7 @@ namespace HolyGo.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

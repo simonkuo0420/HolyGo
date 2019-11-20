@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using HolyGo.Models;
+using System.Configuration;
 
 namespace HolyGo
 {
@@ -55,13 +56,13 @@ namespace HolyGo
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-            appId: "2301090346669995",
-            appSecret: "2f232674d20ec3bccc34c4378e7dd963");
+            appId: ConfigurationManager.AppSettings["FacebookappId"].ToString(),
+            appSecret: ConfigurationManager.AppSettings["FacebookappSecret"].ToString());
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "172601567292-kqhgmgel8pcv5adeaqkvrh5bqnkt8u0a.apps.googleusercontent.com",
-                ClientSecret = "fjlGuz2ypumIZ7OEV4CLUBMb"
+                ClientId = ConfigurationManager.AppSettings["GoogleClientId"].ToString(),
+                ClientSecret = ConfigurationManager.AppSettings["GoogleClientSecret"].ToString()
             });
         }
     }
