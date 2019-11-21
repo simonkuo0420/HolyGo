@@ -57,9 +57,11 @@ namespace HolyGo.Repository
             List<TopTicketViewModel> getTopTicket;
             using (conn = new SqlConnection(connString))
             {
-                string sql = @"SELECT top(8) t.Title,t.Country,t.City,t.Time,t.Images,v.Cost 
-                               FROM Ticket t 
-                               LEFT JOIN Ticket_Combo v ON t.Guid = v.Ticket_guid";
+                string sql = @"SELECT top(8) t.Title,t.Country,t.City,t.Time,t.Images,min(v.Cost) as Cost
+                                FROM Ticket t
+                                LEFT JOIN Ticket_Combo v ON t.Guid = v.Ticket_guid
+                                group by t.Title,t.Country,t.City,t.Time,t.Images
+                                order by t.Title desc,Cost desc";
                 getTopTicket = conn.Query<TopTicketViewModel>(sql).ToList();
             }
             return getTopTicket;
