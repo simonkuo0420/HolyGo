@@ -39,9 +39,11 @@ namespace HolyGo.Repository
             List<TopTravelViewModel> getTopTravel;
             using (conn = new SqlConnection(connString))
             {
-                string sql = @"SELECT top(8) t.Title,t.Country,t.City,t.Time,t.Images,v.Cost 
-                               FROM Travel t 
-                               LEFT JOIN Travel_Combo v ON t.Guid = v.Travel_guid";
+                string sql = @"SELECT top(8) t.Title,t.Country,t.City,t.Time,t.Images,min(v.Cost) as Cost
+                                FROM Travel t
+                                LEFT JOIN Travel_Combo v ON t.Guid = v.Travel_guid
+                                group by t.Title , t.Country,t.City,t.Time,t.Images
+                                order by t.Title desc,Cost desc";
                 getTopTravel = conn.Query<TopTravelViewModel>(sql).ToList();
             }
             return getTopTravel;
