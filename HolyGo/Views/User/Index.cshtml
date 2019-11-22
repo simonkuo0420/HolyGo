@@ -1,10 +1,11 @@
-﻿@{
-    ViewBag.Title = "Member";
+﻿
+@{
+    ViewBag.Title = "Index";
 }
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
-<link rel="stylesheet" href="~/Assets/Css/Home/Member/style.css" />
+<link rel="stylesheet" href="~/Assets/Css/User/style.css" />
 
 <div class="container mt-5 pt-5">
     <div class="row">
@@ -15,7 +16,7 @@
                         <img class="member-img img-fluid rounded-circle" src="https://static.newmobilelife.com/wp-content/uploads/2018/11/oppa1.jpg">
                     </div>
                     <h3 class="text-center">Guest</h3>
-                    <p class="text-muted text-center">a0988591269@gmail.com</p>
+                    <p class="text-muted text-center">@User.Identity.Name</p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item text-center">
                             <b>HolyGo 會員</b>
@@ -27,16 +28,16 @@
             <div class="card my-3">
                 <ul class="list-group">
                     <li class="list-group-item list-group-item-action">
-                        <strong><i class="fas fa-book mr-1"></i> @Html.ActionLink(" 帳號設定", "Member", "Home", new { @class = "text-dark" })</strong>
+                        <strong><i class="fas fa-book mr-1"></i> @Html.ActionLink(" 帳號設定", "Index", "User", new { @class = "text-dark" })</strong>
                     </li>
                     <li class="list-group-item list-group-item-action">
-                        <strong><i class="fas fa-map-marker-alt mr-1"></i>@Html.ActionLink(" 訂單管理", "Order", "Home", new { @class = "text-dark" })</strong>
+                        <strong><i class="fas fa-map-marker-alt mr-1"></i>@Html.ActionLink(" 訂單管理", "Order", "User", new { @class = "text-dark" })</strong>
                     </li>
                     <li class="list-group-item list-group-item-action">
-                        <strong><i class="fas fa-pencil-alt mr-1"></i>@Html.ActionLink(" 訊息管理", "Message", "Home", new { @class = "text-dark" })</strong>
+                        <strong><i class="fas fa-pencil-alt mr-1"></i>@Html.ActionLink(" 訊息管理", "Message", "User", new { @class = "text-dark" })</strong>
                     </li>
                     <li class="list-group-item list-group-item-action">
-                        <strong><i class="far fa-file-alt mr-1"></i>@Html.ActionLink(" 我的收藏", "Favorite", "Home", new { @class = "text-dark" })</strong>
+                        <strong><i class="far fa-file-alt mr-1"></i>@Html.ActionLink(" 我的收藏", "Favorite", "User", new { @class = "text-dark" })</strong>
                     </li>
                 </ul>
             </div>
@@ -57,67 +58,72 @@
                 <div class="card-body">
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="nav-first" aria-labelledby="nav-first-tab">
-                            <form>
-                                <div class="row">
-                                    <div class="form-group col-md-4">
-                                        <label for="inputLastName"><strong>名</strong></label>
-                                        <div>
-                                            <input type="text" class="form-control" id="inputLastName" placeholder="戴">
+                            @using (Html.BeginForm("Member", "Home"))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <form>
+                                    <div class="row">
+                                        <div class="form-group col-md-4">
+                                            <label for="inputLastName"><strong>名</strong></label>
+                                            <div>
+                                                <input type="text" class="form-control" id="inputLastName" placeholder="戴">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputFirstName"><strong>姓</strong></label>
+                                            <div>
+                                                <input type="text" class="form-control" id="inputFirstName" placeholder="仁德">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputGender"><strong>性別</strong></label>
+                                            <div>
+                                                <select class="selectpicker form-control">
+                                                    <option>-請選擇-</option>
+                                                    <option>男</option>
+                                                    <option>女</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="inputFirstName"><strong>姓</strong></label>
-                                        <div>
-                                            <input type="text" class="form-control" id="inputFirstName" placeholder="仁德">
+                                    <div class="row">
+                                        <div class="form-group col-md-4">
+                                            <label for="flatpickr"><strong>出生日期</strong></label>
+                                            <div>
+                                                <input type="text" class="form-control" id="flatpickr" placeholder="出生日期">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputCountry"><strong>國家</strong></label>
+                                            <div>
+                                                <input type="text" class="form-control" id="inputCountry" placeholder="台灣">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="inputGender"><strong>性別</strong></label>
-                                        <div>
-                                            <select class="selectpicker form-control">
-                                                <option>-請選擇-</option>
-                                                <option>男</option>
-                                                <option>女</option>
-                                            </select>
+                                    <div class="row">
+                                        <div class="form-group col-md-4">
+                                            <label for="inputPhone"><strong>電話號碼</strong></label>
+                                            <div>
+                                                <input type="text" class="form-control" id="inputPhone" placeholder="0912 345 678">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-8">
+                                            <label for="inputEmail"><strong>聯絡 E-mail</strong></label>
+                                            <div>
+                                                <input type="email" class="form-control" id="inputEmail" placeholder="HolyGo@gmail.com">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-4">
-                                        <label for="flatpickr"><strong>出生日期</strong></label>
-                                        <div>
-                                            <input type="text" class="form-control" id="flatpickr" placeholder="出生日期">
+                                    <div class="row float-right">
+                                        <div class="form-group col">
+                                            <div>
+                                                <button type="submit" class="btn btn-primary">儲存</button>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="inputCountry"><strong>國家</strong></label>
-                                        <div>
-                                            <input type="text" class="form-control" id="inputCountry" placeholder="台灣">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-4">
-                                        <label for="inputPhone"><strong>電話號碼</strong></label>
-                                        <div>
-                                            <input type="text" class="form-control" id="inputPhone" placeholder="0912 345 678">
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-8">
-                                        <label for="inputEmail"><strong>聯絡 E-mail</strong></label>
-                                        <div>
-                                            <input type="email" class="form-control" id="inputEmail" placeholder="HolyGo@gmail.com">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row float-right">
-                                    <div class="form-group col">
-                                        <div>
-                                            <button type="submit" class="btn btn-primary">儲存</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
+                            }
                         </div>
                         <div class="tab-pane fade show" id="nav-second" aria-labelledby="nav-second-tab">
                             <form>

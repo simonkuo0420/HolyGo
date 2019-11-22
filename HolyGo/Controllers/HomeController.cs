@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using HolyGo.Repository;
 using HolyGo.ViewModels;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -30,11 +31,11 @@ namespace HolyGo.Controllers
             //var Ticket = Home.topTicket().ToString();
             //return View(Travel , Ticket);
             var getTravelData = _hr.topTravel();
-            var topTicketData = _hr.topTicket();
+            var getTicketData = _hr.topTicket();
             //ViewData["key"] = model物件
             //ViewBag.model = model物件
-            ViewData["topTravelData"] = _hr.topTravel();
-            ViewData["topTicketData"] = _hr.topTicket();
+            ViewData["topTravelData"] = getTravelData;
+            ViewData["topTicketData"] = getTicketData;
             return View();
         }
 
@@ -51,30 +52,6 @@ namespace HolyGo.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
-        }
-
-        [Authorize]
-        public ActionResult Member()
-        {
-            return View();
-        }
-
-        [Authorize]
-        public ActionResult Order()
-        {
-            return View();
-        }
-
-        [Authorize]
-        public ActionResult Message()
-        {
-            return View();
-        }
-
-        [Authorize]
-        public ActionResult Favorite()
-        {
             return View();
         }
     }

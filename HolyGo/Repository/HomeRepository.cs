@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using HolyGo.Models;
 using HolyGo.ViewModels;
 using System;
 using System.Collections.Generic;

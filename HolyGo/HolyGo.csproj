@@ -179,6 +179,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,13 +203,15 @@
     <Compile Include="Models\Travel_Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\HomeRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\MemberViewModel.cs" />
     <Compile Include="ViewModels\TopTicketViewModel.cs" />
     <Compile Include="ViewModels\TopTravelViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Css\Account\Login\Login.css" />
-    <Content Include="Assets\Css\Home\Member\style.css" />
+    <Content Include="Assets\Css\User\style.css" />
     <Content Include="Assets\Css\Home\Ticket\Ticket.css" />
     <Content Include="Assets\Css\Home\Travel\Travel.css" />
     <Content Include="Assets\Css\Home\OurTeam\style.css" />
@@ -292,10 +295,10 @@
     <Content Include="Views\Home\_TravelPartial.cshtml" />
     <Content Include="Views\Home\_OurTeamPartial.cshtml" />
     <Content Include="Views\Home\_TicketPartial.cshtml" />
-    <Content Include="Views\Home\Member.cshtml" />
-    <Content Include="Views\Home\Order.cshtml" />
-    <Content Include="Views\Home\Message.cshtml" />
-    <Content Include="Views\Home\Favorite.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Order.cshtml" />
+    <Content Include="Views\User\Message.cshtml" />
+    <Content Include="Views\User\Favorite.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
