@@ -30,14 +30,15 @@ namespace HolyGo.Repository
         /// <summary>
         /// 取得登入後個別使用者資料
         /// </summary>
-        public List<MemberViewModel> SelectUsers(string id)
+        public MemberViewModel SelectUsers(string id)
         {
-            List<MemberViewModel> getAspUsers;
+            MemberViewModel getAspUsers = new MemberViewModel();
             using (conn = new SqlConnection(connString))
             {
-                string sql = $"SELECT FirstName,LastName,Gender,Birthday,Country,City,Phone,Email,EmailConfirmed " +
-                             $"From AspNetUsers WHERE Id = '{id}' ";
-                getAspUsers = conn.Query<MemberViewModel>(sql).ToList();
+                string sql = $"select a.FirstName, a.LastName, a.Gender, a.Birthday, a.Country, a.City, a.Phone, a.Email, a.EmailConfirmed "+
+                             $"from AspNetUsers a " +
+                             $"where Id = '{id}' ";
+                getAspUsers = conn.Query<MemberViewModel>(sql).FirstOrDefault();
             }
             return getAspUsers;
         }

@@ -1,5 +1,4 @@
-﻿@model HolyGo.ViewModels.MemberViewModel
-
+﻿@model MemberViewModel
 @{
     ViewBag.Title = "Index";
 }
@@ -17,7 +16,7 @@
                         <img class="member-img img-fluid rounded-circle" src="https://static.newmobilelife.com/wp-content/uploads/2018/11/oppa1.jpg">
                     </div>
                     <h3 class="text-center">Guest</h3>
-                    <p class="text-muted text-center">@User.Identity.Name</p>
+                    <p class="text-muted text-center">@Html.DisplayFor(m => m.FirstName)</p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item text-center">
                             <b>HolyGo 會員</b>

@@ -48,7 +48,7 @@ namespace HolyGo
             System.Net.NetworkCredential credentials = new System.Net.NetworkCredential(ConfigurationManager.AppSettings["Email"].ToString(), ConfigurationManager.AppSettings["Password"].ToString());
             smtpClient.Credentials = credentials;
             smtpClient.EnableSsl = true;
-            smtpClient.Send(msg);
+            //smtpClient.Send(msg);
         }
     }
 

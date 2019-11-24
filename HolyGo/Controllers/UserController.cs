@@ -25,8 +25,7 @@ namespace HolyGo.Controllers
         {
             var user_id = User.Identity.GetUserId();
             var getUserData = _ur.SelectUsers(user_id);
-            ViewData["getUserData"] = getUserData;
-            return View();
+            return View(getUserData);
         }
 
         [Authorize]
