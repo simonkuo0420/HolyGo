@@ -13,19 +13,18 @@ namespace HolyGo.Controllers
     {
         // GET: User
 
-        public readonly UserRepository _hr;
-        public ApplicationUserManager _userManager;
+        public readonly UserRepository _ur;
 
         public UserController()
         {
-            _hr = new UserRepository();
+            _ur = new UserRepository();
         }
 
        [Authorize]
         public ActionResult Index()
         {
             var user_id = User.Identity.GetUserId();
-            var getUserData = _hr.SelectUsers(user_id);
+            var getUserData = _ur.SelectUsers(user_id);
             ViewData["getUserData"] = getUserData;
             return View();
         }

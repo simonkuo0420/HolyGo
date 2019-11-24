@@ -35,7 +35,8 @@ namespace HolyGo.Repository
             List<MemberViewModel> getAspUsers;
             using (conn = new SqlConnection(connString))
             {
-                string sql = $"SELECT * From AspNetUsers WHERE Id = {id} ";
+                string sql = $"SELECT FirstName,LastName,Gender,Birthday,Country,City,Phone,Email,EmailConfirmed " +
+                             $"From AspNetUsers WHERE Id = '{id}' ";
                 getAspUsers = conn.Query<MemberViewModel>(sql).ToList();
             }
             return getAspUsers;
