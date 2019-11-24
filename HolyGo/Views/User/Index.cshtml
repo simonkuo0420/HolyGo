@@ -1,4 +1,4 @@
-﻿@model MemberViewModel
+﻿@model HolyGo.ViewModels.MemberViewModel
 @{
     ViewBag.Title = "Index";
 }
@@ -16,7 +16,7 @@
                         <img class="member-img img-fluid rounded-circle" src="https://static.newmobilelife.com/wp-content/uploads/2018/11/oppa1.jpg">
                     </div>
                     <h3 class="text-center">Guest</h3>
-                    <p class="text-muted text-center">@Html.DisplayFor(m => m.FirstName)</p>
+                    <p class="text-muted text-center">@User.Identity.Name</p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item text-center">
                             <b>HolyGo 會員</b>
@@ -67,20 +67,19 @@
                                         <div class="form-group col-md-4">
                                             <label for="inputLastName"><strong>名</strong></label>
                                             <div>
-                                                <input type="text" class="form-control" id="inputLastName" placeholder="戴">
+                                                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @id = "inputLastName", @placeholder = "戴" })
                                             </div>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="inputFirstName"><strong>姓</strong></label>
                                             <div>
-                                                <input type="text" class="form-control" id="inputFirstName" placeholder="仁德">
+                                                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @id = "inputFirstName", @placeholder = "仁德" })
                                             </div>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label for="inputGender"><strong>性別</strong></label>
+                                            <strong>請選擇</strong>
                                             <div>
                                                 <select class="selectpicker form-control">
-                                                    <option>-請選擇-</option>
                                                     <option>男</option>
                                                     <option>女</option>
                                                 </select>
@@ -91,13 +90,13 @@
                                         <div class="form-group col-md-4">
                                             <label for="flatpickr"><strong>出生日期</strong></label>
                                             <div>
-                                                <input type="text" class="form-control" id="flatpickr" placeholder="出生日期">
+                                                @Html.TextBoxFor(m => m.Birthday, new { @class = "form-control", @id = "flatpickr", @placeholder = "出生日期" })
                                             </div>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="inputCountry"><strong>國家</strong></label>
                                             <div>
-                                                <input type="text" class="form-control" id="inputCountry" placeholder="台灣">
+                                                @Html.TextBoxFor(m => m.Country, new { @class = "form-control", @id = "inputCountry", @placeholder = "台灣" })
                                             </div>
                                         </div>
                                     </div>
@@ -105,13 +104,13 @@
                                         <div class="form-group col-md-4">
                                             <label for="inputPhone"><strong>電話號碼</strong></label>
                                             <div>
-                                                <input type="text" class="form-control" id="inputPhone" placeholder="0912 345 678">
+                                                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @id = "inputPhone", @placeholder = "0912 345 678" })
                                             </div>
                                         </div>
                                         <div class="form-group col-md-8">
                                             <label for="inputEmail"><strong>聯絡 E-mail</strong></label>
                                             <div>
-                                                <input type="email" class="form-control" id="inputEmail" placeholder="HolyGo@gmail.com">
+                                                @Html.TextBoxFor(m => m.Email, new { @type = "email", @class = "form-control", @id = "inputEmail", @placeholder = "HolyGo@gmail.com" })
                                             </div>
                                         </div>
                                     </div>

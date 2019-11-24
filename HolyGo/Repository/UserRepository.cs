@@ -35,12 +35,36 @@ namespace HolyGo.Repository
             MemberViewModel getAspUsers = new MemberViewModel();
             using (conn = new SqlConnection(connString))
             {
-                string sql = $"select a.FirstName, a.LastName, a.Gender, a.Birthday, a.Country, a.City, a.Phone, a.Email, a.EmailConfirmed "+
+                string sql = $"select a.FirstName, a.LastName, a.Gender, a.Birthday, a.Country, a.City, a.Phone, a.Email, a.EmailConfirmed " +
                              $"from AspNetUsers a " +
                              $"where Id = '{id}' ";
                 getAspUsers = conn.Query<MemberViewModel>(sql).FirstOrDefault();
             }
             return getAspUsers;
+        }
+
+        /// <summary>
+        /// 更新使用者資料
+        /// </summary>
+        /// <param name="memberView"></param>
+        /// <param name="id"></param>
+        public void UpdateUsers(MemberViewModel memberView, string id)
+        {
+            using (conn = new SqlConnection(connString))
+            {
+                string sql = $"Update AspNetUsers " +
+                             $"SET LastName=@LastName, FirstName=@FirstName, Gender=@Gender, Birthday=@Birthday, Country=@Country, Phone=@Phone " +
+                             $"WHERE Id={id}";
+                conn.Execute(sql, new
+                {
+                    LastName = memberView.LastName,
+                    FirstName = memberView.FirstName,
+                    Gender = memberView.Gender,
+                    Birthday = memberView.Birthday,
+                    Country = memberView.Country,
+                    Phone = memberView.Phone
+                });
+            }
         }
     }
 }

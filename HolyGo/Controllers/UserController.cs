@@ -1,9 +1,11 @@
 ﻿using HolyGo.Repository;
+using HolyGo.ViewModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -20,12 +22,32 @@ namespace HolyGo.Controllers
             _ur = new UserRepository();
         }
 
-       [Authorize]
+        [Authorize]
         public ActionResult Index()
         {
             var user_id = User.Identity.GetUserId();
             var getUserData = _ur.SelectUsers(user_id);
             return View(getUserData);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        public ActionResult Index(MemberViewModel memberView)
+        {
+            MemberViewModel member = new MemberViewModel
+            {
+                LastName = memberView.LastName,
+                FirstName = memberView.FirstName,
+                Gender = memberView.Gender,
+                Birthday = memberView.Birthday,
+                Country = memberView.Country,
+                Phone = memberView.Phone
+            };
+            var user_id = User.Identity.GetUserId();
+            _ur.UpdateUsers(member, user_id);
+            return View();
         }
 
         [Authorize]
