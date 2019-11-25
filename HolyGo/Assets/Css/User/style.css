@@ -36,6 +36,10 @@
 
 /*------list------*/
 
+.list-group .list-group-item > strong > a {
+    color: #343a40;
+} 
+
 .product-list {
     border: 1px solid #eaeaea;
     box-shadow: none;

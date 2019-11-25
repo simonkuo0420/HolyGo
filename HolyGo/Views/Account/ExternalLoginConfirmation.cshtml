@@ -2,6 +2,8 @@
 
 <link rel="stylesheet" href="~/Assets/Css/Account/Login/Login.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
 
 @{
     ViewBag.Title = "註冊";
@@ -16,54 +18,56 @@
                 <span class="login100-form-title pb-5">
                     <strong>@ViewBag.LoginProvider</strong>
                 </span>
+                <div class="row">
+                    <div class="wrap-input100 validate-input mb-3 p-0 col-sm-6" data-validate="Username is reauired">
+                        <span class="label-input100">姓氏</span>
+                        @Html.TextBoxFor(m => m.FirstName, new { @placeholder = "戴", @class = "input100" })
+                        <span class="focus-input100" data-symbol="&#xf206;"></span>
+                    </div>
 
-                <div class="wrap-input100 validate-input mb-3" data-validate="Username is reauired">
-                    <span class="label-input100">姓氏</span>
-                    @Html.TextBoxFor(m => m.FirstName, new { @placeholder = "戴", @class = "input100" })
-                    <span class="focus-input100" data-symbol="&#xf206;"></span>
+                    <div class="wrap-input100 validate-input mb-3 p-0 col-sm-6" data-validate="Username is reauired">
+                        <span class="label-input100">名字</span>
+                        @Html.TextBoxFor(m => m.LastName, new { @placeholder = "德仁", @class = "input100" })
+                        <span class="focus-input100" data-symbol="&#xf206;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input mb-3 p-0 col-sm-4" data-validate="Username is reauired">
+                        <span class="label-input100">國籍</span>
+                        @Html.TextBoxFor(m => m.Country, new { @placeholder = "台灣", @class = "input100" })
+                        <span class="focus-input100" data-symbol="&#xf347;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input mb-3 p-0 col-sm-4" data-validate="Username is reauired">
+                        <span class="label-input100">地區</span>
+                        @Html.TextBoxFor(m => m.City, new { @placeholder = "桃園", @class = "input100" })
+                        <span class="focus-input100" data-symbol="&#xf133;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input mb-3 p-0 col-sm-4" data-validate="Username is reauired">
+                        <span class="label-input100">性別</span>
+                        @Html.TextBoxFor(m => m.Gender, new { @placeholder = "男", @class = "input100" })
+                        <span class="focus-input100" data-symbol="&#xf212;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input mb-3 p-0 col-sm-6" data-validate="Username is reauired">
+                        <span class="label-input100">生日</span>
+                        @Html.TextBoxFor(m => m.Birthday, new { @type = "date", @placeholder = "生日", @class = "input100", @id = "flatpickr" })
+                        <span class="focus-input100" data-symbol="&#xf122;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input mb-3 p-0 col-sm-6" data-validate="Username is reauired">
+                        <span class="label-input100">電話</span>
+                        @Html.TextBoxFor(m => m.Phone, new { @placeholder = "0912345678", @class = "input100" })
+                        <span class="focus-input100" data-symbol="&#xf2be;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input mb-3 p-0" data-validate="Username is reauired">
+                        <span class="label-input100">電子信箱</span>
+                        @Html.TextBoxFor(m => m.Email, new { @placeholder = "web108b@gmail.com", @class = "input100" })
+                        <span class="focus-input100" data-symbol="&#xf15a;"></span>
+                    </div>
                 </div>
 
-                <div class="wrap-input100 validate-input mb-3" data-validate="Username is reauired">
-                    <span class="label-input100">名字</span>
-                    @Html.TextBoxFor(m => m.LastName, new { @placeholder = "德仁", @class = "input100" })
-                    <span class="focus-input100" data-symbol="&#xf206;"></span>
-                </div>
-
-                <div class="wrap-input100 validate-input mb-3" data-validate="Username is reauired">
-                    <span class="label-input100">國籍</span>
-                    @Html.TextBoxFor(m => m.Country, new { @placeholder = "台灣", @class = "input100" })
-                    <span class="focus-input100" data-symbol="&#xf347;"></span>
-                </div>
-
-                <div class="wrap-input100 validate-input mb-3" data-validate="Username is reauired">
-                    <span class="label-input100">地區</span>
-                    @Html.TextBoxFor(m => m.City, new { @placeholder = "桃園", @class = "input100" })
-                    <span class="focus-input100" data-symbol="&#xf133;"></span>
-                </div>
-
-                <div class="wrap-input100 validate-input mb-3" data-validate="Username is reauired">
-                    <span class="label-input100">性別</span>
-                    @Html.TextBoxFor(m => m.Gender, new { @placeholder = "男", @class = "input100" })
-                    <span class="focus-input100" data-symbol="&#xf212;"></span>
-                </div>
-
-                <div class="wrap-input100 validate-input mb-3" data-validate="Username is reauired">
-                    <span class="label-input100">生日</span>
-                    @Html.TextBoxFor(m => m.Birthday, new { @type = "date", @placeholder = "生日", @class = "input100" })
-                    <span class="focus-input100" data-symbol="&#xf122;"></span>
-                </div>
-
-                <div class="wrap-input100 validate-input mb-3" data-validate="Username is reauired">
-                    <span class="label-input100">電話</span>
-                    @Html.TextBoxFor(m => m.Phone, new { @placeholder = "0912345678", @class = "input100" })
-                    <span class="focus-input100" data-symbol="&#xf2be;"></span>
-                </div>
-
-                <div class="wrap-input100 validate-input mb-3" data-validate="Username is reauired">
-                    <span class="label-input100">電子信箱</span>
-                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "web108b@gmail.com", @class = "input100" })
-                    <span class="focus-input100" data-symbol="&#xf15a;"></span>
-                </div>
 
                 @Html.ValidationSummary("", new { @class = "text-danger" })
                 <div class="container-login100-form-btn pt-5">
@@ -156,4 +160,6 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script type="text/javascript" src="~/Assets/Js/Home/Member/datepicker.js"></script>
 }
