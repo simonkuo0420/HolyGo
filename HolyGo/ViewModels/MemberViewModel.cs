@@ -16,16 +16,14 @@ namespace HolyGo.ViewModels
         [Display(Name = "性別")]
         public string Gender { get; set; }
         [Display(Name = "生日")]
+        [DisplayFormat(DataFormatString = "{0:YYYY/MM/DD}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime Birthday { get; set; }
         [Display(Name = "國家")]
         public string Country { get; set; }
-        [Display(Name = "地區")]
-        public string City { get; set; }
         [Display(Name = "電話")]
         public string Phone { get; set; }
         [Display(Name = "電子信箱")]
         public string Email { get; set; }
-        [Display(Name = "信箱驗證")]
-        public bool EmailConfirmed { get; set; }
     }
 }

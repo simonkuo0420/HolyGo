@@ -1,6 +1,7 @@
 ﻿$(function () {
     $("#flatpickr").flatpickr({
         maxDate: "today",
-        theme: "dark"
+        theme: "dark",
+        dateFormat: "Y-m-d"
     })
 });

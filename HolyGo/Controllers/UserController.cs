@@ -40,7 +40,6 @@ namespace HolyGo.Controllers
             {
                 LastName = memberView.LastName,
                 FirstName = memberView.FirstName,
-                Gender = memberView.Gender,
                 Birthday = memberView.Birthday,
                 Country = memberView.Country,
                 Phone = memberView.Phone
