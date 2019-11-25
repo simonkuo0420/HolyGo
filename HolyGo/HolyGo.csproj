@@ -208,6 +208,7 @@
     <Compile Include="ViewModels\MemberViewModel.cs" />
     <Compile Include="ViewModels\TopTicketViewModel.cs" />
     <Compile Include="ViewModels\TopTravelViewModel.cs" />
+    <Compile Include="ViewModels\UsersOrderViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Css\Account\Login\Login.css" />

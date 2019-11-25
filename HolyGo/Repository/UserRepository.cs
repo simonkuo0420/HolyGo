@@ -65,5 +65,33 @@ namespace HolyGo.Repository
                 });
             }
         }
+
+        //Select a.User_guid, a.Datetime, c.Title, c.Contents, c.Images, c.Time, c.Country, b.Cost
+        //From Travel_Order a
+        //INNER JOIN Travel_Combo b
+        //ON b.Guid = a.Combo_guid
+        //INNER JOIN Travel c
+        //ON c.Guid = b.Travel_guid
+        //WHERE User_guid = '417cd80d-a994-4835-9d91-31c2955f31a1'
+
+        /// <summary>
+        /// 個別使用者訂單資料
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public List<UsersOrderViewModel> SelectUsersOrder(string id)
+        {
+            List<UsersOrderViewModel> getUsersOrder;
+            using (conn = new SqlConnection(connString))
+            {
+                string sql = $"Select a.User_guid, a.Datetime, c.Title, c.Contents, c.Images, c.Time, c.Country, b.Cost " +
+                             $"From Travel_Order a " +
+                             $"INNER JOIN Travel_Combo b ON b.Guid = a.Combo_guid " +
+                             $"INNER JOIN Travel c ON c.Guid = b.Travel_guid " +
+                             $"WHERE User_guid = '{id}'";
+                getUsersOrder = conn.Query<UsersOrderViewModel>(sql).ToList();
+                return getUsersOrder;
+            }
+        }
     }
 }

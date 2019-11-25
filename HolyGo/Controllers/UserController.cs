@@ -52,7 +52,9 @@ namespace HolyGo.Controllers
         [Authorize]
         public ActionResult Order()
         {
-            return View();
+            var user_id = User.Identity.GetUserId();
+            var getUsersOrder = _ur.SelectUsersOrder(user_id);
+            return View(getUsersOrder);
         }
 
         [Authorize]
