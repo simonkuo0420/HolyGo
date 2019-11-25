@@ -53,7 +53,7 @@ namespace HolyGo.Repository
             using (conn = new SqlConnection(connString))
             {
                 string sql = $"Update AspNetUsers " +
-                             $"SET LastName=@LastName, FirstName=@FirstName, Birthday=@Birthday, Country=@Country, Phone=@Phone " +
+                             $"SET LastName=@LastName, FirstName=@FirstName, Birthday=@Birthday, Country=@Country, Phone=@Phone " +  
                              $"WHERE Id= '{id}' ";
                 conn.Execute(sql, new
                 {
@@ -65,6 +65,17 @@ namespace HolyGo.Repository
                 });
             }
         }
+
+        //public void UpdateUsers(MemberViewModel memberView, string id)
+        //{
+        //    using (conn = new SqlConnection(connString))
+        //    {
+        //        string sql = $"Update AspNetUsers " +
+        //                     $"SET LastName= '{memberView.LastName}', FirstName='{memberView.FirstName}', Birthday='{memberView.Birthday}', Country='{memberView.Country}', Phone='{memberView.Phone}' " +
+        //                     $"WHERE Id= '{id}' ";
+        //        conn.Execute(sql);
+        //    }
+        //}
 
         //Select a.User_guid, a.Datetime, c.Title, c.Contents, c.Images, c.Time, c.Country, b.Cost
         //From Travel_Order a

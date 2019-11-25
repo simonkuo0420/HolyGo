@@ -57,9 +57,9 @@ namespace HolyGo.Controllers
             var CurrentTime = dateTime.ToShortDateString();
             var getUsersOrder = _ur.SelectUsersOrder(user_id, CurrentTime);
             var getUsersGoOrder = _ur.SelectUsersGoOrder(user_id, CurrentTime);
-            //ViewData["getUsersOrder"] = getUsersOrder;
-            //ViewData["getUserGoOrder"] = getUsersGoOrder;
-            return View(getUsersOrder);
+            ViewBag.getUsersOrder = getUsersOrder;
+            ViewBag.getUsersGoOrder = getUsersGoOrder;
+            return View();
         }
 
         [Authorize]
