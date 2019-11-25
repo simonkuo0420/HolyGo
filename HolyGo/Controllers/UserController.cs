@@ -53,7 +53,12 @@ namespace HolyGo.Controllers
         public ActionResult Order()
         {
             var user_id = User.Identity.GetUserId();
-            var getUsersOrder = _ur.SelectUsersOrder(user_id);
+            DateTime dateTime = DateTime.Now;
+            var CurrentTime = dateTime.ToShortDateString();
+            var getUsersOrder = _ur.SelectUsersOrder(user_id, CurrentTime);
+            var getUsersGoOrder = _ur.SelectUsersGoOrder(user_id, CurrentTime);
+            //ViewData["getUsersOrder"] = getUsersOrder;
+            //ViewData["getUserGoOrder"] = getUsersGoOrder;
             return View(getUsersOrder);
         }
 

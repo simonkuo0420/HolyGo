@@ -79,7 +79,7 @@ namespace HolyGo.Repository
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public List<UsersOrderViewModel> SelectUsersOrder(string id)
+        public List<UsersOrderViewModel> SelectUsersOrder(string id,string date)
         {
             List<UsersOrderViewModel> getUsersOrder;
             using (conn = new SqlConnection(connString))
@@ -88,9 +88,24 @@ namespace HolyGo.Repository
                              $"From Travel_Order a " +
                              $"INNER JOIN Travel_Combo b ON b.Guid = a.Combo_guid " +
                              $"INNER JOIN Travel c ON c.Guid = b.Travel_guid " +
-                             $"WHERE User_guid = '{id}'";
+                             $"WHERE User_guid = '{id}' AND Datetime < '{date}'" ;
                 getUsersOrder = conn.Query<UsersOrderViewModel>(sql).ToList();
                 return getUsersOrder;
+            }
+        }
+
+        public List<UsersOrderViewModel> SelectUsersGoOrder(string id, string date)
+        {
+            List<UsersOrderViewModel> getUsersGoOrder;
+            using (conn = new SqlConnection(connString))
+            {
+                string sql = $"Select a.User_guid, a.Datetime, c.Title, c.Contents, c.Images, c.Time, c.Country, b.Cost " +
+                             $"From Travel_Order a " +
+                             $"INNER JOIN Travel_Combo b ON b.Guid = a.Combo_guid " +
+                             $"INNER JOIN Travel c ON c.Guid = b.Travel_guid " +
+                             $"WHERE User_guid = '{id}' AND Datetime >= '{date}'";
+                getUsersGoOrder = conn.Query<UsersOrderViewModel>(sql).ToList();
+                return getUsersGoOrder;
             }
         }
     }

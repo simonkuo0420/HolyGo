@@ -19,7 +19,7 @@ namespace HolyGo.ViewModels
         [Display(Name = "下單時間")]
         [DisplayFormat(DataFormatString = "{0:YYYY/MM/DD}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
-        public string DateTime { get; set; }
+        public DateTime DateTime { get; set; }
         /// <summary>
         /// 訂單標題
         /// </summary>
