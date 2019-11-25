@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Order";
 }
 
@@ -59,6 +60,44 @@
                         <div class="tab-pane fade show active" id="nav-first" aria-labelledby="#nav-first-tab">
                             @using (Html.BeginForm("Order", "User"))
                             {
+                                foreach (var item in ViewBag.getUsersGoOrder)
+                                {
+                                    <form>
+                                        <div class="product-list">
+                                            <a href="#" class="product-card">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <div class="img-bg" style="background-image: url('@item.Images');"></div>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <div class="product-detail">
+                                                            <h3 class="h5">@item.Title</h3>
+                                                            <p class="product-content">
+                                                                @item.Contents
+                                                            </p>
+                                                            <div class="product-place">@item.Country</div>
+                                                            <div class="product-time">行程 @item.Time 小時</div>
+                                                            <div class="product-footer">
+                                                                <div class="float-left product-count">
+                                                                    <span class="d-inline">即將出發 </span>@item.DateTime.ToShortDateString()
+                                                                </div>
+                                                                <div class="float-right product-price">
+                                                                    <span class="d-inline">TWD</span>
+                                                                    <h5 class="text-primary d-inline"> @item.Cost</h5>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </form>
+                                }
+                            }
+                        </div>
+                        <div class="tab-pane fade show" id="nav-second" aria-labelledby="#nav-second-tab">
+                            @using (Html.BeginForm("Order", "User"))
+                            {
                                 foreach (var item in ViewBag.getUsersOrder)
                                 {
                                     <form>
@@ -78,7 +117,7 @@
                                                             <div class="product-time">行程 @item.Time 小時</div>
                                                             <div class="product-footer">
                                                                 <div class="float-left product-count">
-                                                                    <span class="d-inline">下單日期 </span>@item.DateTime.ToShortDateString()
+                                                                    <span class="d-inline">已出發 </span>@item.DateTime.ToShortDateString()
                                                                 </div>
                                                                 <div class="float-right product-price">
                                                                     <span class="d-inline">TWD</span>
@@ -94,41 +133,43 @@
                                 }
                             }
                         </div>
-                        <div class="tab-pane fade show" id="nav-second" aria-labelledby="#nav-second-tab">
-                            <form>
-                                <div class="product-list">
-                                    <a href="#" class="product-card">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="img-bg" style="background-image: url('https://image.kkday.com/v2/image/get/w_481%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_18532/20180420063712_OhUWh/jpg');"></div>
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="product-detail">
-                                                    <h3 class="h5">【KKday獨家】AQUAFIELD</h3>
-                                                    <p class="product-content">
-                                                        預先購買首爾 AQUAFIELD 高陽汗蒸幕入場券，前進首爾近郊，在以享受與療癒為設計宗旨的高級環境，體驗道地的三溫暖、戶外足浴，另有高級扁柏木房、多媒體藝術房、雲朵房等特色汗蒸幕廂房，以及供旅客交流的愜意休息空間及餐飲區，頂樓更設有無邊際泳池、各式水療池，讓你徹底洗盡旅途疲憊，放鬆度過寧靜舒適的時光。
-                                                    </p>
-                                                    <div class="product-place">首爾</div>
-                                                    <div class="product-time">行程6小時</div>
-                                                    <div class="product-footer">
-                                                        <div class="float-left product-count">
-                                                            <span class="d-inline">TWD </span>3.5K+個已訂購
-                                                        </div>
-                                                        <div class="float-right product-price">
-                                                            <span class="d-inline">TWD</span>
-                                                            <h5 class="text-primary d-inline"> 6000</h5>
+                        <div class="tab-pane fade show" id="nav-third" aria-labelledby="#nav-third-tab">
+                            @using (Html.BeginForm("Order", "User"))
+                            {
+                                foreach (var item in ViewBag.getCancleOrder)
+                                {
+                                    <form>
+                                        <div class="product-list">
+                                            <a href="#" class="product-card">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <div class="img-bg" style="background-image: url('@item.Images');"></div>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <div class="product-detail">
+                                                            <h3 class="h5">@item.Title</h3>
+                                                            <p class="product-content">
+                                                                @item.Contents
+                                                            </p>
+                                                            <div class="product-place">@item.Country</div>
+                                                            <div class="product-time">行程 @item.Time 小時</div>
+                                                            <div class="product-footer">
+                                                                <div class="float-left product-count">
+                                                                    <span class="d-inline">已取消 </span>
+                                                                </div>
+                                                                <div class="float-right product-price">
+                                                                    <span class="d-inline">TWD</span>
+                                                                    <h5 class="text-primary d-inline"> @item.Cost</h5>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
-                                    </a>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="tab-pane fade show" id="nav-third" aria-labelledby="#nav-third-tab">
-                            <form>
-                            </form>
+                                    </form>
+                                }
+                            }
                         </div>
                     </div>
                 </div>

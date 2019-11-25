@@ -31,9 +31,7 @@ namespace HolyGo.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        [Authorize]
         public ActionResult Index(MemberViewModel memberView)
         {
             MemberViewModel member = new MemberViewModel
@@ -57,8 +55,10 @@ namespace HolyGo.Controllers
             var CurrentTime = dateTime.ToShortDateString();
             var getUsersOrder = _ur.SelectUsersOrder(user_id, CurrentTime);
             var getUsersGoOrder = _ur.SelectUsersGoOrder(user_id, CurrentTime);
+            var getCancleOrder = _ur.SelectCancleOrder(user_id);
             ViewBag.getUsersOrder = getUsersOrder;
             ViewBag.getUsersGoOrder = getUsersGoOrder;
+            ViewBag.getCancleOrder = getCancleOrder;
             return View();
         }
 
@@ -71,6 +71,9 @@ namespace HolyGo.Controllers
         [Authorize]
         public ActionResult Favorite()
         {
+            var user_id = User.Identity.GetUserId();
+            var getFavorite = _ur.SelectFavorite(user_id);
+            ViewBag.getFavorite = getFavorite;
             return View();
         }
     }
