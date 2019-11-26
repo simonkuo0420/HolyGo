@@ -212,6 +212,10 @@
     <Compile Include="ViewModels\UsersOrderViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Css\About\AbCard\cardstyle.css" />
+    <Content Include="Assets\Css\About\AbContent\AbContent.css" />
+    <Content Include="Assets\Css\About\radiusCard\RadiusCard.css" />
+    <Content Include="Assets\Css\About\Viedo\viedo.css" />
     <Content Include="Assets\Css\Account\Login\Login.css" />
     <Content Include="Assets\Css\Travel\style.css" />
     <Content Include="Assets\Css\User\style.css" />
@@ -298,6 +302,10 @@
     <Content Include="Views\User\Message.cshtml" />
     <Content Include="Views\User\Favorite.cshtml" />
     <Content Include="Views\Travel\Index.cshtml" />
+    <Content Include="Views\Home\About\_AbCardPartial.cshtml" />
+    <Content Include="Views\Home\About\_AbcontentPartial.cshtml" />
+    <Content Include="Views\Home\About\_RadiusCardPartial.cshtml" />
+    <Content Include="Views\Home\About\_VideoPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

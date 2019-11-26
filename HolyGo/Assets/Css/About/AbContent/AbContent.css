@@ -1,0 +1,129 @@
+ html, body {
+  height: 100%;
+}
+
+
+img {
+   
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+p {
+  margin: 0 0 15px;
+  color: #444;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+  margin: 0 0 15px;
+  color: #444;
+  font-weight: 500;
+}
+
+
+
+h2 {
+  font-size: 38px;
+  line-height: 40px;
+}
+
+
+h4 {
+  font-size: 24px;
+  line-height: 26px;
+}
+
+
+
+a {
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3EC1D5;
+  text-decoration: none;
+}
+
+a:active, a:hover {
+  outline: 0 none;
+}
+
+body {
+  background: #fff none repeat scroll 0 0;
+  color: #444;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  text-align: left;
+  /*overflow-x: hidden;*/
+  line-height: 22px;
+}
+
+ul {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+.area-padding {
+  padding: 70px 0px 80px;
+}
+
+
+
+.section-headline h2 {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 120px;
+  position: relative;
+  text-transform: capitalize;
+}
+
+    .section-headline h2::after {
+        border: 1px solid #333;
+        bottom: -20px;
+        content: "";
+        left: 0;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        width: 40%;
+    }
+
+
+ /*3. About Area
+--------------------------------*/
+
+.about-area {
+    /*margin-bottom: 100px;*/
+    background-color: #f9f9f9;
+}
+
+.single-well>a {
+  display: block;
+}
+
+.single-well ul li {
+  color: #444;
+  display: block;
+  padding: 5px 0;
+}
+
+.single-well ul li i {
+  color: #3EC1D5;
+  padding-right: 10px;
+  font-size: 12px;
+}
+
+.single-well p {
+  color: #444;
+}
+
+/*--------------------------------*/

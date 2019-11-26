@@ -1,0 +1,115 @@
+@media screen and (max-width: 767px) {
+    .wrapper {
+        height: 900px;
+     
+    }
+}
+
+.content {
+    max-width: 1680px;
+    width: 100%;
+    padding: 0 4%;
+    /*padding-top: 70px;*/
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+@media screen and (max-width: 400px) {
+    .content {
+        /*padding-top: 100px;*/
+        flex-direction: column;
+    }
+}
+
+@font-face {
+    src: url('fonts/qfont.otf');
+    font-family: webfont;
+}
+.section-headline h2 {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 100px;
+    margin-bottom: 120px;
+    position: relative;
+    text-transform: capitalize;
+}
+
+    .section-headline h2::after {
+        border: 1px solid #333;
+        bottom: -20px;
+        content: "";
+        left: 0;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        width: 40%;
+    }
+
+
+
+.rcard {
+    width: 100%;
+    max-width: 350px;
+    min-width: 200px;
+    height: 300px;
+    margin: 10px;
+    margin-right: 50px;
+    border-radius: 10px;
+    font-size: 12px;
+    position: relative;
+    display: inline-block;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.ricon {
+    margin: 0 auto;
+    width: 130px;
+    height: 130px;
+    background: rgb(0, 160, 210);
+    border-radius: 100%;
+    display: inline-block;
+    color: white;
+    background-position: 0px;
+    background-size: 200px;
+    line-height: 150px;
+    text-align: center;
+}
+
+.material-icons {
+    font-size: 60px;
+}
+
+.rcard .title {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    margin-top: 30px;
+    color: black;
+    font-weight: 300;
+    letter-spacing: 4px;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.rcard .text {
+    width: 75%;
+    margin: 0 auto;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+    color: #333333;
+    font-weight: 300;
+    letter-spacing: 2px;
+    max-height: 0;
+    line-height: 22px;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.card {
+    background-color: #F9F9F9;
+    border: none;
+}
