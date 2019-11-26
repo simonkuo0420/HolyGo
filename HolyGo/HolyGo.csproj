@@ -230,6 +230,7 @@
     <Content Include="Assets\Css\Home\Banner\Banner.css" />
     <Content Include="Assets\Css\Layout\main_styles.css" />
     <Content Include="Assets\Css\Layout\responsive.css" />
+    <Content Include="Assets\Images\About\Content.jpg" />
     <Content Include="Assets\Images\Logo\HolyGo.ico" />
     <Content Include="Assets\Js\Home\Member\datepicker.js" />
     <Content Include="Assets\Js\Home\OurTeam\ourteamslide.js" />
