@@ -41,10 +41,10 @@ namespace HolyGo.Repository
             using (conn = new SqlConnection(connString))
             {
                 string sql = @"SELECT top(8) t.Title,t.Country,t.City,t.Time,t.Images,min(v.Cost) as Cost
-                                FROM Travel t
-                                LEFT JOIN Travel_Combo v ON t.Guid = v.Travel_guid
-                                group by t.Title , t.Country,t.City,t.Time,t.Images
-                                order by t.Title desc,Cost desc";
+                               FROM Travel t
+                               LEFT JOIN Travel_Combo v ON t.Guid = v.Travel_guid
+                               group by t.Title , t.Country,t.City,t.Time,t.Images
+                               order by t.Title desc,Cost desc";
                 getTopTravel = conn.Query<TopTravelViewModel>(sql).ToList();
             }
             return getTopTravel;
@@ -59,10 +59,10 @@ namespace HolyGo.Repository
             using (conn = new SqlConnection(connString))
             {
                 string sql = @"SELECT top(8) t.Title,t.Country,t.City,t.Time,t.Images,min(v.Cost) as Cost
-                                FROM Ticket t
-                                LEFT JOIN Ticket_Combo v ON t.Guid = v.Ticket_guid
-                                group by t.Title,t.Country,t.City,t.Time,t.Images
-                                order by t.Title desc,Cost desc";
+                               FROM Ticket t
+                               LEFT JOIN Ticket_Combo v ON t.Guid = v.Ticket_guid
+                               group by t.Title,t.Country,t.City,t.Time,t.Images
+                               order by t.Title desc,Cost desc";
                 getTopTicket = conn.Query<TopTicketViewModel>(sql).ToList();
             }
             return getTopTicket;

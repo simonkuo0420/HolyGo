@@ -204,11 +204,13 @@
     <Compile Include="Models\Travel_Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\HomeRepository.cs" />
+    <Compile Include="Repository\TravelRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\MemberViewModel.cs" />
     <Compile Include="ViewModels\TopTicketViewModel.cs" />
     <Compile Include="ViewModels\TopTravelViewModel.cs" />
+    <Compile Include="ViewModels\TravelViewModel.cs" />
     <Compile Include="ViewModels\UsersOrderViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
