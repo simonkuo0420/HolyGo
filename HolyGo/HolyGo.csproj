@@ -179,6 +179,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TravelController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -212,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Css\Account\Login\Login.css" />
+    <Content Include="Assets\Css\Travel\style.css" />
     <Content Include="Assets\Css\User\style.css" />
     <Content Include="Assets\Css\Home\Ticket\Ticket.css" />
     <Content Include="Assets\Css\Home\Travel\Travel.css" />
@@ -224,12 +226,7 @@
     <Content Include="Assets\Css\Home\Banner\Banner.css" />
     <Content Include="Assets\Css\Layout\main_styles.css" />
     <Content Include="Assets\Css\Layout\responsive.css" />
-    <Content Include="Assets\Images\destination-1.jpg" />
-    <Content Include="Assets\Images\destination-2.jpg" />
-    <Content Include="Assets\Images\destination-3.jpg" />
-    <Content Include="Assets\Images\destination-4.jpg" />
-    <Content Include="Assets\Images\destination-5.jpg" />
-    <Content Include="Assets\Images\destination-6.jpg" />
+    <Content Include="Assets\Images\Logo\HolyGo.ico" />
     <Content Include="Assets\Js\Home\Member\datepicker.js" />
     <Content Include="Assets\Js\Home\OurTeam\ourteamslide.js" />
     <Content Include="Assets\Js\Layout\custom.js" />
@@ -300,6 +297,7 @@
     <Content Include="Views\User\Order.cshtml" />
     <Content Include="Views\User\Message.cshtml" />
     <Content Include="Views\User\Favorite.cshtml" />
+    <Content Include="Views\Travel\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
