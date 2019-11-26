@@ -3,157 +3,176 @@
     ViewBag.Title = "Index";
 }
 
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/flick/jquery-ui.css">
 <link rel="stylesheet" href="~/Assets/Css/Travel/style.css" />
 
-    <div class="container mt-5 pt-5">
-        <div class="row">
-            <div class="col-xl-3 mb-3">
-                <div class="filter-box my-3">
-                    <ul class="list-group">
-                        <li class="list-group-item ">
-                            <strong class="text-center">選擇、探索國家</strong>
-                        </li>
-                        <li class="list-group-item list-group-item-action">
-                            <a href="/ThirdUI/Index.html" class="text-dark">
-                                <i class="fas fa-book mr-1"></i> 台灣
-                            </a>
-                        </li>
-                        <li class="list-group-item list-group-item-action">
-                            <a href="/ThirdUI/order.html" class="text-dark">
-                                <i class="fas fa-map-marker-alt mr-1"></i> 日本
-                            </a>
-                        </li>
-                        <li class="list-group-item list-group-item-action">
-                            <a href="/ThirdUI/message.html" class="text-dark">
-                                <i class="fas fa-pencil-alt mr-1"></i> 韓國
-                            </a>
-                        </li>
-                        <li class="list-group-item list-group-item-action">
-                            <a href="/ThirdUI/favorite.html" class="text-dark">
-                                <i class="far fa-file-alt mr-1"></i> 其他
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="filter-box my-3">
-                    <ul class="list-group">
-                        <li class="list-group-item ">
-                            <strong class="text-center">行程時間</strong>
-                        </li>
-                        <li class="list-group-item list-group-item-action">
-                            <a href="/ThirdUI/Index.html" class="text-dark">
-                                <i class="fas fa-book mr-1"></i> 0 - 4小時
-                            </a>
-                        </li>
-                        <li class="list-group-item list-group-item-action">
-                            <a href="/ThirdUI/order.html" class="text-dark">
-                                <i class="fas fa-map-marker-alt mr-1"></i> 4小時 - 1日
-                            </a>
-                        </li>
-                        <li class="list-group-item list-group-item-action">
-                            <a href="/ThirdUI/message.html" class="text-dark">
-                                <i class="fas fa-pencil-alt mr-1"></i> 1日 - 2日
-                            </a>
-                        </li>
-                        <li class="list-group-item list-group-item-action">
-                            <a href="/ThirdUI/favorite.html" class="text-dark">
-                                <i class="far fa-file-alt mr-1"></i> 2日以上
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-xl-3 mb-3">
+            <div class="filter-box my-3">
+                <ul class="list-group">
+                    <li class="list-group-item ">
+                        <strong class="text-center">選擇、探索國家</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/ThirdUI/Index.html" class="text-dark">
+                            <i class="fas fa-book mr-1"></i> 台灣
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/ThirdUI/order.html" class="text-dark">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 日本
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/ThirdUI/message.html" class="text-dark">
+                            <i class="fas fa-pencil-alt mr-1"></i> 韓國
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/ThirdUI/favorite.html" class="text-dark">
+                            <i class="far fa-file-alt mr-1"></i> 其他
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="col-xl-9 my-3">
-                <div class="card">
-                    <div class="product-list p-3">
-                        <strong>探索 台灣 新鮮事</strong>
-                    </div>
-                </div>
-                <div class="product-list">
-                    <a href="#" class="product-card">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="img-bg" style="background-image: url('https://image.kkday.com/v2/image/get/w_481%2Ch_358%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_23270/20190523014212_9JXyL/jpg');"></div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="product-detail">
-                                    <h3 class="h5">【KKday獨家】AQUAFIELD</h3>
-                                    <p class="product-content">
-                                        預先購買首爾 AQUAFIELD 高陽汗蒸幕入場券，前進首爾近郊，在以享受與療癒為設計宗旨的高級環境，體驗道地的三溫暖、戶外足浴，另有高級扁柏木房、多媒體藝術房、雲朵房等特色汗蒸幕廂房，以及供旅客交流的愜意休息空間及餐飲區，頂樓更設有無邊際泳池、各式水療池，讓你徹底洗盡旅途疲憊，放鬆度過寧靜舒適的時光。
-                                    </p>
-                                    <div class="product-place">首爾</div>
-                                    <div class="product-time">行程6小時</div>
-                                    <div class="product-footer">
-                                        <div class="float-left product-count">
-                                            <span class="d-inline">TWD </span>3.5K+個已訂購
-                                        </div>
-                                        <div class="float-right product-price">
-                                            <span class="d-inline">TWD</span>
-                                            <h5 class="text-primary d-inline"> 6000</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="product-list">
-                    <a href="#" class="product-card">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="img-bg" style="background-image: url('https://image.kkday.com/v2/image/get/w_1920%2Ch_1080%2Cc_fit%2Cq_55%2Ct_webp/s1.kkday.com/product_12786/20170713034326_AzeUs/jpeg');"></div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="product-detail">
-                                    <h3 class="h5">【KKday獨家】AQUAFIELD 高陽汗蒸幕入場券【KKday獨家】AQUAFIELD 高陽汗蒸幕入場券【KKday獨家】AQUAFIELD 高陽汗蒸幕入場券</h3>
-                                    <p class="product-content">
-                                        預先購買首爾 AQUAFIELD 高陽汗蒸幕入場券，前進首爾近郊，在以享受與療癒為設計宗旨的高級環境，體驗道地的三溫暖、戶外足浴，另有高級扁柏木房、多媒體藝術房、雲朵房等特色汗蒸幕廂房，以及供旅客交流的愜意休息空間及餐飲區，頂樓更設有無邊際泳池、各式水療池，讓你徹底洗盡旅途疲憊，放鬆度過寧靜舒適的時光。
-                                    </p>
-                                    <div class="product-place">首爾</div>
-                                    <div class="product-time">行程6小時</div>
-                                    <div class="product-footer">
-                                        <div class="float-left product-count">
-                                            <span class="d-inline">TWD </span>3.5K+個已訂購
-                                        </div>
-                                        <div class="float-right product-price">
-                                            <span class="d-inline">TWD</span>
-                                            <h5 class="text-primary d-inline"> 6000</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="product-list">
-                    <a href="#" class="product-card">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="img-bg" style="background-image: url('https://image.kkday.com/v2/image/get/w_481%2Ch_358%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_19643/20190612032252_qSzsZ/png');"></div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="product-detail">
-                                    <h3 class="h5">【KKday獨家】AQUAFIELD 高陽汗蒸幕入場券</h3>
-                                    <p class="product-content">
-                                        預先購買首爾 AQUAFIELD 高陽汗蒸幕入場券，前進首爾近郊，在以享受與療癒為設計宗旨的高級環境，體驗道地的三溫暖、戶外足浴，另有高級扁柏木房、多媒體藝術房、雲朵房等特色汗蒸幕廂房，以及供旅客交流的愜意休息空間及餐飲區，頂樓更設有無邊際泳池、各式水療池，讓你徹底洗盡旅途疲憊，放鬆度過寧靜舒適的時光。
-                                    </p>
-                                    <div class="product-place">首爾</div>
-                                    <div class="product-time">行程6小時</div>
-                                    <div class="product-footer">
-                                        <div class="float-left product-count">
-                                            <span class="d-inline">TWD </span>3.5K+個已訂購
-                                        </div>
-                                        <div class="float-right product-price">
-                                            <span class="d-inline">TWD</span>
-                                            <h5 class="text-primary d-inline"> 6000</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+            <div class="filter-box my-3">
+                <ul class="list-group">
+                    <li class="list-group-item ">
+                        <strong class="text-center">行程時間</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/ThirdUI/Index.html" class="text-dark">
+                            <i class="fas fa-book mr-1"></i> 0 - 4小時
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/ThirdUI/order.html" class="text-dark">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 4小時 - 1日
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/ThirdUI/message.html" class="text-dark">
+                            <i class="fas fa-pencil-alt mr-1"></i> 1日 - 2日
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/ThirdUI/favorite.html" class="text-dark">
+                            <i class="far fa-file-alt mr-1"></i> 2日以上
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="filter-box my-3">
+                <div>
+                    <p>
+                        <input type="hidden" name="Time" value="@ViewBag.Time" />
+                        <input type="hidden" name="Country" value="@ViewBag.Country" />
+                        <input type="hidden" id="MaxCost" name="MaxCost" value="" />
+                        <input type="hidden" id="MinCost" name="MinCost" value="" />
+                        <input type="text" class="sidebar-price" id="sidebar-price" readonly>
+                    </p>
+
+                    <div id="slider"></div>
+                    <button class="filter_button my-3" type="submit">篩選</button>
                 </div>
             </div>
         </div>
+        <div class="col-xl-9 my-3">
+            <div class="card">
+                <div class="product-list p-3">
+                    <strong>探索 台灣 新鮮事</strong>
+                </div>
+            </div>
+            <div class="product-list">
+                <a href="#" class="product-card">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="img-bg" style="background-image: url('https://image.kkday.com/v2/image/get/w_481%2Ch_358%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_23270/20190523014212_9JXyL/jpg');"></div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="product-detail">
+                                <h3 class="h5">【KKday獨家】AQUAFIELD</h3>
+                                <p class="product-content">
+                                    預先購買首爾 AQUAFIELD 高陽汗蒸幕入場券，前進首爾近郊，在以享受與療癒為設計宗旨的高級環境，體驗道地的三溫暖、戶外足浴，另有高級扁柏木房、多媒體藝術房、雲朵房等特色汗蒸幕廂房，以及供旅客交流的愜意休息空間及餐飲區，頂樓更設有無邊際泳池、各式水療池，讓你徹底洗盡旅途疲憊，放鬆度過寧靜舒適的時光。
+                                </p>
+                                <div class="product-place">首爾</div>
+                                <div class="product-time">行程6小時</div>
+                                <div class="product-footer">
+                                    <div class="float-left product-count">
+                                        <span class="d-inline">TWD </span>3.5K+個已訂購
+                                    </div>
+                                    <div class="float-right product-price">
+                                        <span class="d-inline">TWD</span>
+                                        <h5 class="text-primary d-inline"> 6000</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="product-list">
+                <a href="#" class="product-card">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="img-bg" style="background-image: url('https://image.kkday.com/v2/image/get/w_1920%2Ch_1080%2Cc_fit%2Cq_55%2Ct_webp/s1.kkday.com/product_12786/20170713034326_AzeUs/jpeg');"></div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="product-detail">
+                                <h3 class="h5">【KKday獨家】AQUAFIELD 高陽汗蒸幕入場券【KKday獨家】AQUAFIELD 高陽汗蒸幕入場券【KKday獨家】AQUAFIELD 高陽汗蒸幕入場券</h3>
+                                <p class="product-content">
+                                    預先購買首爾 AQUAFIELD 高陽汗蒸幕入場券，前進首爾近郊，在以享受與療癒為設計宗旨的高級環境，體驗道地的三溫暖、戶外足浴，另有高級扁柏木房、多媒體藝術房、雲朵房等特色汗蒸幕廂房，以及供旅客交流的愜意休息空間及餐飲區，頂樓更設有無邊際泳池、各式水療池，讓你徹底洗盡旅途疲憊，放鬆度過寧靜舒適的時光。
+                                </p>
+                                <div class="product-place">首爾</div>
+                                <div class="product-time">行程6小時</div>
+                                <div class="product-footer">
+                                    <div class="float-left product-count">
+                                        <span class="d-inline">TWD </span>3.5K+個已訂購
+                                    </div>
+                                    <div class="float-right product-price">
+                                        <span class="d-inline">TWD</span>
+                                        <h5 class="text-primary d-inline"> 6000</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="product-list">
+                <a href="#" class="product-card">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="img-bg" style="background-image: url('https://image.kkday.com/v2/image/get/w_481%2Ch_358%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_19643/20190612032252_qSzsZ/png');"></div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="product-detail">
+                                <h3 class="h5">【KKday獨家】AQUAFIELD 高陽汗蒸幕入場券</h3>
+                                <p class="product-content">
+                                    預先購買首爾 AQUAFIELD 高陽汗蒸幕入場券，前進首爾近郊，在以享受與療癒為設計宗旨的高級環境，體驗道地的三溫暖、戶外足浴，另有高級扁柏木房、多媒體藝術房、雲朵房等特色汗蒸幕廂房，以及供旅客交流的愜意休息空間及餐飲區，頂樓更設有無邊際泳池、各式水療池，讓你徹底洗盡旅途疲憊，放鬆度過寧靜舒適的時光。
+                                </p>
+                                <div class="product-place">首爾</div>
+                                <div class="product-time">行程6小時</div>
+                                <div class="product-footer">
+                                    <div class="float-left product-count">
+                                        <span class="d-inline">TWD </span>3.5K+個已訂購
+                                    </div>
+                                    <div class="float-right product-price">
+                                        <span class="d-inline">TWD</span>
+                                        <h5 class="text-primary d-inline"> 6000</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
-
+</div>
+@section scripts{
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script src="~/Assets/Js/Travel/slider.js"></script>
+}

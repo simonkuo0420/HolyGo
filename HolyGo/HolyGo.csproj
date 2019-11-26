@@ -235,6 +235,7 @@
     <Content Include="Assets\Js\Home\Member\datepicker.js" />
     <Content Include="Assets\Js\Home\OurTeam\ourteamslide.js" />
     <Content Include="Assets\Js\Layout\custom.js" />
+    <Content Include="Assets\Js\Travel\slider.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
