@@ -43,7 +43,7 @@
                     </div>
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About Us", "About", "Home")</li>
-                    <li>@Html.ActionLink("旅遊行程", "Index", "Travel")</li>
+                    <li>@Html.ActionLink("旅遊行程", "Index", "TravelList")</li>
                     <li>@Html.ActionLink("訂單管理", "Order", "User")</li>
                     <li>@Html.ActionLink("訊息管理", "Message", "User")</li>
                     <li>@Html.ActionLink("我的收藏", "Favorite", "User")</li>
@@ -57,17 +57,18 @@
         <header class="header">
             <div class="header_overlay"></div>
             <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                @*<a href="index">Holy<span>Go</span><span>+</span></a>*@
                 <!-- Logo -->
-                <div class="logo">@Html.ActionLink("Holy"+"Go"+"+","Index","Home")</div>
+                <div class="logo">
+                    <a href="@Url.Action("Index","Home")">Holy<span>Go</span><span>+</span></a>
+                </div>
 
                 <!-- Header Nav -->
                 <div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
                     <nav class="main_nav">
-                        <ul class="d-flex flex-row align-items-center justify-content-start">
+                        <ul class="d-flex flex-row align-items-center justify-content-center">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             <li>@Html.ActionLink("About Us", "About", "Home")</li>
-                            <li>@Html.ActionLink("旅遊行程", "Index", "Travel")</li>
+                            <li>@Html.ActionLink("旅遊行程", "Index", "TravelList")</li>
                             <li>@Html.ActionLink("訂單管理", "Order", "User")</li>
                             <li>@Html.ActionLink("訊息管理", "Message", "User")</li>
                             <li>@Html.ActionLink("我的收藏", "Favorite", "User")</li>

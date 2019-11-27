@@ -40,6 +40,9 @@
 ************/
 
 @media only screen and (max-width: 1440px) {
+    .header_right .main_nav ul li:not(:last-of-type) {
+        margin-right: 30px;
+    }
     .container_custom .container {
         max-width: 1170px;
     }
@@ -50,7 +53,11 @@
 3. 1380px
 ************/
 
-@media only screen and (max-width: 1380px) {}
+@media only screen and (max-width: 1380px) {
+    .header_right .main_nav ul li:not(:last-of-type) {
+        margin-right: 25px;
+    }
+}
 
 
 /************
@@ -58,8 +65,8 @@
 ************/
 
 @media only screen and (max-width: 1300px) {
-    .main_nav ul li:not(:last-of-type) {
-        margin-right: 15px;
+    .header_right .main_nav ul li:not(:last-of-type) {
+        margin-right: 20px;
     }
     .log_reg {
         margin-left: 20px;
@@ -72,6 +79,9 @@
 ************/
 
 @media only screen and (max-width: 1199px) {
+    .header_right .main_nav ul li:not(:last-of-type) {
+        margin-right: 15px;
+    }
     .container_custom .container {
         max-width: 960px;
     }

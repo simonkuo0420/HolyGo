@@ -9,17 +9,16 @@ using System.Web;
 
 namespace HolyGo.Repository
 {
-    public class TravelRepository
+    public class TravelListRepository
     {
         #region 建構式
         public static string connString;
         public SqlConnection conn;
-
-        public TravelRepository()
+        public TravelListRepository()
         {
             if (string.IsNullOrEmpty(connString))
             {
-                connString = ConfigurationManager.ConnectionStrings["ConnectionDefault"].ToString();
+                connString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
             }
             if(conn == null)
             {
@@ -34,13 +33,13 @@ namespace HolyGo.Repository
         /// <param name="Time"></param>
         /// <param name="Cost"></param>
         /// <returns></returns>
-        public List<TravelViewModel> SelectTravel(string Country,string Time, int Cost)
+        public List<TravelListViewModel> SelectTravel(string Country, string Time, int Cost)
         {
-            List<TravelViewModel> getTravel;
+            List<TravelListViewModel> getTravel;
             using (conn = new SqlConnection(connString))
             {
                 string sql = $"";
-                getTravel = conn.Query<TravelViewModel>(sql).ToList();
+                getTravel = conn.Query<TravelListViewModel>(sql).ToList();
                 return getTravel;
             }
         }

@@ -3,176 +3,203 @@
     ViewBag.Title = "Index";
 }
 
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/flick/jquery-ui.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css' />
+<link rel='stylesheet' href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
 <link rel="stylesheet" href="~/Assets/Css/Travel/style.css" />
 
 <div class="container mt-5 pt-5">
-    <div class="row">
-        <div class="col-xl-3 mb-3">
-            <div class="filter-box my-3">
-                <ul class="list-group">
-                    <li class="list-group-item ">
-                        <strong class="text-center">選擇、探索國家</strong>
-                    </li>
-                    <li class="list-group-item list-group-item-action">
-                        <a href="/ThirdUI/Index.html" class="text-dark">
-                            <i class="fas fa-book mr-1"></i> 台灣
-                        </a>
-                    </li>
-                    <li class="list-group-item list-group-item-action">
-                        <a href="/ThirdUI/order.html" class="text-dark">
-                            <i class="fas fa-map-marker-alt mr-1"></i> 日本
-                        </a>
-                    </li>
-                    <li class="list-group-item list-group-item-action">
-                        <a href="/ThirdUI/message.html" class="text-dark">
-                            <i class="fas fa-pencil-alt mr-1"></i> 韓國
-                        </a>
-                    </li>
-                    <li class="list-group-item list-group-item-action">
-                        <a href="/ThirdUI/favorite.html" class="text-dark">
-                            <i class="far fa-file-alt mr-1"></i> 其他
-                        </a>
-                    </li>
-                </ul>
+    <div id="product-banner" class="product-banner" style="background-image:url('https://image.kkday.com/v2/image/get/w_1920%2Ch_1080%2Cc_fit%2Cq_55%2Ct_webp/s1.kkday.com/product_19510/20180619043138_UPigW/jpeg');"></div>
+</div>
+<div class="product-wrap">
+    <div data-spy="overview" class="container">
+        <div class="row">
+            <div class="col-xl-8">
+                <div id="prodInfo" class="product-info my-3">
+                    <div class="product-name">
+                        <h1><strong>【台灣地區寄送】T-money Card 交通卡</strong></h1>
+                    </div>
+                    <div class="product-benefit">
+                        <div class="critical-info d-inline-block pr-5">
+                            <i class="far fa-clock"></i>
+                            <span>行程時間 1 小時</span>
+                        </div>
+                        <div class="critical-info d-inline-block pr-5">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>有效期內任何一天使用</span>
+                        </div>
+                        <div class="critical-info d-inline-block pr-5">
+                            <i class="far fa-times-circle"></i>
+                            <span>不可取消</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="product-abstract py-3">
+                        全韓國通用的交通卡T-money Card，在台灣也買得到！提供台灣郵寄到府，一到韓國可立即儲值使用，不管是首爾、釜山、濟州島，甚至是大邱、慶州等，一卡在手，只靠嗶嗶兩聲，遊遍全韓國！
+                    </div>
+                    <hr>
+                </div>
             </div>
-            <div class="filter-box my-3">
-                <ul class="list-group">
-                    <li class="list-group-item ">
-                        <strong class="text-center">行程時間</strong>
-                    </li>
-                    <li class="list-group-item list-group-item-action">
-                        <a href="/ThirdUI/Index.html" class="text-dark">
-                            <i class="fas fa-book mr-1"></i> 0 - 4小時
-                        </a>
-                    </li>
-                    <li class="list-group-item list-group-item-action">
-                        <a href="/ThirdUI/order.html" class="text-dark">
-                            <i class="fas fa-map-marker-alt mr-1"></i> 4小時 - 1日
-                        </a>
-                    </li>
-                    <li class="list-group-item list-group-item-action">
-                        <a href="/ThirdUI/message.html" class="text-dark">
-                            <i class="fas fa-pencil-alt mr-1"></i> 1日 - 2日
-                        </a>
-                    </li>
-                    <li class="list-group-item list-group-item-action">
-                        <a href="/ThirdUI/favorite.html" class="text-dark">
-                            <i class="far fa-file-alt mr-1"></i> 2日以上
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="filter-box my-3">
-                <div>
-                    <p>
-                        <input type="hidden" name="Time" value="@ViewBag.Time" />
-                        <input type="hidden" name="Country" value="@ViewBag.Country" />
-                        <input type="hidden" id="MaxCost" name="MaxCost" value="" />
-                        <input type="hidden" id="MinCost" name="MinCost" value="" />
-                        <input type="text" class="sidebar-price" id="sidebar-price" readonly>
-                    </p>
-
-                    <div id="slider"></div>
-                    <button class="filter_button my-3" type="submit">篩選</button>
+            <div class="col-xl-4">
+                <div id="booking-bar" class="vue-affix affix mt-3" style="transform: initial;">
+                    <div>
+                        <div class="booking-bar-content">
+                            <div class="lowest-price d-inline-block">
+                                <div class="product-pricing text-left ">
+                                    <span class="text-grey d-inline-block">TWD</span>
+                                    <h2 class="text-grey d-inline-block">470</h2>
+                                    <small class="text-grey-light d-inline-block">起</small>
+                                </div>
+                            </div>
+                            <div class="btn-book-group">
+                                <a href="#" class="btn btn-blue">加入購物車</a>
+                                <a href="#" class="btn btn-primary">立即訂購</a>
+                            </div>
+                            <div class="booking-hint">
+                                <div class="critical-info">
+                                    <i class="fa fa-flash text-primary fa-lg"></i>
+                                    <span>立即確認並發送憑證</span>
+                                </div>
+                                <div class="critical-info">
+                                    <i class="fa fa-flash text-primary fa-lg"></i>
+                                    <span>出示訂單編號即可使用</span>
+                                </div>
+                                <div class="critical-info">
+                                    <i class="fa fa-flash text-primary fa-lg"></i>
+                                    <span>一人成團</span>
+                                </div>
+                                <div class="critical-info">
+                                    <i class="fa fa-flash text-primary fa-lg"></i>
+                                    <span>保證有位</span>
+                                </div>
+                            </div>
+                            <div class="booking-hint">
+                                <div class="critical-info m-0 float-left">
+                                    <i class="fa fa-flash text-primary fa-lg"></i>
+                                    <span class="text-grey">34.6K+ 個已訂購</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-xl-9 my-3">
-            <div class="card">
-                <div class="product-list p-3">
-                    <strong>探索 台灣 新鮮事</strong>
+    </div>
+    <div class="option-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8">
+                    <h3 class="info-title pb-3">
+                        <strong>套餐選項</strong>
+                    </h3>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control text-center" id="flatpickr" placeholder="請選擇使用日期">
+                        </div>
+                    </div>
+                    <ul class="option-group">
+                        <li class="option-item">
+                            <h4 class="option-title d-inline-block"><strong>同行不滑雪</strong></h4>
+                            <div class="product-pricing d-inline-block">
+                                <span class="d-inline-block">TWD</span>
+                                <h4 class="d-inline-block">977</h4>
+                            </div>
+                            <a href="#" class="btn btn-success select-option">
+                                選擇
+                            </a>
+                            <div class="row"></div>
+                            <a href="javascript:;" id="detail-toggle" class="detail-toggle">
+                                查看更多<i class="far fa-times-circle"></i>
+                            </a>
+                            <div class="option-detail">
+                                <ul>
+                                    <li>
+                                        <div>僅提供滑雪場來回接駁及滑雪手套</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="product-list">
-                <a href="#" class="product-card">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="img-bg" style="background-image: url('https://image.kkday.com/v2/image/get/w_481%2Ch_358%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_23270/20190523014212_9JXyL/jpg');"></div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="product-detail">
-                                <h3 class="h5">【KKday獨家】AQUAFIELD</h3>
-                                <p class="product-content">
-                                    預先購買首爾 AQUAFIELD 高陽汗蒸幕入場券，前進首爾近郊，在以享受與療癒為設計宗旨的高級環境，體驗道地的三溫暖、戶外足浴，另有高級扁柏木房、多媒體藝術房、雲朵房等特色汗蒸幕廂房，以及供旅客交流的愜意休息空間及餐飲區，頂樓更設有無邊際泳池、各式水療池，讓你徹底洗盡旅途疲憊，放鬆度過寧靜舒適的時光。
+        </div>
+    </div>
+    <div class="product-view mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8">
+                    <div data-spy="intro">
+                        <div class="info-session">
+                            <h3 class="info-title pb-3">
+                                <strong>行程說明</strong>
+                            </h3>
+                            <div class="info-content">
+                                <p>
+                                    － 行程特色 －
+                                    <br>
+                                    <br> ・參加 KKday 專屬團，一人即可訂購、保證有位
+                                    <br> ・搭乘舒適旅遊專車，輕鬆暢遊台北近郊人氣景點
+                                    <br> ・全程提供英語領隊隨行服務，出發及回程地點皆在交通方便的台北車站
+                                    <br> ・預訂九份品茶專案，可享海悅樓景觀茶坊訂位服務及季節限定茶點組合
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br> － 行程資訊 －
+                                    <br>
+                                    <br> ・集合時間：08:45
+                                    <br> ・集合地點：台北車站南一門
+                                    <br> ・行程長度：9 小時
+                                    <br> ・使用車型：依當日拼車人數派車
+                                    <br> ・語言服務：英語 / 越語 / 泰語（中文輔助）
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br> － 重要資訊 －
+                                    <br>
+                                    <br> ・如遇週六、週日或台灣連續假日，十分瀑布將取消並延長其他景點停留時間做替代，不另行通知。
+                                    <br> ・如遇塞車、交通管制等不可抗拒因素，各景點停留時間將會調整，請聽導遊指示。
+                                    <br> ・行程不分年齡均一價。
+                                    <br> ・預定含有Chatime珍珠奶茶方案者，需於2019/12/31前於日出茶太＿天成店完成珍珠奶茶兌換。
+                                    <br> ・請於日出茶太＿天成店營業時間前往兌換。營業時間10:00 - 21:00；營業地址臺北市中正區忠孝西路一段41號之1號 台北天成大飯店 Cosmos Hotel Taipei。
+                                    <br> ・每日僅贈送100杯珍珠奶茶，如當日已贈送完畢，請挑選他日前往兌換。
+                                    <br> ・現場店家保有保有隨時修改及終止本活動之權利，如有任何變更內容或詳細注意事項將公布於本網頁，恕不另行通知。
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br> － 行程表 －
+                                    <br>
+                                    <br> ・台北車站南 1 門內
+                                    <br> ・KKday 遊覽車（車輛定期保養日將更換同等級車款）
+                                    <br> ・野柳（約停留 60 分鐘）
+                                    <br> ・十分瀑布
+                                    <br> ・十分老街-放天燈（約停留 90 分鐘）
+                                    <br> ・九份老街（約停留 120 分鐘）
+                                    <br>
+                                    <br>
                                 </p>
-                                <div class="product-place">首爾</div>
-                                <div class="product-time">行程6小時</div>
-                                <div class="product-footer">
-                                    <div class="float-left product-count">
-                                        <span class="d-inline">TWD </span>3.5K+個已訂購
-                                    </div>
-                                    <div class="float-right product-price">
-                                        <span class="d-inline">TWD</span>
-                                        <h5 class="text-primary d-inline"> 6000</h4>
-                                    </div>
-                                </div>
                             </div>
                         </div>
+                        <div class="info-session"></div>
+                        <div class="info-session"></div>
+                        <div class="info-session"></div>
+                        <div class="info-session"></div>
+                        <div class="info-session"></div>
+                        <div class="info-session"></div>
                     </div>
-                </a>
-            </div>
-            <div class="product-list">
-                <a href="#" class="product-card">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="img-bg" style="background-image: url('https://image.kkday.com/v2/image/get/w_1920%2Ch_1080%2Cc_fit%2Cq_55%2Ct_webp/s1.kkday.com/product_12786/20170713034326_AzeUs/jpeg');"></div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="product-detail">
-                                <h3 class="h5">【KKday獨家】AQUAFIELD 高陽汗蒸幕入場券【KKday獨家】AQUAFIELD 高陽汗蒸幕入場券【KKday獨家】AQUAFIELD 高陽汗蒸幕入場券</h3>
-                                <p class="product-content">
-                                    預先購買首爾 AQUAFIELD 高陽汗蒸幕入場券，前進首爾近郊，在以享受與療癒為設計宗旨的高級環境，體驗道地的三溫暖、戶外足浴，另有高級扁柏木房、多媒體藝術房、雲朵房等特色汗蒸幕廂房，以及供旅客交流的愜意休息空間及餐飲區，頂樓更設有無邊際泳池、各式水療池，讓你徹底洗盡旅途疲憊，放鬆度過寧靜舒適的時光。
-                                </p>
-                                <div class="product-place">首爾</div>
-                                <div class="product-time">行程6小時</div>
-                                <div class="product-footer">
-                                    <div class="float-left product-count">
-                                        <span class="d-inline">TWD </span>3.5K+個已訂購
-                                    </div>
-                                    <div class="float-right product-price">
-                                        <span class="d-inline">TWD</span>
-                                        <h5 class="text-primary d-inline"> 6000</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="product-list">
-                <a href="#" class="product-card">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="img-bg" style="background-image: url('https://image.kkday.com/v2/image/get/w_481%2Ch_358%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_19643/20190612032252_qSzsZ/png');"></div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="product-detail">
-                                <h3 class="h5">【KKday獨家】AQUAFIELD 高陽汗蒸幕入場券</h3>
-                                <p class="product-content">
-                                    預先購買首爾 AQUAFIELD 高陽汗蒸幕入場券，前進首爾近郊，在以享受與療癒為設計宗旨的高級環境，體驗道地的三溫暖、戶外足浴，另有高級扁柏木房、多媒體藝術房、雲朵房等特色汗蒸幕廂房，以及供旅客交流的愜意休息空間及餐飲區，頂樓更設有無邊際泳池、各式水療池，讓你徹底洗盡旅途疲憊，放鬆度過寧靜舒適的時光。
-                                </p>
-                                <div class="product-place">首爾</div>
-                                <div class="product-time">行程6小時</div>
-                                <div class="product-footer">
-                                    <div class="float-left product-count">
-                                        <span class="d-inline">TWD </span>3.5K+個已訂購
-                                    </div>
-                                    <div class="float-right product-price">
-                                        <span class="d-inline">TWD</span>
-                                        <h5 class="text-primary d-inline"> 6000</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 @section scripts{
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-    <script src="~/Assets/Js/Travel/slider.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://kit.fontawesome.com/1fad495502.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flatpickr "></script>
+    <script type="text/javascript" src="~/Assets/Js/Travel/Travel.js"></script>
 }

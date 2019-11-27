@@ -2,7 +2,6 @@ body {
     width: 100vw;
     background-color: #F9F9F9;
     margin: 0;
-    font-family: helvetica;
 }
 
 @media screen and (max-width: 767px) {
@@ -138,7 +137,6 @@ body {
         }
 
 h2 {
-    font-family: 'Raleway', sans-serif;
     margin: 0 0 15px;
     color: #444;
     font-weight: 500;
