@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HolyGo.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,19 @@ namespace HolyGo.Controllers
 {
     public class TravelController : Controller
     {
-        // GET: Travel
-        public ActionResult Index()
+        public readonly TravelRepository _tr;
+
+        public TravelController()
         {
+            _tr = new TravelRepository();
+        }
+
+        // GET: Travel
+        [AllowAnonymous]
+        public ActionResult Index(Guid Guid)
+        {
+            var getTravel = _tr.SelectTravel(Guid);
+            ViewBag.getTravel = getTravel;
             return View();
         }
     }

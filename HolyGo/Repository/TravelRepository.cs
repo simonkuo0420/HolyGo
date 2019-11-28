@@ -19,7 +19,7 @@ namespace HolyGo.Repository
         {
             if (string.IsNullOrEmpty(connString))
             {
-                connString = ConfigurationManager.ConnectionStrings["ConnectionDefault"].ToString();
+                connString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
             }
             if(conn == null)
             {
