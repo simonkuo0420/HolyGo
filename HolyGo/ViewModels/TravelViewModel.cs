@@ -8,13 +8,17 @@ namespace HolyGo.ViewModels
     public class TravelViewModel
     {
         /// <summary>
+        /// 行程編號
+        /// </summary>
+        public Guid Guid { get; set; }
+        /// <summary>
         /// 行程標題
         /// </summary>
         public string Title { get; set; }
         /// <summary>
         /// 行程時長
         /// </summary>
-        public int Time { get; set; }
+        public DateTime Time { get; set; }
         /// <summary>
         /// 行程國家
         /// </summary>
@@ -27,6 +31,7 @@ namespace HolyGo.ViewModels
         /// 行程圖片
         /// </summary>
         public string Images { get; set; }
+        public string Explain { get; set; }
         /// <summary>
         /// 行程價錢
         /// </summary>

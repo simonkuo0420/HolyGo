@@ -11,6 +11,10 @@ namespace HolyGo.ViewModels
     public partial class TopTravelViewModel
     {
         /// <summary>
+        /// 旅遊編號
+        /// </summary>
+        public Guid Guid { get; set; }
+        /// <summary>
         /// 旅遊標題
         /// </summary>
         public string Title { get; set; }

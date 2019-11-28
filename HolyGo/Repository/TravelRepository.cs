@@ -34,12 +34,14 @@ namespace HolyGo.Repository
         /// <param name="Time"></param>
         /// <param name="Cost"></param>
         /// <returns></returns>
-        public List<TravelViewModel> SelectTravel(string Country,string Time, int Cost)
+        public List<TravelViewModel> SelectTravel(Guid Guid)
         {
             List<TravelViewModel> getTravel;
             using (conn = new SqlConnection(connString))
             {
-                string sql = $"";
+                string sql = $"SELECT * " +
+                             $"FROM Travel " +
+                             $"WHERE Guid = '{Guid}'";
                 getTravel = conn.Query<TravelViewModel>(sql).ToList();
                 return getTravel;
             }

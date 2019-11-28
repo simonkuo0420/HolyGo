@@ -22,10 +22,10 @@
                     <div class="card-project">
                         <div class="img">
                             <div class="vr"><span>Sale</span></div>
-                            <a href="destination.html"><img class="img-fluid justify-content-center align-items-center" src="@item.Images"></a>
+                            <a href="@Url.Action("Index", "Travel", new { Guid = "@item.Guid" })"><img class="img-fluid justify-content-center align-items-center" src="@item.Images"></a>
                         </div>
                         <div class="text">
-                            <a href="destination.html">
+                            <a href="@Url.Action("Index", "Travel", new { Guid = "@item.Guid" })">
                                 <h4 class="price">$@item.Cost</h4>
                                 <span> 行程時間 @item.Time 小時</span>
                                 <div class="float-right">

@@ -8,6 +8,10 @@ namespace HolyGo.ViewModels
     public class TopTicketViewModel
     {
         /// <summary>
+        /// 旅遊編號
+        /// </summary>
+        public Guid Guid { get; set; }
+        /// <summary>
         /// 票券標題
         /// </summary>
         public string Title { get; set; }

@@ -88,6 +88,38 @@
 .product-pricing {
     font-family: Arial Rounded MT Bold, Arial Rounded MT, sans-serif;
     letter-spacing: 0;
+    text-align: right;
+}
+
+    .product-pricing span {
+        color: #999;
+        font-size: 1rem;
+    }
+
+    .product-pricing h2 {
+        font-size: 1.5rem;
+    }
+
+.view-option {
+    display: none;
+    border-bottom: 1px dashed #e1e1e1;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+}
+
+    .view-option .option-title {
+        width: 90%;
+        margin-bottom: 10px;
+        padding-left: 0;
+        font-size: 1.2rem;
+    }
+
+.booking-info span {
+    margin-right: 10px;
+    white-space: nowrap;
+    font-size: 0.8rem;
 }
 
 .booking-bar-content .btn-book-group {
@@ -107,10 +139,15 @@
         line-height: 1.5;
     }
 
-.booking-price,
-.view-option {
+.booking-price {
     display: none;
+    margin-top: 10px;
+    padding: 0 12px;
 }
+
+    .booking-price h5 {
+        font-size: 0.8rem;
+    }
 
 .btn-blue {
     background-color: #64b3f4;
@@ -133,6 +170,10 @@
         background-color: #22a7aa;
         border-color: #22a7aa;
     }
+
+.text-primary {
+    color: #26bec9 !important;
+}
 
 .booking-hint:not(:last-child) {
     border-bottom: 1px solid #e1e1e1;
