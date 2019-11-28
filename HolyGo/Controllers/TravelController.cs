@@ -21,7 +21,9 @@ namespace HolyGo.Controllers
         public ActionResult Index(Guid Guid)
         {
             var getTravel = _tr.SelectTravel(Guid);
+            var getTravelCombo = _tr.SelectCombo(Guid);
             ViewBag.getTravel = getTravel;
+            ViewBag.getTravelCombo = getTravelCombo;
             return View();
         }
     }

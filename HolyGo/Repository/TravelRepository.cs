@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using HolyGo.Models;
 using HolyGo.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,20 @@ namespace HolyGo.Repository
                              $"WHERE Guid = '{Guid}'";
                 getTravel = conn.Query<TravelViewModel>(sql).ToList();
                 return getTravel;
+            }
+        }
+
+        public List<Travel_Combo> SelectCombo(Guid Guid)
+        {
+            List<Travel_Combo> getTravelCombo;
+            using (conn = new SqlConnection(connString))
+            {
+                string sql = $"SELECT * " +
+                             $"FROM Travel_Combo " +
+                             $"WHERE Travel_guid = '{Guid}' " +
+                             $"ORDER BY Cost";
+                getTravelCombo = conn.Query<Travel_Combo>(sql).ToList();
+                return getTravelCombo;
             }
         }
     }
