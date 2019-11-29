@@ -97,7 +97,7 @@
     }
 
     .product-pricing h2 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
 .view-option {
@@ -139,6 +139,24 @@
         line-height: 1.5;
     }
 
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+    opacity: 1;
+    background-color: #ddd;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+    .btn.disabled:hover,
+    .btn[disabled]:hover,
+    fieldset[disabled] .btn:hover {
+        opacity: 1;
+        background-color: #ddd;
+        color: #fff;
+        cursor: not-allowed;
+    }
+
 .booking-price {
     display: none;
     margin-top: 10px;
@@ -152,6 +170,7 @@
 .btn-blue {
     background-color: #64b3f4;
     color: #fff;
+    box-shadow: none !important;
 }
 
     .btn-blue:hover {
@@ -161,8 +180,9 @@
 
 .btn-primary {
     color: #fff;
-    background-color: #26bec9;
+    background-color: #22a7aa !important;
     border: none;
+    box-shadow: none !important;
 }
 
     .btn-primary:hover {
@@ -197,7 +217,7 @@
     padding-left: 20px;
 }
 
-    .info-content p{
+    .info-content p {
         font-size: 0.8rem;
         font-weight: 600;
     }
@@ -321,14 +341,21 @@
 
 .btn-success {
     color: #26bec9;
-    background-color: #fff;
+    background-color: #fff !important;
     border: 1.5px solid rgba(38, 190, 201, .7);
+    box-shadow: none !important;
 }
 
     .btn-success:hover {
         color: #22a7aa;
         background-color: #e4f4f5;
         border-color: #26bec9;
+    }
+
+    .btn-success:not(:disabled):not(.disabled):active {
+        color: #26bec9;
+        background-color: #fff;
+        border: 1.5px solid rgba(38, 190, 201, .7);
     }
 
 .option-item > a.btn {
