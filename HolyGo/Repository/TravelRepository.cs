@@ -61,5 +61,32 @@ namespace HolyGo.Repository
                 return getTravelCombo;
             }
         }
+
+        //public List<Ticket> SelectTicket(Guid Guid)
+        //{
+        //    List<Ticket> getTicket;
+        //    using (conn = new SqlConnection(connString))
+        //    {
+        //        string sql = $"SELECT * " +
+        //                     $"FROM Ticket " +
+        //                     $"WHERE Guid = '{Guid}'";
+        //        getTicket = conn.Query<Ticket>(sql).ToList();
+        //        return getTicket;
+        //    }
+        //}
+
+        //public List<Ticket_Combo> SelectTicketCombo(Guid Guid)
+        //{
+        //    List<Ticket_Combo> getTicket;
+        //    using (conn = new SqlConnection(connString))
+        //    {
+        //        string sql = $"SELECT * " +
+        //                     $"FROM Ticket_Combo " +
+        //                     $"WHERE Ticket_guid = '{Guid}' " +
+        //                     $"ORDER BY Cost";
+        //        getTicket = conn.Query<Ticket_Combo>(sql).ToList();
+        //        return getTicket;
+        //    }
+        //}
     }
 }
