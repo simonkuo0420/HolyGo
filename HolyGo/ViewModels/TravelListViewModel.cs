@@ -12,6 +12,10 @@ namespace HolyGo.ViewModels
         /// </summary>
         public string Title { get; set; }
         /// <summary>
+        /// 行程內容
+        /// </summary>
+        public string Contents { get; set; }
+        /// <summary>
         /// 行程時長
         /// </summary>
         public int Time { get; set; }

@@ -29,19 +29,64 @@ namespace HolyGo.Repository
         /// <summary>
         /// 抓旅遊資料
         /// </summary>
-        /// <param name="Country"></param>
-        /// <param name="Time"></param>
-        /// <param name="Cost"></param>
         /// <returns></returns>
-        public List<TravelListViewModel> SelectTravel(string Country, string Time, int Cost)
+        public List<TravelListViewModel> QuerySelectTravel()
         {
             List<TravelListViewModel> getTravel;
             using (conn = new SqlConnection(connString))
             {
-                string sql = $"";
+                string sql = $"select * from Travel t order by t.Country";
                 getTravel = conn.Query<TravelListViewModel>(sql).ToList();
                 return getTravel;
             }
+        }
+
+        public List<TravelListViewModel> QuerySelectTravel(string id)
+        {
+            List<TravelListViewModel> getTravel = null;
+            using (conn = new SqlConnection(connString))
+            {
+                string sql;
+                switch (id)
+                {
+                    case "ALL":
+                        sql = @"select tc.Title, tc.Contents, t.Time, t.Country, t.City, t.Images, tc.Cost 
+                                from Travel t 
+                                inner join Travel_Combo tc on t.Guid = tc.Travel_guid
+                                order by t.Country";
+                        break;
+                    case "Taiwan":
+                        sql = @"select tc.Title, tc.Contents, t.Time, t.Country, t.City, t.Images, tc.Cost 
+                                from Travel t 
+                                inner join Travel_Combo tc on t.Guid = tc.Travel_guid 
+                                where t.Country = N'台灣'";
+                        break;
+                    case "Japan":
+                        sql = @"select tc.Title, tc.Contents, t.Time, t.Country, t.City, t.Images, tc.Cost
+                                from Travel t
+                                inner join Travel_Combo tc on t.Guid = tc.Travel_guid 
+                                where t.Country = N'日本'";
+                        break;
+                    case "Korea":
+                        sql = @"select tc.Title, tc.Contents, t.Time, t.Country, t.City, t.Images, tc.Cost
+                                from Travel t
+                                inner join Travel_Combo tc on t.Guid = tc.Travel_guid 
+                                where t.Country = N'韓國'";
+                        break;
+                    case "Other":
+                        sql = @"select tc.Title, tc.Contents, t.Time, t.Country, t.City, t.Images, tc.Cost
+                                from Travel t
+                                inner join Travel_Combo tc on t.Guid = tc.Travel_guid 
+                                where t.Country not like N'韓國' and t.Country not like N'台灣' and t.Country not like N'日本' 
+                                order by t.Country";
+                        break;
+                    default:
+                        return null;
+                }
+                getTravel = conn.Query<TravelListViewModel>(sql).ToList();
+
+            }
+            return getTravel;
         }
     }
 }
