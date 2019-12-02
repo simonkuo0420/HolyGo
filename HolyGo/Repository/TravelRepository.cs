@@ -62,6 +62,16 @@ namespace HolyGo.Repository
             }
         }
 
+        public void AddCart(Guid Guid, string User_guid, Guid Travel_guid)
+        {
+            using (conn = new SqlConnection(connString))
+            {
+                string sql = $"INSERT INTO Favorite(Guid, User_guid, Travel_guid) " +
+                             $"Value ('{Guid}','{User_guid}','{Travel_guid}')";
+                conn.Execute(sql);
+            }
+        }
+
         //public List<Ticket> SelectTicket(Guid Guid)
         //{
         //    List<Ticket> getTicket;

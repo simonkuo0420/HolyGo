@@ -1,4 +1,6 @@
-﻿using HolyGo.Repository;
+﻿using HolyGo.Models;
+using HolyGo.Repository;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,7 @@ namespace HolyGo.Controllers
             _tr = new TravelRepository();
         }
 
+
         // GET: Travel
         [AllowAnonymous]
         public ActionResult Index(Guid Guid)
@@ -25,6 +28,19 @@ namespace HolyGo.Controllers
             ViewBag.getTravel = getTravel;
             ViewBag.getTravelCombo = getTravelCombo;
             return View();
+        }
+
+        [HttpPost]
+        public string AddToCart(Guid tGuid)
+        {
+            Guid fGuid = new Guid();
+            var user_id = User.Identity.GetUserId();
+            if (Request.IsAuthenticated)
+            {
+                _tr.AddCart(fGuid, user_id, tGuid);
+                return "success" + fGuid;
+            }
+            return "fail";
         }
     }
 }

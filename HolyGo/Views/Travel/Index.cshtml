@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css' />
-<link rel='stylesheet' href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel='stylesheet' href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
 <link rel="stylesheet" href="~/Assets/Css/Travel/style.css" />
@@ -77,7 +77,10 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="btn-book-group">
-                                <a href="javascript:;" class="btn btn-blue"><strong>加入購物車</strong></a>
+                                    @foreach (var item in ViewBag.getTravel)
+                                    {
+                                        <a href="@Url.Action("Index", "Travel",new { tGuid = @item.Guid })" class="btn btn-blue"><strong>加入購物車</strong></a>
+                                    }
                                 <a href="javascript:;" class="btn btn-primary"><strong>立即訂購</strong></a>
                             </div>
                         </div>
