@@ -87,7 +87,7 @@
             @foreach (var emp in Model)
             {
                 <div class="product-list">
-                    <a href="#" class="product-card">
+                    <a href="@Url.Action("Index", "Travel", new { Guid = @emp.Guid })" class="product-card">
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="img-bg" style="background-image: url('@emp.Images');"></div>
@@ -102,7 +102,7 @@
                                     <div class="product-time">行程 @emp.Time 小時</div>
                                     <div class="product-footer">
                                         <div class="float-left product-count">
-                                            <span class="d-inline">TWD </span>3.5K+個已訂購
+                                            <span class="d-inline">@emp.Country</span>
                                         </div>
                                         <div class="float-right product-price">
                                             <span class="d-inline">TWD</span>

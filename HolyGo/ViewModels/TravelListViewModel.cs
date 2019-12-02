@@ -8,6 +8,10 @@ namespace HolyGo.ViewModels
     public class TravelListViewModel
     {
         /// <summary>
+        /// 行程編號
+        /// </summary>
+        public Guid Guid { get; set; }
+        /// <summary>
         /// 行程標題
         /// </summary>
         public string Title { get; set; }

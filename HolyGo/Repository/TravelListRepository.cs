@@ -20,7 +20,7 @@ namespace HolyGo.Repository
             {
                 connString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
             }
-            if(conn == null)
+            if (conn == null)
             {
                 conn = new SqlConnection(connString);
             }
@@ -50,35 +50,43 @@ namespace HolyGo.Repository
                 switch (id)
                 {
                     case "ALL":
-                        sql = @"select tc.Title, tc.Contents, t.Time, t.Country, t.City, t.Images, tc.Cost 
-                                from Travel t 
-                                inner join Travel_Combo tc on t.Guid = tc.Travel_guid
-                                order by t.Country";
+                        sql = @"SELECT t.Guid,t.Title,t.Contents,t.Country,t.City,t.Time,t.Images,min(v.Cost) as Cost
+                                FROM Travel t
+                                LEFT JOIN Travel_Combo v ON t.Guid = v.Travel_guid
+                                Group BY t.Guid, t.Title, t.Contents, t.Country, t.City, t.Time, t.Images
+                                Order BY t.Title, Cost";
                         break;
                     case "Taiwan":
-                        sql = @"select tc.Title, tc.Contents, t.Time, t.Country, t.City, t.Images, tc.Cost 
-                                from Travel t 
-                                inner join Travel_Combo tc on t.Guid = tc.Travel_guid 
-                                where t.Country = N'台灣'";
+                        sql = @"SELECT t.Guid,t.Title,t.Contents,t.Country,t.City,t.Time,t.Images,min(v.Cost) as Cost
+                                FROM Travel t
+                                LEFT JOIN Travel_Combo v ON t.Guid = v.Travel_guid
+                                Where t.Country = N'台灣'
+                                Group BY t.Guid, t.Title, t.Contents, t.Country, t.City, t.Time, t.Images
+                                Order BY Cost";
                         break;
                     case "Japan":
-                        sql = @"select tc.Title, tc.Contents, t.Time, t.Country, t.City, t.Images, tc.Cost
-                                from Travel t
-                                inner join Travel_Combo tc on t.Guid = tc.Travel_guid 
-                                where t.Country = N'日本'";
+                        sql = @"SELECT t.Guid,t.Title,t.Contents,t.Country,t.City,t.Time,t.Images,min(v.Cost) as Cost
+                                FROM Travel t
+                                LEFT JOIN Travel_Combo v ON t.Guid = v.Travel_guid
+                                Where t.Country = N'日本'
+                                Group BY t.Guid, t.Title, t.Contents, t.Country, t.City, t.Time, t.Images
+                                Order BY Cost";
                         break;
                     case "Korea":
-                        sql = @"select tc.Title, tc.Contents, t.Time, t.Country, t.City, t.Images, tc.Cost
-                                from Travel t
-                                inner join Travel_Combo tc on t.Guid = tc.Travel_guid 
-                                where t.Country = N'韓國'";
+                        sql = @"SELECT t.Guid,t.Title,t.Contents,t.Country,t.City,t.Time,t.Images,min(v.Cost) as Cost
+                                FROM Travel t
+                                LEFT JOIN Travel_Combo v ON t.Guid = v.Travel_guid
+                                Where t.Country = N'韓國'
+                                Group BY t.Guid, t.Title, t.Contents, t.Country, t.City, t.Time, t.Images
+                                Order BY Cost";
                         break;
                     case "Other":
-                        sql = @"select tc.Title, tc.Contents, t.Time, t.Country, t.City, t.Images, tc.Cost
-                                from Travel t
-                                inner join Travel_Combo tc on t.Guid = tc.Travel_guid 
-                                where t.Country not like N'韓國' and t.Country not like N'台灣' and t.Country not like N'日本' 
-                                order by t.Country";
+                        sql = @"SELECT t.Guid,t.Title,t.Contents,t.Country,t.City,t.Time,t.Images,min(v.Cost) as Cost
+                                FROM Travel t
+                                LEFT JOIN Travel_Combo v ON t.Guid = v.Travel_guid
+                                Where t.Country not like N'韓國' and t.Country not like N'台灣' and t.Country not like N'日本'
+                                Group BY t.Guid, t.Title, t.Contents, t.Country, t.City, t.Time, t.Images
+                                Order BY Cost";
                         break;
                     default:
                         return null;
