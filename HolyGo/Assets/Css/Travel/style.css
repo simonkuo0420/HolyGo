@@ -322,6 +322,11 @@ fieldset[disabled] .btn {
     padding-left: 20px;
 }
 
+    .detail-toggle:hover {
+        color: #777;
+        text-decoration: none;
+    }
+
 .option-detail {
     display: none;
     width: 70%;
