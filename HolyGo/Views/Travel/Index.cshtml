@@ -77,11 +77,12 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="btn-book-group">
-                                    @foreach (var item in ViewBag.getTravel)
-                                    {
-                                        <a href="@Url.Action("Index", "Travel",new { tGuid = @item.Guid })" class="btn btn-blue"><strong>加入購物車</strong></a>
-                                    }
-                                <a href="javascript:;" class="btn btn-primary"><strong>立即訂購</strong></a>
+                                @foreach (var item in ViewBag.getTravel)
+                                {
+                                    <a href="javascript:;" id="AddCart" class="btn btn-blue"><strong>加入購物車</strong></a>
+                                    <input id="AddToCart" type="hidden" value="@item.Guid"/>
+                                }
+                                <a href="javascript:;" id="BookNow" class="btn btn-primary"><strong>立即訂購</strong></a>
                             </div>
                         </div>
                         <div class="booking-hint">
@@ -144,7 +145,7 @@
                                         <span class="d-inline-block">TWD</span>
                                         <h4 class="d-inline-block">@item.Cost</h4>
                                     </div>
-                                    <a href="javascript:;" class="btn btn-success select-option" value="@item.Guid">
+                                    <a href="javascript:;" class="btn btn-success select-option">
                                         選擇
                                     </a>
                                     <div class="row"></div>
@@ -198,4 +199,19 @@
     <script type="text/javascript" src="https://kit.fontawesome.com/1fad495502.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flatpickr "></script>
     <script type="text/javascript" src="~/Assets/Js/Travel/Travel.js"></script>
+
+    <script>
+    $(function () {
+        $('#AddCart').click(addToCart);
+        function addToCart() {
+            var AddCartValue = $('#AddToCart').val();
+            //alert(AddCartValue);
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("AddToCart", "Travel")',
+                data: { tGuid: AddCartValue }
+            });
+        }
+    });
+    </script>
 }

@@ -31,16 +31,14 @@ namespace HolyGo.Controllers
         }
 
         [HttpPost]
-        public string AddToCart(Guid tGuid)
+        public void AddToCart(Guid tGuid)
         {
-            Guid fGuid = new Guid();
+            Guid fGuid = Guid.NewGuid();
             var user_id = User.Identity.GetUserId();
             if (Request.IsAuthenticated)
             {
                 _tr.AddCart(fGuid, user_id, tGuid);
-                return "success" + fGuid;
             }
-            return "fail";
         }
     }
 }
