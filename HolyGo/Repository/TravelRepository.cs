@@ -35,15 +35,15 @@ namespace HolyGo.Repository
         /// <param name="Time"></param>
         /// <param name="Cost"></param>
         /// <returns></returns>
-        public List<TravelViewModel> SelectTravel(Guid Guid)
+        public TravelViewModel SelectTravel(Guid Guid)
         {
-            List<TravelViewModel> getTravel;
+            TravelViewModel getTravel;
             using (conn = new SqlConnection(connString))
             {
                 string sql = $"SELECT * " +
                              $"FROM Travel " +
                              $"WHERE Guid = '{Guid}'";
-                getTravel = conn.Query<TravelViewModel>(sql).ToList();
+                getTravel = conn.Query<TravelViewModel>(sql).FirstOrDefault();
                 return getTravel;
             }
         }
@@ -71,6 +71,30 @@ namespace HolyGo.Repository
                 conn.Execute(sql);
             }
         }
+
+
+
+        #region Helper
+
+        public bool CheckFavorite(Guid Travel_guid, string user_guid)
+        {
+            Favorite favorite = new Favorite();
+            using (conn = new SqlConnection(connString))
+            {
+                string sql = $"select * from Favorite f where f.Travel_guid = '{Travel_guid}' and f.User_guid = '{user_guid}'";
+                favorite = conn.Query<Favorite>(sql).FirstOrDefault();
+            }
+
+            if (favorite == null)
+            {
+                return false;
+            }
+
+            return true;
+            
+        }
+
+        #endregion
 
         //public List<Ticket> SelectTicket(Guid Guid)
         //{

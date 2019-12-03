@@ -157,19 +157,18 @@ namespace HolyGo.Repository
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public List<UsersOrderViewModel> SelectFavorite(string id)
+        public List<UsersOrderViewModel> SelectFavorite(string user_id)
         {
             List<UsersOrderViewModel> getFavorite;
             using (conn = new SqlConnection(connString))
             {
-                string sql = $"SELECT a.Guid, c.Title, c.Contents, c.Time, c.Country, c.Images, min(d.Cost) AS Cost " +
-                             $"FROM Favorite a " +
-                             $"INNER JOIN AspNetUsers b ON b.id = a.User_guid " +
-                             $"INNER JOIN Travel c ON c.Guid = a.Travel_guid " +
-                             $"INNER JOIN Travel_Combo d ON d.Travel_Guid = c.Guid " +
-                             $"WHERE User_Guid = '{id}' " +
-                             $"GROUP BY a.Guid, c.Title, c.Contents, c.Time, c.Country, c.Images " +
-                             $"ORDER BY Cost, c.Title";
+                string sql = $"select t.Guid, t.Title, t.Contents, t.Images, t.Time, t.Country, min(tc.Cost) as Cost " +
+                             $"from Favorite f " +
+                             $"inner join Travel t on t.Guid = f.Travel_guid " +
+                             $"inner join Travel_Combo tc on tc.Travel_guid = t.Guid " +
+                             $"where f.User_guid = '{user_id}' "+
+                             $"group by t.Guid, t.Title, t.Contents, t.Images, t.Time, t.Country "+
+                             $"order by Cost, t.Title";
                 getFavorite = conn.Query<UsersOrderViewModel>(sql).ToList();
                 return getFavorite;
             }
