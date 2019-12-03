@@ -162,12 +162,12 @@ namespace HolyGo.Repository
             List<UsersOrderViewModel> getFavorite;
             using (conn = new SqlConnection(connString))
             {
-                string sql = $"select t.Guid, t.Title, t.Contents, t.Images, t.Time, t.Country, min(tc.Cost) as Cost " +
+                string sql = $"select f.Guid, t.Title, t.Contents, t.Images, t.Time, t.Country, min(tc.Cost) as Cost " +
                              $"from Favorite f " +
                              $"inner join Travel t on t.Guid = f.Travel_guid " +
                              $"inner join Travel_Combo tc on tc.Travel_guid = t.Guid " +
                              $"where f.User_guid = '{user_id}' "+
-                             $"group by t.Guid, t.Title, t.Contents, t.Images, t.Time, t.Country "+
+                             $"group by f.Guid, t.Title, t.Contents, t.Images, t.Time, t.Country "+
                              $"order by Cost, t.Title";
                 getFavorite = conn.Query<UsersOrderViewModel>(sql).ToList();
                 return getFavorite;
