@@ -67,7 +67,7 @@ namespace HolyGo.Repository
             using (conn = new SqlConnection(connString))
             {
                 string sql = $"INSERT INTO Favorite(Guid, User_guid, Travel_guid) " +
-                             $"Value ('{Guid}','{User_guid}','{Travel_guid}')";
+                             $"VALUES ('{Guid}','{User_guid}','{Travel_guid}')";
                 conn.Execute(sql);
             }
         }
