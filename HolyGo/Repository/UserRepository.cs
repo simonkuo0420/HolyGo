@@ -174,5 +174,15 @@ namespace HolyGo.Repository
                 return getFavorite;
             }
         }
+
+        public void DelFavorite(Guid Guid)
+        {
+            using (conn = new SqlConnection(connString))
+            {
+                string sql = $"DELETE FROM Favorite " +
+                             $"WHERE Guid = '{Guid}'";
+                conn.Execute(sql);
+            }
+        }
     }
 }

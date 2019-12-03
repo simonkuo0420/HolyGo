@@ -9,6 +9,10 @@ namespace HolyGo.ViewModels
     public class UsersOrderViewModel
     {
         /// <summary>
+        /// 購物車Guid
+        /// </summary>
+        public Guid Guid { get; set; }
+        /// <summary>
         /// 訂單使用者ID
         /// </summary>
         [Display(Name = "Userid")]

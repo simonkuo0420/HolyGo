@@ -90,7 +90,7 @@ $(function () {
         $('#booking-title').text("");
         $('#booking-cost').text("");
     });
-    $('.btn-book-group>a').click(function () {
+    $('#BookNow').click(function () {
         var date = $('#flatpickr').val();
         if (date == "") {
             $('#flatpickr').focus();

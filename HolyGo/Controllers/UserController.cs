@@ -76,5 +76,13 @@ namespace HolyGo.Controllers
             ViewBag.getFavorite = getFavorite;
             return View();
         }
+
+        public void DelFavorite(Guid FavoriteGuid)
+        {
+            if (Request.IsAuthenticated)
+            {
+                _ur.DelFavorite(FavoriteGuid);
+            }
+        }
     }
 }

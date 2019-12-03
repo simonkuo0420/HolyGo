@@ -50,7 +50,7 @@
                         {
                             <form>
                                 <div class="product-list alert alert-danger alert-dismissible fade show aniShow">
-                                    <a href="#" class="product-card">
+                                    <a href="@Url.Action("Index", "Travel", new { @item.Guid })" class="product-card">
                                         <div class="row">
                                             <div class="col-lg-4">
                                                 <div class="img-bg" style="background-image: url('@item.Images');"></div>
@@ -76,7 +76,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <button class="close" data-dismiss="alert" value="">&times;</button>
+                                    <button class="close" data-dismiss="alert" value="@item.Guid"><i class="far fa-trash-alt fa-sm"></i></button>
                                 </div>
                             </form>
                         }
@@ -87,7 +87,21 @@
     </div>
 </div>
 @section scripts{
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+        $('.close').click(DelFavorite);
+            function DelFavorite() {
+                var DelValue = $(this).val();
+                //alert(DelValue);
+            $.ajax({
+                type: "post",
+                url: "@Url.Action("DelFavorite", "User")",
+                data: { FavoriteGuid : DelValue }
+            });
+        }
+    });
+    </script>
 }
