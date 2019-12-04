@@ -41,6 +41,7 @@ namespace HolyGo.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult AddToCart(Guid t_guid)
         {
             Guid guid = Guid.NewGuid();
