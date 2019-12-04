@@ -174,6 +174,21 @@ namespace HolyGo.Controllers
                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     await UserManager.SendEmailAsync(user.Id, "確認您的帳戶", "請按一下此連結確認您的帳戶 <a href=\"" + callbackUrl + "\">這裏</a>");
+
+                    //前台角色名稱
+                    var RoleName = "Member";
+                    //後台角色名稱 
+                    //var RoleName = "Admin";
+
+                    if (HttpContext.GetOwinContext().Get<ApplicationRoleManager>().RoleExists(RoleName) == false)
+                    {
+                        //角色不存在,建立角色
+                        var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole(RoleName);
+                        await HttpContext.GetOwinContext().Get<ApplicationRoleManager>().CreateAsync(role);
+                    }
+                    //將使用者加入該角色
+                    await UserManager.AddToRoleAsync(user.Id, RoleName);
+
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
@@ -385,6 +400,21 @@ namespace HolyGo.Controllers
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
+
+                        //前台角色名稱
+                        var RoleName = "Member";
+                        //後台角色名稱 
+                        //var RoleName = "Admin";
+
+                        if (HttpContext.GetOwinContext().Get<ApplicationRoleManager>().RoleExists(RoleName) == false)
+                        {
+                            //角色不存在,建立角色
+                            var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole(RoleName);
+                            await HttpContext.GetOwinContext().Get<ApplicationRoleManager>().CreateAsync(role);
+                        }
+                        //將使用者加入該角色
+                        await UserManager.AddToRoleAsync(user.Id, RoleName);
+
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                         return RedirectToLocal(returnUrl);
                     }
