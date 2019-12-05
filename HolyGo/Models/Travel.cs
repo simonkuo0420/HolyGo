@@ -5,6 +5,7 @@ namespace HolyGo.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     [Table("Travel")]
     public partial class Travel
@@ -44,6 +45,9 @@ namespace HolyGo.Models
         [Required]
         [StringLength(3)]
         public string Status { get; set; }
+
+        [AllowHtml]
+        public string Explain { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Favorite> Favorite { get; set; }
