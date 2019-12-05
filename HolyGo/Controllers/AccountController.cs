@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -72,13 +73,19 @@ namespace HolyGo.Controllers
             {
                 return View(model);
             }
-
+            string id = UserManager.FindByEmail(model.Email).Id;
+            IList<string> roleNames = UserManager.GetRoles(id);
+            var roleName = roleNames[0];
             // 這不會計算為帳戶鎖定的登入失敗
             // 若要啟用密碼失敗來觸發帳戶鎖定，請變更為 shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
+                    if (roleName == "Admin")
+                    {
+                        return RedirectToAction("Index", "BackStage");
+                    }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
