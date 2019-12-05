@@ -5,6 +5,8 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using Dapper;
+using HolyGo.ViewModels;
 
 namespace HolyGo.Repository
 {
@@ -27,10 +29,13 @@ namespace HolyGo.Repository
         }
         #endregion
 
-        public string CreateTravel(Travel travel)
+        public List<UserDataViewModel> QueryGetUserData ()
         {
+            List<UserDataViewModel> getUserData = new List<UserDataViewModel>();
+                string sql = @"select a.Id, a.FirstName, a.LastName, a.Gender, a.Birthday, a.Country, a.City, a.Phone, a.Email from AspNetUsers a";
 
+            getUserData = conn.Query<UserDataViewModel>(sql).ToList();
+            return getUserData;
         }
-
     }
 }
