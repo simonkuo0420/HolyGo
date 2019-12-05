@@ -1,4 +1,5 @@
-﻿
+﻿@model Travel
+
 @{
     ViewBag.Title = "Travel";
 }
@@ -75,38 +76,39 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="backstage-content">
-                            <form>
+                            @using (Html.BeginForm("CreateTravel", "BackStage"))
+                            {
                                 <div class="form-group">
                                     <label for="travel_title">行程標題</label>
-                                    <input type="text" id="travel_title" name="travel_title" required="required" class="form-control ol-md-12 col-sm-12 col-xs-12">
+                                    @Html.TextBoxFor(model => model.Title, new { @id = "travel_title", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
                                 </div>
                                 <div class="form-group">
                                     <label for="travel_content">行程概要</label>
-                                    <input type="text" id="travel_content" name="travel_content" required="required" class="form-control ol-md-12 col-sm-12 col-xs-12">
+                                    @Html.TextBoxFor(model => model.Contents, new { @id = "travel_content", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
                                 </div>
                                 <div class="form-group">
                                     <label for="travel_time">總時數</label>
-                                    <input type="text" id="travel_time" class="form-control ol-md-12 col-sm-12 col-xs-12" name="travel_time">
+                                    @Html.TextBoxFor(model => model.Time, new { @id = "travel_time", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
                                 </div>
                                 <div class="form-group">
                                     <label for="travel_country">國家</label>
-                                    <input type="text" id="travel_country" class="form-control ol-md-12 col-sm-12 col-xs-12" name="travel_country">
+                                    @Html.TextBoxFor(model => model.Country, new { @id = "travel_country", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
                                 </div>
                                 <div class="form-group">
                                     <label for="travel_city">城市</label>
-                                    <input type="text" id="travel_city" class="form-control ol-md-12 col-sm-12 col-xs-12" name="travel_city">
+                                    @Html.TextBoxFor(model => model.City, new { @id = "travel_city", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
                                 </div>
                                 <div class="form-group">
                                     <label for="travel_image">照片</label>
-                                    <input type="text" id="travel_image" class="form-control ol-md-12 col-sm-12 col-xs-12" name="travel_image">
+                                    @Html.TextBoxFor(model => model.Images, new { @id = "travel_city", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
                                 </div>
                                 <div class="form-group">
                                     <label for="CkEditor">行程說明</label>
-                                    @Html.TextArea("行程說明", new { @id = "CkEditor" })
+                                    @Html.TextAreaFor(model => model.Explain, new { @id = "CkEditor" })
                                 </div>
                                 <br />
                                 <button type="submit" class="btn btn-success mt-3">Submit</button>
-                            </form>
+                            }
                         </div>
                     </div>
                 </div>
