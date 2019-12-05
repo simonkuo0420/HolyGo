@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = "Travel";
+}
+
+<link rel="stylesheet" href="~/Assets/Css/BackStage/style.css" />
+
+<body class="nav-md mt-5 pt-5">
+    <div class="container backstage col-12">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>HolyGo</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br />
+                    <div id="sidebar-menu" class="hidden-print main_menu">
+                        <div class="backstage-memu">
+                            <h3>管理者後台</h3>
+                            <ul class="nav backstage-slide">
+                                <li>
+                                    <a><i class="fas fa-plane fa-lg mr-3"></i> 會員 <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav backstage-option">
+                                        <li>@Html.ActionLink("會員清單", "Index", "BackStage")</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fas fa-users fa-lg mr-3"></i> 行程 <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav backstage-option">
+                                        <li>@Html.ActionLink("行程清單", "Travel", "BackStage")</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fas fa-clipboard-list fa-lg mr-4"></i> 票券 <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav backstage-option">
+                                        <li>@Html.ActionLink("票券清單", "Ticket", "BackStage")</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fas fa-user-tie fa-lg mr-4"></i> 導遊 <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav backstage-option">
+                                        <li>@Html.ActionLink("導遊清單", "Guide", "BackStage")</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="right_col" role="main">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>管理者後台</h3>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="backstage-panel">
+                        <div class="backstage-title">
+                            <h2>增加行程</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="backstage-content">
+                            <form>
+                                <div class="form-group">
+                                    <label for="travel_title">行程標題</label>
+                                    <input type="text" id="travel_title" name="travel_title" required="required" class="form-control ol-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <div class="form-group">
+                                    <label for="travel_content">行程概要</label>
+                                    <input type="text" id="travel_content" name="travel_content" required="required" class="form-control ol-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <div class="form-group">
+                                    <label for="travel_time">總時數</label>
+                                    <input type="text" id="travel_time" class="form-control ol-md-12 col-sm-12 col-xs-12" name="travel_time">
+                                </div>
+                                <div class="form-group">
+                                    <label for="travel_country">國家</label>
+                                    <input type="text" id="travel_country" class="form-control ol-md-12 col-sm-12 col-xs-12" name="travel_country">
+                                </div>
+                                <div class="form-group">
+                                    <label for="travel_city">城市</label>
+                                    <input type="text" id="travel_city" class="form-control ol-md-12 col-sm-12 col-xs-12" name="travel_city">
+                                </div>
+                                <div class="form-group">
+                                    <label for="travel_image">照片</label>
+                                    <input type="text" id="travel_image" class="form-control ol-md-12 col-sm-12 col-xs-12" name="travel_image">
+                                </div>
+                                <div class="form-group">
+                                    <label for="CkEditor">行程說明</label>
+                                    @Html.TextArea("行程說明", new { @id = "CkEditor" })
+                                </div>
+                                <br />
+                                <button type="submit" class="btn btn-success mt-3">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="backstage-panel">
+                        <div class="backstage-title">
+                            <h2>行程清單</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+@section scripts{
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/Assets/Js/BackStage/BackStage.js"></script>
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+}
