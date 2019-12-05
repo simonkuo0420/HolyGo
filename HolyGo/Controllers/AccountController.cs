@@ -360,12 +360,18 @@ namespace HolyGo.Controllers
             {
                 return RedirectToAction("Login");
             }
-
+            string id = UserManager.FindByEmail(loginInfo.Email).Id;
+            IList<string> roleNames = UserManager.GetRoles(id);
+            var roleName = roleNames[0];
             // 若使用者已經有登入資料，請使用此外部登入提供者登入使用者
             var result = await SignInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
             switch (result)
             {
                 case SignInStatus.Success:
+                    if (roleName == "Admin")
+                    {
+                        return RedirectToAction("Index", "BackStage");
+                    }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
