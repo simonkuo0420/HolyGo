@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using HolyGo.Repository;
 
 namespace HolyGo.Controllers
 {
@@ -42,7 +41,7 @@ namespace HolyGo.Controllers
         {
             Guid Guid = Guid.NewGuid();
             var result = _br.CreateTravel(travel, Guid);
-            return RedirectToAction("Travel", new {result = result });
+            return RedirectToAction("Travel", new { result = result });
         }
     }
 }
