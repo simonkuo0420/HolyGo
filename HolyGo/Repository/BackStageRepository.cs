@@ -1,11 +1,12 @@
-﻿using Dapper;
-using HolyGo.Models;
+﻿using HolyGo.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using Dapper;
+using HolyGo.ViewModels;
 
 namespace HolyGo.Repository
 {
@@ -28,23 +29,13 @@ namespace HolyGo.Repository
         }
         #endregion
 
-        public string CreateTravel(Travel travel, Guid Guid)
+        public List<UserDataViewModel> QueryGetUserData ()
         {
-            using (conn = new SqlConnection(connString))
-            {
-                try
-                {
-                    string sql = $"INSERT INTO Travel (Guid, Title, Contents, Time, Country, City, Images, Status, Explain) " +
-                                 $"VALUES ('{Guid}','{travel.Title}','{travel.Contents}','{travel.Time}','{travel.Country}','{travel.City}','{travel.Images}','{travel.Status}','{travel.Explain}')";
-                    conn.Execute(sql);
-                    return "新增成功";
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                    return "新增失敗";
-                }
-            }
+            List<UserDataViewModel> getUserData = new List<UserDataViewModel>();
+                string sql = @"select a.Id, a.FirstName, a.LastName, a.Gender, a.Birthday, a.Country, a.City, a.Phone, a.Email from AspNetUsers a";
+
+            getUserData = conn.Query<UserDataViewModel>(sql).ToList();
+            return getUserData;
         }
     }
 }

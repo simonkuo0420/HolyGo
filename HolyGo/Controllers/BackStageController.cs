@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HolyGo.Repository;
 
 namespace HolyGo.Controllers
 {
@@ -21,7 +22,9 @@ namespace HolyGo.Controllers
         // GET: BackStage
         public ActionResult Index()
         {
-            return View();
+            ViewBag.UserData = _br.QueryGetUserData();
+            var getUserData = _br.QueryGetUserData();
+            return View(getUserData);
         }
         public ActionResult Travel(string result)
         {

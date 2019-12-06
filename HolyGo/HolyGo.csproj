@@ -216,6 +216,7 @@
     <Compile Include="ViewModels\TopTravelViewModel.cs" />
     <Compile Include="ViewModels\TravelListViewModel.cs" />
     <Compile Include="ViewModels\TravelViewModel.cs" />
+    <Compile Include="ViewModels\UserDataViewModel.cs" />
     <Compile Include="ViewModels\UsersOrderViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
