@@ -36,3 +36,9 @@ $(document).ready(function () {
 $(document).ready(function () {
     CKEDITOR.replace('CkEditor');
 })
+
+function toast() {
+    var x = document.getElementById("toast")
+    x.className = "show";
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 5000);
+}

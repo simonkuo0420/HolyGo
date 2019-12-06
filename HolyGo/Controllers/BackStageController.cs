@@ -27,6 +27,7 @@ namespace HolyGo.Controllers
         }
         public ActionResult Travel(string result)
         {
+            ViewBag.CreateTravel = result;
             return View();
         }
         public ActionResult Ticket()
@@ -37,6 +38,12 @@ namespace HolyGo.Controllers
         {
             return View();
         }
+
+        public ActionResult Travel_Combo()
+        {
+            return View();
+        }
+
         public ActionResult CreateTravel(Travel travel)
         {
             Guid Guid = Guid.NewGuid();

@@ -592,6 +592,7 @@
     <Content Include="Views\BackStage\Travel.cshtml" />
     <Content Include="Views\BackStage\Ticket.cshtml" />
     <Content Include="Views\BackStage\Guide.cshtml" />
+    <Content Include="Views\BackStage\Travel_Combo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

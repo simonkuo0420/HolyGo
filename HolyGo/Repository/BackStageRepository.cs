@@ -45,7 +45,7 @@ namespace HolyGo.Repository
                 try
                 {
                     string sql = $"INSERT INTO Travel (Guid, Title, Contents, Time, Country, City, Images, Status, Explain) " +
-                                 $"VALUES ('{Guid}','{travel.Title}','{travel.Contents}','{travel.Time}','{travel.Country}','{travel.City}','{travel.Images}','{travel.Status}','{travel.Explain}')";
+                                 $"VALUES ('{Guid}',N'{travel.Title}',N'{travel.Contents}','{travel.Time}',N'{travel.Country}',N'{travel.City}','{travel.Images}','1',N'{travel.Explain}')";
                     conn.Execute(sql);
                     return "新增成功";
                 }

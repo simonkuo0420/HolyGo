@@ -74,37 +74,55 @@
                             </ul>
                             <div class="clearfix"></div>
                         </div>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.FirstName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.LastName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Gander)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Birthday)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Country)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.City)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Phone)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Email)
-                                </td>
-                                <td>
-                                </td>
-                            </tr>
-                        }
+                        <div class="backstage-content">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>名字</th>
+                                                    <th>性別</th>
+                                                    <th>生日</th>
+                                                    <th>國家</th>
+                                                    <th>電話</th>
+                                                    <th>電子信箱</th>
+                                                    <th>編輯</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.FirstName)@Html.DisplayFor(modelItem => item.LastName)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.Gender)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.Birthday)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.Country),@Html.DisplayFor(modelItem => item.City)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.Phone)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.Email)
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:;"><i class="fas fa-plus-square fa-lg"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="clearfix"></div>

@@ -20,7 +20,6 @@ namespace HolyGo.ViewModels
         public string Gender { get; set; }
         [Required]
         [Display(Name = "生日")]
-        [DisplayFormat(DataFormatString = "{0:YYYY/MM/DD}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime Birthday { get; set; }
         [Required]

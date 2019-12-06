@@ -1,7 +1,6 @@
-﻿@model Travel
-
+﻿
 @{
-    ViewBag.Title = "Travel";
+    ViewBag.Title = "Travel_Combo";
 }
 
 <link rel="stylesheet" href="~/Assets/Css/BackStage/style.css" />
@@ -76,43 +75,14 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="backstage-content">
-                            @using (Html.BeginForm("CreateTravel", "BackStage"))
-                            {
-                                @Html.AntiForgeryToken()
                                 <div class="form-group">
                                     <label for="travel_title">行程標題</label>
-                                    @Html.TextBoxFor(model => model.Title, new { @id = "travel_title", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
-                                </div>
-                                <div class="form-group">
-                                    <label for="travel_content">行程概要</label>
-                                    @Html.TextBoxFor(model => model.Contents, new { @id = "travel_content", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
-                                </div>
-                                <div class="form-group">
-                                    <label for="travel_time">總時數</label>
-                                    @Html.TextBoxFor(model => model.Time, new { @id = "travel_time", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
-                                </div>
-                                <div class="form-group">
-                                    <label for="travel_country">國家</label>
-                                    @Html.TextBoxFor(model => model.Country, new { @id = "travel_country", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
-                                </div>
-                                <div class="form-group">
-                                    <label for="travel_city">城市</label>
-                                    @Html.TextBoxFor(model => model.City, new { @id = "travel_city", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
-                                </div>
-                                <div class="form-group">
-                                    <label for="travel_image">照片</label>
-                                    @Html.TextBoxFor(model => model.Images, new { @id = "travel_city", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
-                                </div>
-                                <div class="form-group">
-                                    <label for="CkEditor">行程說明</label>
-                                    @Html.TextAreaFor(model => model.Explain, new { @id = "CkEditor" })
+                                    <input type="text" id="travel_title" name="travel_title" required="required" class="form-control ol-md-12 col-sm-12 col-xs-12">
                                 </div>
                                 <button type="submit" class="btn btn-success mt-3">送出</button>
                                 @*<div id="toast">
-                                <div id="desc">@ViewBag.CreateTravel</div>
-                                </div>*@
-                                @Html.ValidationSummary("", new { @class = "text-danger" })
-                                @ViewBag.CreateTravel
+                                    <div id="desc">@ViewBag.CreateTravel</div>
+                                    </div>*@
                             }
                         </div>
                     </div>
@@ -126,34 +96,6 @@
                                 <li><a class="close-link"><i class="fa fa-close"></i></a></li>
                             </ul>
                             <div class="clearfix"></div>
-                        </div>
-                        <div class="backstage-content">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>名字</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                    @*@foreach (var item in Model)
-                                                    {
-                                                        <tr>
-                                                            <td>
-                                                                @Html.DisplayFor()
-                                                            </td>
-                                                            <td>
-                                                                <a href="javascript:;"><i class="fas fa-plus-square fa-lg"></i></a>
-                                                            </td>
-                                                        </tr>
-                                                    }*@
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
