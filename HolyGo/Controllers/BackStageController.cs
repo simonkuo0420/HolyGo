@@ -27,6 +27,8 @@ namespace HolyGo.Controllers
         }
         public ActionResult Travel(string result)
         {
+            var SelectTravel = _br.SelectTravel();
+            ViewBag.SelectTravel = SelectTravel;
             ViewBag.CreateTravel = result;
             return View();
         }
@@ -39,8 +41,11 @@ namespace HolyGo.Controllers
             return View();
         }
 
-        public ActionResult Travel_Combo()
+        public ActionResult Travel_Combo(Guid Guid)
         {
+            var SelectTravelCombo = _br.SelectTravelCombo(Guid);
+            ViewBag.SelectTravelCombo = SelectTravelCombo;
+            ViewBag.tGuid = Guid;
             return View();
         }
 
@@ -49,6 +54,13 @@ namespace HolyGo.Controllers
             Guid Guid = Guid.NewGuid();
             var result = _br.CreateTravel(travel, Guid);
             return RedirectToAction("Travel", new { result = result });
+        }
+
+        public ActionResult CreateTravelCombo(string tGuid, string title, string content, string cost)
+        {
+            Guid tcGuid = Guid.NewGuid();
+            _br.CreateTravelCombo(tcGuid, tGuid, title, content, cost);
+            return RedirectToAction("Travel_Combo");
         }
     }
 }

@@ -56,5 +56,44 @@ namespace HolyGo.Repository
                 }
             }
         }
+
+        public void CreateTravelCombo(Guid tcGuid, string tGuid, string Title, string Contents, string Cost)
+        {
+            using (conn = new SqlConnection(connString))
+            {
+                string sql = $"INSERT INTO Travel_Combo (Guid, Travel_Guid, Title, Contents, Cost) " +
+                             $"VALUES ('{tcGuid}',N'{tGuid}',N'{Title}',N'{Contents}',{Cost})";
+                conn.Execute(sql);
+            }
+        }
+
+        public List<BackStageTravelList> SelectTravel()
+        {
+            List<BackStageTravelList> SelectTravel;
+            using (conn = new SqlConnection(connString))
+            {
+                string sql = $"select t.Guid, t.Title, t.Time, t.Country, t.City, Count(tc.Cost) as Count " +
+                             $"from Travel t " +
+                             $"left join Travel_Combo tc " +
+                             $"on t.Guid = tc.Travel_guid " +
+                             $"group by t.Guid, t.Title, t.Time, t.Country, t.City";
+                SelectTravel =  conn.Query<BackStageTravelList>(sql).ToList();
+                return SelectTravel;
+            }
+        }
+
+        public List<Travel_Combo> SelectTravelCombo(Guid Guid)
+        {
+            List<Travel_Combo> SelectTravelCombo;
+            using (conn = new SqlConnection(connString))
+            {
+                string sql = $"SELECT * " +
+                             $"FROM Travel_Combo " +
+                             $"WHERE Travel_guid = '{Guid}' " +
+                             $"ORDER BY Cost";
+                SelectTravelCombo = conn.Query<Travel_Combo>(sql).ToList();
+                return SelectTravelCombo;
+            }
+        }
     }
 }

@@ -67,7 +67,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="backstage-panel">
                         <div class="backstage-title">
-                            <h2>增加行程</h2>
+                            <h2>增加套餐</h2>
                             <ul class="nav navbar-right panel_toolbox">
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                                 <li><a class="close-link"><i class="fa fa-close"></i></a></li>
@@ -75,27 +75,65 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="backstage-content">
-                                <div class="form-group">
-                                    <label for="travel_title">行程標題</label>
-                                    <input type="text" id="travel_title" name="travel_title" required="required" class="form-control ol-md-12 col-sm-12 col-xs-12">
-                                </div>
-                                <button type="submit" class="btn btn-success mt-3">送出</button>
-                                @*<div id="toast">
-                                    <div id="desc">@ViewBag.CreateTravel</div>
-                                    </div>*@
-                            }
+                            <div class="form-group">
+                                <label for="combo_title">標題</label>
+                                <input type="text" id="combo_title" name="combo_title" required="required" class="form-control ol-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="form-group">
+                                <label for="combo_content">內容</label>
+                                <input type="text" id="combo_content" name="combo_content" required="required" class="form-control ol-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="form-group">
+                                <label for="combo_cost">價錢</label>
+                                <input type="text" id="combo_cost" name="combo_cost" required="required" class="form-control ol-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <input id="tGuid" type="hidden" value="@ViewBag.tGuid"/>
+                            <button id="addCombo" type="submit" class="btn btn-success mt-3">送出</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="backstage-panel">
                         <div class="backstage-title">
-                            <h2>行程清單</h2>
+                            <h2>套餐清單</h2>
                             <ul class="nav navbar-right panel_toolbox">
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                                 <li><a class="close-link"><i class="fa fa-close"></i></a></li>
                             </ul>
                             <div class="clearfix"></div>
+                        </div>
+                        <div class="backstage-content">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>標題</th>
+                                                    <th>內容</th>
+                                                    <th>價錢</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in ViewBag.SelectTravelCombo)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            @item.Title
+                                                        </td>
+                                                        <td>
+                                                            @item.Contents
+                                                        </td>
+                                                        <td>
+                                                            @item.Cost
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -106,9 +144,25 @@
 </body>
 
 @section scripts{
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="~/Assets/Js/BackStage/BackStage.js"></script>
     <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+        $(function () {
+        $('#addCombo').click(addCombo);
+        function addCombo() {
+            var combo_title = $('#combo_title').val();
+            var combo_content = $('#combo_content').val();
+            var combo_cost = $('#combo_cost').val();
+            var travel_guid = $('#tGuid').val();
+            //alert(travel_guid);
+            $.ajax({
+                type: "post",
+                url: "@Url.Action("CreateTravelCombo", "BackStage")",
+                data: {tGuid : travel_guid, title : combo_title , content : combo_content, cost : combo_cost}
+            });
+        }
+    });
+    </script>
 }

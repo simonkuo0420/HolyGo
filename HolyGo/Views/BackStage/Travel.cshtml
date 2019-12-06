@@ -109,8 +109,8 @@
                                 </div>
                                 <button type="submit" class="btn btn-success mt-3">送出</button>
                                 @*<div id="toast">
-                                <div id="desc">@ViewBag.CreateTravel</div>
-                                </div>*@
+                                    <div id="desc">@ViewBag.CreateTravel</div>
+                                    </div>*@
                                 @Html.ValidationSummary("", new { @class = "text-danger" })
                                 @ViewBag.CreateTravel
                             }
@@ -134,21 +134,34 @@
                                         <table class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>名字</th>
+                                                    <th>標題</th>
+                                                    <th>總時程</th>
+                                                    <th>國家</th>
+                                                    <th>套餐數</th>
+                                                    <th>編輯</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                    @*@foreach (var item in Model)
+                                                    @foreach (var item in ViewBag.SelectTravel)
                                                     {
                                                         <tr>
                                                             <td>
-                                                                @Html.DisplayFor()
+                                                                @item.Title
                                                             </td>
                                                             <td>
-                                                                <a href="javascript:;"><i class="fas fa-plus-square fa-lg"></i></a>
+                                                                @item.Time
+                                                            </td>
+                                                            <td>
+                                                                @item.Country,@item.City
+                                                            </td>
+                                                            <td>
+                                                                @item.Count
+                                                            </td>
+                                                            <td>
+                                                                <a href="@Url.Action("Travel_Combo","BackStage",new { Guid = item.Guid })"><i class="fas fa-plus-square fa-lg"></i></a>
                                                             </td>
                                                         </tr>
-                                                    }*@
+                                                    }
                                             </tbody>
                                         </table>
                                     </div>
