@@ -114,6 +114,7 @@ $(document).ready(function() {
         if ($('.home_slider').length) {
             var homeSlider = $('.home_slider');
             homeSlider.owlCarousel({
+                navigation: true,
                 items: 1,
                 animateOut: 'slideOutDown',
                 animateIn: 'fadeIn',
@@ -213,6 +214,7 @@ $(document).ready(function() {
         if ($('.clients_slider').length) {
             var clientsSlider = $('.clients_slider');
             clientsSlider.owlCarousel({
+                navigation: true,
                 items: 5,
                 autoplay: true,
                 loop: true,
@@ -260,6 +262,7 @@ $(document).ready(function() {
 
 $(function() {
     $('.mhn-slide').owlCarousel({
+        navigation: true,
         nav: true,
         //loop:true,
         slideBy: 'page',
