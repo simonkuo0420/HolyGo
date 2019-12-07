@@ -64,9 +64,8 @@ namespace HolyGo.Models
 
             modelBuilder.Entity<Guide>()
                 .HasMany(e => e.Travel)
-                .WithRequired(e => e.Guide)
-                .HasForeignKey(e => e.Guide_guid)
-                .WillCascadeOnDelete(false);
+                .WithOptional(e => e.Guide)
+                .HasForeignKey(e => e.Guide_guid);
 
             modelBuilder.Entity<Ticket>()
                 .HasMany(e => e.Ticket_Combo)

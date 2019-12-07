@@ -6,20 +6,17 @@ namespace HolyGo.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Travel")]
-    public partial class Travel
+    [Table("Ticket")]
+    public partial class Ticket
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Travel()
+        public Ticket()
         {
-            Favorite = new HashSet<Favorite>();
-            Travel_Combo = new HashSet<Travel_Combo>();
+            Ticket_Combo = new HashSet<Ticket_Combo>();
         }
 
         [Key]
         public Guid Guid { get; set; }
-
-        public Guid? Guide_guid { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -45,14 +42,11 @@ namespace HolyGo.Models
         [StringLength(3)]
         public string Status { get; set; }
 
+        public int Favorite { get; set; }
+
         public string Explain { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Favorite> Favorite { get; set; }
-
-        public virtual Guide Guide { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Travel_Combo> Travel_Combo { get; set; }
+        public virtual ICollection<Ticket_Combo> Ticket_Combo { get; set; }
     }
 }

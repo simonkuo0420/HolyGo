@@ -23,7 +23,6 @@ namespace HolyGo.Models
 
         [Required]
         [StringLength(30)]
-        [Display(Name ="©m¤ó")]
         public string FirstName { get; set; }
 
         [Required]
@@ -34,6 +33,7 @@ namespace HolyGo.Models
         [StringLength(1)]
         public string Gender { get; set; }
 
+        [Column(TypeName = "date")]
         public DateTime Birthday { get; set; }
 
         [Required]

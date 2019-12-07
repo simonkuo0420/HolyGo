@@ -90,10 +90,10 @@ $(function () {
         $('#booking-title').text("");
         $('#booking-cost').text("");
     });
-    $('#BookNow').click(function () {
-        var date = $('#flatpickr').val();
-        if (date == "") {
-            $('#flatpickr').focus();
-        }
-    });
+    //$('#BookNow').click(function () {
+    //    var date = $('#flatpickr').val();
+    //    if (date == "") {
+    //        $('#flatpickr').focus();
+    //    }
+    //});
 });

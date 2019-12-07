@@ -6,7 +6,8 @@ namespace HolyGo.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Travel_Order
+    [Table("Favorite")]
+    public partial class Favorite
     {
         [Key]
         public Guid Guid { get; set; }
@@ -15,17 +16,10 @@ namespace HolyGo.Models
         [StringLength(128)]
         public string User_guid { get; set; }
 
-        public Guid Combo_guid { get; set; }
-
-        [Column(TypeName = "date")]
-        public DateTime Datetime { get; set; }
-
-        [Required]
-        [StringLength(3)]
-        public string Status { get; set; }
+        public Guid Travel_guid { get; set; }
 
         public virtual AspNetUsers AspNetUsers { get; set; }
 
-        public virtual Travel_Combo Travel_Combo { get; set; }
+        public virtual Travel Travel { get; set; }
     }
 }
