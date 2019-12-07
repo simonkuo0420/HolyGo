@@ -110,9 +110,9 @@
                     <div class="ftco-footer-widget mb-4 ml-md-4">
                         <h2 class="ftco-heading-2">熱門連結</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li>@Html.ActionLink("旅遊行程", "Index", "Travel")</li>
+                            <li>@Html.ActionLink("首頁", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                            <li>@Html.ActionLink("旅遊行程", "Index", "TravelList", new { id = "ALL" }, null)</li>
                         </ul>
                     </div>
                 </div>

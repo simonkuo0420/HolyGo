@@ -13,7 +13,7 @@
             <div class="card card-primary">
                 <div class="card-body">
                     <div class="text-center">
-                        <img class="member-img img-fluid rounded-circle" src="https://static.newmobilelife.com/wp-content/uploads/2018/11/oppa1.jpg">
+                        <img class="member-img img-fluid rounded-circle" src="https://truth.bahamut.com.tw/s01/201207/28a8513919088d3328aaa40284c6b13e.PNG">
                     </div>
                     <h3 class="text-center">Guest</h3>
                     <p class="text-muted text-center">@User.Identity.Name</p>
@@ -67,19 +67,19 @@
                                         <div class="form-group col-md-4">
                                             <label for="inputLastName"><strong>@Html.LabelFor(m => m.LastName, new { @class = "m-0" })</strong></label>
                                             <div>
-                                                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @id = "inputLastName", @placeholder = "戴" })
+                                                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @id = "inputLastName", @placeholder = "戴", @required = "required" })
                                             </div>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="inputFirstName"><strong>@Html.LabelFor(m => m.FirstName, new { @class = "m-0"})</strong></label>
                                             <div>
-                                                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @id = "inputFirstName", @placeholder = "仁德" })
+                                                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @id = "inputFirstName", @placeholder = "仁德", @required = "required"  })
                                             </div>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label><strong>@Html.LabelFor(m => m.Gender, new { @class = "m-0" })</strong></label>
                                             <div>
-                                                @Html.TextBoxFor(m => m.Gender, new { @class = "form-control",@readonly = "readonly"})
+                                                @Html.TextBoxFor(m => m.Gender, new { @class = "form-control",@readonly = "readonly", @required = "required" })
                                             </div>
                                         </div>
                                     </div>
@@ -87,13 +87,13 @@
                                         <div class="form-group col-md-4">
                                             <label for="flatpickr"><strong>@Html.LabelFor(m => m.Birthday, new { @class = "m-0" })</strong></label>
                                             <div>
-                                                @Html.TextBoxFor(m => m.Birthday, new { @class = "form-control", @id = "flatpickr", @placeholder = "出生日期" })
+                                                @Html.TextBoxFor(m => m.Birthday, new { @class = "form-control", @id = "flatpickr", @placeholder = "出生日期", @required = "required"  })
                                             </div>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="inputCountry"><strong>@Html.LabelFor(m => m.Country, new { @class = "m-0" })</strong></label>
                                             <div>
-                                                @Html.TextBoxFor(m => m.Country, new { @class = "form-control", @id = "inputCountry", @placeholder = "台灣" })
+                                                @Html.TextBoxFor(m => m.Country, new { @class = "form-control", @id = "inputCountry", @placeholder = "台灣", @required = "required"  })
                                             </div>
                                         </div>
                                     </div>
@@ -101,13 +101,13 @@
                                         <div class="form-group col-md-4">
                                             <label for="inputPhone"><strong>@Html.LabelFor(m => m.Phone, new { @class = "m-0" })</strong></label>
                                             <div>
-                                                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @id = "inputPhone", @placeholder = "0912 345 678" })
+                                                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @id = "inputPhone", @placeholder = "0912 345 678", @required = "required"  })
                                             </div>
                                         </div>
                                         <div class="form-group col-md-8">
                                             <label for="inputEmail"><strong>@Html.LabelFor(m => m.Email, new { @class = "m-0" })</strong></label>
                                             <div>
-                                                @Html.TextBoxFor(m => m.Email, new { @type = "email", @class = "form-control", @id = "inputEmail", @placeholder = "HolyGo@gmail.com", @readonly = "readonly"})
+                                                @Html.TextBoxFor(m => m.Email, new { @type = "email", @class = "form-control", @id = "inputEmail", @placeholder = "HolyGo@gmail.com", @readonly = "readonly", @required = "required" })
                                             </div>
                                         </div>
                                     </div>

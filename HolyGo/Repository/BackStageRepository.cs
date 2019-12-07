@@ -76,7 +76,8 @@ namespace HolyGo.Repository
                              $"from Travel t " +
                              $"left join Travel_Combo tc " +
                              $"on t.Guid = tc.Travel_guid " +
-                             $"group by t.Guid, t.Title, t.Time, t.Country, t.City";
+                             $"group by t.Guid, t.Title, t.Time, t.Country, t.City " +
+                             $"order by Count";
                 SelectTravel =  conn.Query<BackStageTravelList>(sql).ToList();
                 return SelectTravel;
             }

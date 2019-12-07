@@ -1,3 +1,13 @@
+a{
+    color:#555;
+    text-decoration:none;
+}
+
+    a:hover {
+        color: #777;
+        text-decoration: none;
+    }
+
 section>.text {
     margin: 100px auto;
     max-width: 555px;

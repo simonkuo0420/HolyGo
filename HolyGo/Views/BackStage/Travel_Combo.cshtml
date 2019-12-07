@@ -87,8 +87,7 @@
                                 <label for="combo_cost">價錢</label>
                                 <input type="text" id="combo_cost" name="combo_cost" required="required" class="form-control ol-md-12 col-sm-12 col-xs-12">
                             </div>
-                            <input id="tGuid" type="hidden" value="@ViewBag.tGuid"/>
-                            <button id="addCombo" type="submit" class="btn btn-success mt-3">送出</button>
+                            <button id="addCombo" type="submit" class="btn btn-success mt-3" value="@ViewBag.tGuid">送出</button>
                         </div>
                     </div>
                 </div>
@@ -155,7 +154,7 @@
             var combo_title = $('#combo_title').val();
             var combo_content = $('#combo_content').val();
             var combo_cost = $('#combo_cost').val();
-            var travel_guid = $('#tGuid').val();
+            var travel_guid = $('#addCombo').val();
             //alert(travel_guid);
             $.ajax({
                 type: "post",
