@@ -14,7 +14,7 @@
 5. Home
 6. Locations
 7. Undefined
-13. Footer
+8. Footer
 
 
 ******************************/
@@ -24,13 +24,13 @@
 1. Fonts
 ***********/
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900');
-
 /*********************************
 2. Body and some general stuff
 *********************************/
 
 * {
+    font-family: Noto Sans TC, 微软雅黑, Microsoft YaHei, sans-serif;
+    letter-spacing: .5px;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
@@ -97,7 +97,7 @@ img {
 *********************************/
 
 .header {
-    background: rgba(196, 196, 196, 0.9);
+    background: rgba(256, 256, 256, 0.87);
     position: fixed;
     top: 0;
     left: 0;
@@ -108,10 +108,11 @@ img {
     -ms-transition: all 400ms ease;
     -o-transition: all 400ms ease;
     transition: all 400ms ease;
+    border-bottom: 1px solid #F5F5F5;
 }
 
     .header.scrolled {
-        background: rgba(196, 196, 196, 0.9);
+        background: rgba(256, 256, 256, 1);
     }
 
     .header.active {
@@ -164,31 +165,34 @@ img {
     font-size: 24px;
     color: #000000;
 }
+    .logo a:hover {
+        font-size: 24px;
+        color: #000000;
+        text-decoration: none;
+    }
 
     .logo a span {
         color: #ffb400;
     }
 
         .logo a span:last-child {
-            font-weight: 700;
+            font-weight: 900;
         }
 
-.main_nav ul li:not(:last-of-type) {
-    margin-right: 59px;
+.header_right .main_nav ul li:not(:last-of-type) {
+    margin-right: 50px;
 }
 
-.main_nav ul li a {
+.header_right .main_nav ul li a {
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 600;
     color: #000000;
-}
-
-.main_nav ul li.active a {
-    color: #000000;
+    text-decoration: none;
 }
 
 .log_reg {
     margin-left: 28px;
+    text-decoration: none;
 }
 
     .log_reg ul li:not(:last-of-type)::after {
@@ -196,15 +200,16 @@ img {
         content: '/';
         margin-left: 6px;
         margin-right: 6px;
-        font-size: 16px;
-        font-weight: 300;
+        font-size: 18px;
+        font-weight: 600;
         color: #000000;
     }
 
     .log_reg ul li a {
-        font-size: 16px;
-        font-weight: 300;
+        font-size: 18px;
+        font-weight: 600;
         color: #000000;
+        text-decoration: none;
     }
 
     .log_reg ul li:first-child a {
@@ -218,7 +223,7 @@ img {
 }
 
     .hamburger i {
-        font-size: 20px;
+        font-size: 24px;
         color: #000000;
         -webkit-transition: all 200ms ease;
         -moz-transition: all 200ms ease;
@@ -285,18 +290,20 @@ img {
     }
 
     .menu_nav ul li a {
-        font-size: 24px;
+        font-size: 18px;
+        font-weight:600;
         color: #000000;
+        text-decoration:none
     }
 
 
 /*********************************
-13. Footer
+8. Footer
 *********************************/
 
 .ftco-footer {
     font-size: 14px;
-    background: #f6f7f2;
+    background: #333;
     padding: 6em 0;
 }
 
@@ -307,14 +314,14 @@ img {
 
     .ftco-footer .ftco-footer-widget h2 {
         font-weight: normal;
-        color: #3c312e;
+        color: #FFF;
         margin-bottom: 40px;
         font-size: 18px;
         font-weight: 400;
     }
 
-    .ftco-footer .ftco-footer-widget ul li a span {
-        color: #3c312e;
+    .ftco-footer .ftco-footer-widget ul li {
+        color: #FFF;
     }
 
     .ftco-footer .ftco-footer-widget .btn-primary {
@@ -328,15 +335,15 @@ img {
         }
 
     .ftco-footer p {
-        color: #3c312e;
+        color: #FFF;
     }
 
     .ftco-footer a {
-        color: #3c312e;
+        color: #FFF;
     }
 
         .ftco-footer a:hover {
-            color: #3c312e;
+            color: #F3F3F3;
         }
 
     .ftco-footer .ftco-heading-2 {
@@ -370,6 +377,7 @@ img {
     }
 
         .ftco-footer-social li a i {
+            color : #333;
             position: absolute;
             font-size: 26px;
             top: 50%;
@@ -392,3 +400,4 @@ img {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
+

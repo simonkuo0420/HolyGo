@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 /* CSS Document */
 
@@ -40,6 +40,9 @@
 ************/
 
 @media only screen and (max-width: 1440px) {
+    .header_right .main_nav ul li:not(:last-of-type) {
+        margin-right: 30px;
+    }
     .container_custom .container {
         max-width: 1170px;
     }
@@ -50,16 +53,20 @@
 3. 1380px
 ************/
 
-@media only screen and (max-width: 1380px) {}
+@media only screen and (max-width: 1380px) {
+    .header_right .main_nav ul li:not(:last-of-type) {
+        margin-right: 25px;
+    }
+}
 
 
 /************
 3. 1280px
 ************/
 
-@media only screen and (max-width: 1280px) {
-    .main_nav ul li:not(:last-of-type) {
-        margin-right: 25px;
+@media only screen and (max-width: 1300px) {
+    .header_right .main_nav ul li:not(:last-of-type) {
+        margin-right: 20px;
     }
     .log_reg {
         margin-left: 20px;
@@ -72,6 +79,9 @@
 ************/
 
 @media only screen and (max-width: 1199px) {
+    .header_right .main_nav ul li:not(:last-of-type) {
+        margin-right: 15px;
+    }
     .container_custom .container {
         max-width: 960px;
     }
@@ -82,14 +92,44 @@
 4. 1100px
 ************/
 
-@media only screen and (max-width: 1100px) {}
+@media only screen and (max-width: 1100px) {
+    .container_custom .container {
+        max-width: 540px;
+    }
+
+    .log_reg ul li a {
+        font-size: 14px;
+    }
+
+    .menu_link {
+        display: block;
+    }
+
+    .home_slider_dots {
+        left: 30px;
+    }
+
+    .home_title h1 {
+        font-size: 56px;
+    }
+
+        .home_title h1 span::after {
+            top: 17px;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            font-size: 14px;
+        }
+}
 
 
 /************
 5. 1024px
 ************/
 
-@media only screen and (max-width: 1024px) {}
+@media only screen and (max-width: 1024px) {
+    
+}
 
 
 /************

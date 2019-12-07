@@ -12,8 +12,8 @@ namespace HolyGo
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
-                        "~/Assets/Js/Layout/custom.js",
-                        "~/Scripts/jquery-3.3.1.min.js"));
+                        "~/Scripts/jquery-3.3.1.min.js",
+                        "~/Assets/Js/Layout/custom.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));

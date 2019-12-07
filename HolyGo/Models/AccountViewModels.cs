@@ -9,6 +9,34 @@ namespace HolyGo.Models
         [Required]
         [Display(Name = "電子郵件")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "姓氏")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "名字")]
+        public string LastName { get; set; }
+
+        [Required]
+        [Display(Name = "生日")]
+        public DateTime Birthday { get; set; }
+
+        [Required]
+        [Display(Name = "性別")]
+        public string Gender { get; set; }
+
+        [Required]
+        [Display(Name = "國籍")]
+        public string Country { get; set; }
+
+        [Required]
+        [Display(Name = "地區")]
+        public string City { get; set; }
+
+        [Required]
+        [Display(Name = "電話")]
+        public string Phone { get; set; }
     }
 
     public class ExternalLoginListViewModel

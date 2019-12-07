@@ -5,9 +5,9 @@
     {
     @Html.AntiForgeryToken()
 
-    <ul class="d-flex flex-row align-items-center justify-content-start">
+    <ul class="d-flex flex-row align-items-center justify-content-end">
         <li>
-            @Html.ActionLink("您好 " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink(User.Identity.GetUserName(), "Index", "User", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">登出</a></li>
     </ul>
@@ -15,8 +15,8 @@
 }
 else
 {
-    <ul class="d-flex flex-row align-items-center justify-content-start">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+<ul class="d-flex flex-row align-items-center justify-content-end">
+    <li>@Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "pl-4" })</li>
+    <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" , @class = "pl-0" })</li>
+</ul>
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -72,13 +73,19 @@ namespace HolyGo.Controllers
             {
                 return View(model);
             }
-
+            string id = UserManager.FindByEmail(model.Email).Id;
+            IList<string> roleNames = UserManager.GetRoles(id);
+            var roleName = roleNames[0];
             // 這不會計算為帳戶鎖定的登入失敗
             // 若要啟用密碼失敗來觸發帳戶鎖定，請變更為 shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
+                    if (roleName == "Admin")
+                    {
+                        return RedirectToAction("Index", "BackStage");
+                    }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -171,9 +178,23 @@ namespace HolyGo.Controllers
                     
                     // 如需如何進行帳戶確認及密碼重設的詳細資訊，請前往 https://go.microsoft.com/fwlink/?LinkID=320771
                     // 傳送包含此連結的電子郵件
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "確認您的帳戶", "請按一下此連結確認您的帳戶 <a href=\"" + callbackUrl + "\">這裏</a>");
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id, "確認您的帳戶", "請按一下此連結確認您的帳戶 <a href=\"" + callbackUrl + "\">這裏</a>");
+
+                    //前台角色名稱
+                    var RoleName = "Member";
+                    //後台角色名稱 
+                    //var RoleName = "Admin";
+
+                    if (HttpContext.GetOwinContext().Get<ApplicationRoleManager>().RoleExists(RoleName) == false)
+                    {
+                        //角色不存在,建立角色
+                        var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole(RoleName);
+                        await HttpContext.GetOwinContext().Get<ApplicationRoleManager>().CreateAsync(role);
+                    }
+                    //將使用者加入該角色
+                    await UserManager.AddToRoleAsync(user.Id, RoleName);
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -214,7 +235,7 @@ namespace HolyGo.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await UserManager.FindByNameAsync(model.Email);
+                var user = await UserManager.FindByEmailAsync(model.Email);
                 if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
                 {
                     // 不顯示使用者不存在或未受確認
@@ -223,10 +244,10 @@ namespace HolyGo.Controllers
 
                 // 如需如何進行帳戶確認及密碼重設的詳細資訊，請前往 https://go.microsoft.com/fwlink/?LinkID=320771
                 // 傳送包含此連結的電子郵件
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "重設密碼", "請按 <a href=\"" + callbackUrl + "\">這裏</a> 重設密碼");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                 var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
+                 await UserManager.SendEmailAsync(user.Id, "重設密碼", "請按 <a href=\"" + callbackUrl + "\">這裏</a> 重設密碼");
+                 return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // 如果執行到這裡，發生某項失敗，則重新顯示表單
@@ -260,7 +281,7 @@ namespace HolyGo.Controllers
             {
                 return View(model);
             }
-            var user = await UserManager.FindByNameAsync(model.Email);
+            var user = await UserManager.FindByEmailAsync(model.Email);
             if (user == null)
             {
                 // 不顯示使用者不存在
@@ -339,12 +360,18 @@ namespace HolyGo.Controllers
             {
                 return RedirectToAction("Login");
             }
-
+            string id = UserManager.FindByEmail(loginInfo.Email).Id;
+            IList<string> roleNames = UserManager.GetRoles(id);
+            var roleName = roleNames[0];
             // 若使用者已經有登入資料，請使用此外部登入提供者登入使用者
             var result = await SignInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
             switch (result)
             {
                 case SignInStatus.Success:
+                    if (roleName == "Admin")
+                    {
+                        return RedirectToAction("Index", "BackStage");
+                    }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -379,13 +406,28 @@ namespace HolyGo.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Birthday = model.Birthday, Gender = model.Gender, Country = model.Country, City = model.City, Phone = model.Phone };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
+
+                        //前台角色名稱
+                        var RoleName = "Member";
+                        //後台角色名稱 
+                        //var RoleName = "Admin";
+
+                        if (HttpContext.GetOwinContext().Get<ApplicationRoleManager>().RoleExists(RoleName) == false)
+                        {
+                            //角色不存在,建立角色
+                            var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole(RoleName);
+                            await HttpContext.GetOwinContext().Get<ApplicationRoleManager>().CreateAsync(role);
+                        }
+                        //將使用者加入該角色
+                        await UserManager.AddToRoleAsync(user.Id, RoleName);
+
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                         return RedirectToLocal(returnUrl);
                     }

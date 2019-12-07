@@ -1,0 +1,185 @@
+﻿@model Travel
+
+@{
+    ViewBag.Title = "Travel";
+}
+
+<link rel="stylesheet" href="~/Assets/Css/BackStage/style.css" />
+
+<body class="nav-md mt-5 pt-5">
+    <div class="container backstage col-12">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="@Url.Action("Index","BackStage")" class="site_title"><i class="fa fa-paw"></i> <span>HolyGo</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br />
+                    <div id="sidebar-menu" class="hidden-print main_menu">
+                        <div class="backstage-memu">
+                            <h3>管理者後台</h3>
+                            <ul class="nav backstage-slide">
+                                <li>
+                                    <a><i class="fas fa-users fa-lg mr-3"></i> 會員 <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav backstage-option">
+                                        <li>@Html.ActionLink("會員清單", "Index", "BackStage")</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fas fa-plane fa-lg mr-3"></i> 行程 <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav backstage-option">
+                                        <li>@Html.ActionLink("行程清單", "Travel", "BackStage")</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fas fa-clipboard-list fa-lg mr-4"></i> 票券 <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav backstage-option">
+                                        <li>@Html.ActionLink("票券清單", "Ticket", "BackStage")</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fas fa-user-tie fa-lg mr-4"></i> 導遊 <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav backstage-option">
+                                        <li>@Html.ActionLink("導遊清單", "Guide", "BackStage")</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="right_col" role="main">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>管理者後台</h3>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="backstage-panel">
+                        <div class="backstage-title">
+                            <h2>增加行程</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="backstage-content">
+                            @using (Html.BeginForm("CreateTravel", "BackStage"))
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="form-group">
+                                    <label for="travel_title">行程標題</label>
+                                    @Html.TextBoxFor(model => model.Title, new { @id = "travel_title", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="travel_content">行程概要</label>
+                                    @Html.TextBoxFor(model => model.Contents, new { @id = "travel_content", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="travel_time">總時數</label>
+                                    @Html.TextBoxFor(model => model.Time, new { @id = "travel_time", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="travel_country">國家</label>
+                                    @Html.TextBoxFor(model => model.Country, new { @id = "travel_country", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="travel_city">城市</label>
+                                    @Html.TextBoxFor(model => model.City, new { @id = "travel_city", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="travel_image">照片</label>
+                                    @Html.TextBoxFor(model => model.Images, new { @id = "travel_city", @class = "form-control ol-md-12 col-sm-12 col-xs-12", @required = "required" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="CkEditor">行程說明</label>
+                                    @Html.TextAreaFor(model => model.Explain, new { @id = "CkEditor" })
+                                </div>
+                                <button type="submit" class="btn btn-success mt-3">送出</button>
+                                @*<div id="toast">
+                                    <div id="desc">@ViewBag.CreateTravel</div>
+                                    </div>*@
+                                @Html.ValidationSummary("", new { @class = "text-danger" })
+                                @ViewBag.CreateTravel
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="backstage-panel">
+                        <div class="backstage-title">
+                            <h2>行程清單</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="backstage-content">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>標題</th>
+                                                    <th>總時程</th>
+                                                    <th>國家</th>
+                                                    <th>套餐數</th>
+                                                    <th>編輯</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    @foreach (var item in ViewBag.SelectTravel)
+                                                    {
+                                                        <tr>
+                                                            <td>
+                                                                @item.Title
+                                                            </td>
+                                                            <td>
+                                                                @item.Time
+                                                            </td>
+                                                            <td>
+                                                                @item.Country,@item.City
+                                                            </td>
+                                                            <td>
+                                                                @item.Count
+                                                            </td>
+                                                            <td>
+                                                                <a href="@Url.Action("Travel_Combo","BackStage",new { Guid = item.Guid })"><i class="fas fa-plus-square fa-lg"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+@section scripts{
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/Assets/Js/BackStage/BackStage.js"></script>
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+}

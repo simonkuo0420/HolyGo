@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HolyGo</title>
+    <link rel="icon" href="~/Assets/Images/Logo/HolyGo.ico" type="image/ico" />
     <script src="https://kit.fontawesome.com/1fad495502.js" crossorigin="anonymous"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -37,11 +38,16 @@
             <div class="menu_close">close</div>
             <nav class="menu_nav">
                 <ul>
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Listings</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <div class="log_reg">
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+                    @*<li>@Html.ActionLink("About Us", "About", "Home")</li>*@
+                    <li>@Html.ActionLink("旅遊行程", "Index", "TravelList")</li>
+                    <li>@Html.ActionLink("訂單管理", "Order", "User")</li>
+                    <li>@Html.ActionLink("訊息管理", "Message", "User")</li>
+                    <li>@Html.ActionLink("購物車", "Favorite", "User")</li>
+                    @*<li>@Html.ActionLink("後台", "Index", "BackStage")</li>*@
                 </ul>
             </nav>
         </div>
@@ -52,23 +58,26 @@
         <header class="header">
             <div class="header_overlay"></div>
             <div class="header_content d-flex flex-row align-items-center justify-content-start">
-
                 <!-- Logo -->
-                <div class="logo"><a href="index">Holy<span>Go</span><span>+</span></a></div>
+                <div class="logo">
+                    <a href="@Url.Action("Index","Home")">Holy<span>Go</span><span>+</span></a>
+                </div>
 
                 <!-- Header Nav -->
                 <div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
                     <nav class="main_nav">
-                        <ul class="d-flex flex-row align-items-center justify-content-start">
-                            <li class="active">@Html.ActionLink("Home","Index","Home")</li>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Listings</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Contact</a></li>
+                        <ul class="d-flex flex-row align-items-center justify-content-center">
+                            @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+                            @*<li>@Html.ActionLink("About Us", "About", "Home")</li>*@
+                            <li>@Html.ActionLink("旅遊行程", "Index", "TravelList", new { id = "ALL" }, null)</li>
+                            <li>@Html.ActionLink("訂單管理", "Order", "User")</li>
+                            <li>@Html.ActionLink("訊息管理", "Message", "User")</li>
+                            <li>@Html.ActionLink("購物車", "Favorite", "User")</li>
+                            @*<li>@Html.ActionLink("後台", "Index", "BackStage")</li>*@
                         </ul>
                     </nav>
                     <!-- <div class="add_listing text-center trans_200"><a href="#">+Add Listing</a></div> -->
-                    <div class="log_reg">
+                    <div class="log_reg d-none d-lg-block">
                         @Html.Partial("_LoginPartial")
                     </div>
                     <div class="hamburger">
@@ -89,7 +98,7 @@
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">About Me</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <p>全世界最棒的旅遊體驗與HOLYGO一起，開啟新旅程，探索世界的更多可能</p>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                             <li class="ftco-animate"><a href="#"><i class="fab fa-twitter"></i></a></li>
                             <li class="ftco-animate"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -99,24 +108,22 @@
                 </div>
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4 ml-md-4">
-                        <h2 class="ftco-heading-2">Popular Links</h2>
+                        <h2 class="ftco-heading-2">熱門連結</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#">Finding Agency</a></li>
-                            <li><a href="#">Types of Modeling</a></li>
-                            <li><a href="#">Freelance</a></li>
-                            <li><a href="#">Search Models</a></li>
+                            <li>@Html.ActionLink("首頁", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                            <li>@Html.ActionLink("旅遊行程", "Index", "TravelList", new { id = "ALL" }, null)</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Quick Links</h2>
+                        <h2 class="ftco-heading-2">快速連結</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Models</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Terms &amp; Conditions</a></li>
-                            <li><a href="#">FAQ</a></li>
+                            <li>@Html.ActionLink("帳號設定", "Index", "User")</li>
+                            <li>@Html.ActionLink("訂單管理", "Order", "User")</li>
+                            <li>@Html.ActionLink("訊息管理", "Message", "User")</li>
+                            <li>@Html.ActionLink("購物車", "Favorite", "User")</li>
                         </ul>
                     </div>
                 </div>
@@ -125,9 +132,9 @@
                         <h2 class="ftco-heading-2">Have a Questions?</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><i class="fa fa-map-marker"></i><span class="text"> 203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                                <li><a href="#"><i class="fa fa-phone"></i><span class="text"> +2 392 3929 210</span></a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i><span class="text"> info@yourdomain.com</span></a></li>
+                                <li><i class="fa fa-map-marker mr-1"></i><span class="text">32651   桃園市楊梅區秀才路851號</span></li>
+                                <li><a href="#"><i class="fa fa-phone mr-1"></i><span class="text">(03)485-5368</span></a></li>
+                                <li><a href="https://thmr.wda.gov.tw/"><i class="fa fa-envelope  mr-1"></i><span class="text">https://thmr.wda.gov.tw/</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -140,7 +147,7 @@
                         Copyright &copy;
                         <script>
                             document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </script> HolyGo All rights reserved. | This template is made with<i class="icon-heart" aria-hidden="true"></i> by <a href="#" target="_blank">HolyGo</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>
@@ -149,8 +156,9 @@
     </footer>
 
     @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/js")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-    @Scripts.Render("~/bundles/js")
+
 </body>
 </html>

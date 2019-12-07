@@ -1,0 +1,43 @@
+﻿@using HolyGo.Models
+@model IEnumerable<HolyGo.ViewModels.TopTicketViewModel>
+
+@{
+    ViewBag.Title = "_TicketPartial";
+}
+
+<link rel="stylesheet" href="~/Assets/Css/Home/Ticket/Ticket.css" />
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700,900&display=swap" rel="stylesheet">
+
+<section class="ftco-section pt-4">
+    <div class="container">
+        <div class="row ">
+            <div class="heading-section text-center ftco-animate">
+                <h2 class="mb-4" style="font-family: 'Noto Sans TC', sans-serif; font-weight:700;">熱門必買票券精選👈</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-md-4 col-lg-3 ftco-animate">
+                    <div class="card-project">
+                        <div class="img">
+                            <div class="vr"><span>Sale</span></div>
+                            <a href="javascript:;"><img class="img-fluid justify-content-center align-items-center" src="@item.Images"></a>
+                        </div>
+                        <div class="text">
+                            <a href="javascript:;">
+                                <h4 class="price">$@item.Cost</h4>
+                                <span> 行程時間 @item.Time 小時</span>
+                                <div class="float-right">
+                                    <span class="rate">@item.Country</span>
+                                </div>
+                                <h3 class="title">@item.Title</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,217 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css' />
+<link rel='stylesheet' href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+<link rel="stylesheet" href="~/Assets/Css/Travel/style.css" />
+<div class="container mt-5 pt-5">
+    <div id="product-banner" class="product-banner" style="background-image:url('@ViewBag.getTravel.Images');"></div>
+
+</div>
+<div class="product-wrap mb-5 pb-5">
+    <div data-spy="overview" class="container">
+        <div class="row">
+            <div class="col-xl-8">
+                @using (Html.BeginForm("Index", "Travel"))
+                {
+
+                        <div id="prodInfo" class="product-info my-3">
+                            <div class="product-name">
+                                <h1><strong>@ViewBag.getTravel.Title</strong></h1>
+                            </div>
+                            <div class="product-benefit">
+                                <div class="critical-info d-inline-block pr-5">
+                                    <i class="far fa-clock"></i>
+                                    <span>行程時間 @ViewBag.getTravel.Time 小時</span>
+                                </div>
+                                <div class="critical-info d-inline-block pr-5">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>有效期內任何一天使用</span>
+                                </div>
+                                <div class="critical-info d-inline-block pr-5">
+                                    <i class="fas fa-check"></i>
+                                    <span>可取消</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="product-abstract py-3">
+                                @ViewBag.getTravel.Contents
+                            </div>
+                            <hr>
+                        </div>
+                    
+                }
+
+            </div>
+            <div class="col-xl-4">
+                <div id="booking-bar" class="vue-affix affix mt-3" style="transform: initial;">
+                    <div class="booking-bar-content">
+                        <div>
+                            <div class="lowest-price">
+                                <div class="product-pricing text-left">
+                                    <h2 class="text-grey"><strong>請選擇出發、使用日期 & 價錢</strong></h2>
+                                </div>
+                            </div>
+                            <div class="view-option">
+                                <h4 class="option-title"><strong id="booking-title"></strong></h4>
+                                <div class="booking-info">
+                                    <span><strong id="booking-date"></strong></span>
+                                </div>
+                            </div>
+                            <div class="booking-price">
+                                <h5 class="pull-left"><strong>總金額</strong></h5>
+                                <div class="pull-right">
+                                    <div class="product-pricing">
+                                        <span class="d-inline-block m-0">TWD</span>
+                                        <h2 id="booking-cost" class="text-primary d-inline-block"></h2>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="btn-book-group">
+                                @if (ViewBag.Check == 1)
+                                {
+                                    <button href="#" id="AddCart" class="btn btn-blue" disabled="disabled"><strong>加入購物車</strong></button>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Action("AddToCart","Travel",new{t_guid = ViewBag.getTravel.Guid})" id="AddCart" class="btn btn-blue"><strong>加入購物車</strong></a>
+                                }
+                                @*<input id="AddToCart" type="hidden" value="@ViewBag.getTravel.guid" />*@
+                                <a href="javascript:;" id="BookNow" class="btn btn-primary"><strong>立即訂購</strong></a>
+                            </div>
+                        </div>
+                        <div class="booking-hint">
+                            <div class="critical-info">
+                                <i class="fas fa-check text-primary fa-lg"></i>
+                                <span>立即確認</span>
+                            </div>
+                            <div class="critical-info">
+                                <i class="fas fa-clipboard-list text-primary fa-lg"></i>
+                                <span>出示訂單編號即可使用</span>
+                            </div>
+                            <div class="critical-info">
+                                <i class="fas fa-child text-primary fa-lg"></i>
+                                <span>一人成團</span>
+                            </div>
+                            <div class="critical-info">
+                                <i class="fas fa-plane text-primary fa-lg"></i>
+                                <span>保證有位</span>
+                            </div>
+                        </div>
+                        <!-- <div class="booking-hint">
+                            <div class="critical-info m-0 float-left">
+                                <i class="fa fa-flash text-primary fa-lg"></i>
+                                <span class="text-grey">34.6K+ 個已訂購</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="booking-hint">
+                            <div class="critical-info m-0 float-left">
+                                <i class="fa fa-flash text-primary fa-lg"></i>
+                                <span class="text-grey">34.6K+ 個已訂購</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="option-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8">
+                    <h3 class="info-title pb-3">
+                        <strong>套餐選項</strong>
+                    </h3>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control text-center" id="flatpickr" placeholder="出發、使用日期">
+                        </div>
+                    </div>
+                    <ul class="option-group">
+                        @using (Html.BeginForm("Index", "Travel"))
+                        {
+                            foreach (var item in ViewBag.getTravelCombo)
+                            {
+                                <li class="option-item">
+                                    <h4 class="option-title d-inline-block"><strong>@item.Title</strong></h4>
+                                    <div class="product-pricing d-inline-block">
+                                        <span class="d-inline-block">TWD</span>
+                                        <h4 class="d-inline-block">@item.Cost</h4>
+                                    </div>
+                                    <a href="javascript:;" class="btn btn-success select-option">
+                                        選擇
+                                    </a>
+                                    <div class="row"></div>
+                                    <a href="javascript:;" class="detail-toggle">
+                                        查看更多<i class="fas fa-angle-right p-3"></i>
+                                    </a>
+                                    <div class="option-detail">
+                                        <ul>
+                                            <li>
+                                                <div>@item.Contents</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-view mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8">
+                    <div data-spy="intro">
+                        <div class="info-session">
+                            <h3 class="info-title pb-3">
+                                <strong>行程說明</strong>
+                            </h3>
+                            <div class="info-content">
+                                <p>
+
+                                        @Html.Raw(@ViewBag.getTravel.Explain)
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    @*<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>*@
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://kit.fontawesome.com/1fad495502.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flatpickr "></script>
+    <script type="text/javascript" src="~/Assets/Js/Travel/Travel.js"></script>
+    @*<script type="text/javascript">
+    $(function () {
+        $('#AddCart').click(addCart);
+        function addCart() {
+            var AddCartValue = $('#AddToCart').val();
+            //alert(AddCartValue);
+            $.ajax({
+                type: "post",
+                url: "@Url.Action("AddToCart", "Travel")",
+                data: { tGuid : AddCartValue }
+            });
+        }
+    });
+    </script>*@
+}

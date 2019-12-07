@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Message";
+}
+
+<link rel="stylesheet" href="~/Assets/Css/User/style.css" />
+
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-xl-3 d-none d-xl-block my-3">
+            <div class="card card-primary">
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="member-img img-fluid rounded-circle" src="https://truth.bahamut.com.tw/s01/201207/28a8513919088d3328aaa40284c6b13e.PNG">
+                    </div>
+                    <h3 class="text-center">Guest</h3>
+                    <p class="text-muted text-center">@User.Identity.Name</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item text-center">
+                            <b>HolyGo 會員</b>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card my-3">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="fas fa-address-card mr-1"></i> @Html.ActionLink(" 帳號設定", "Index", "User")</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="fas fa-book mr-1"></i>@Html.ActionLink(" 訂單管理", "Order", "User")</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="fas fa-comment-dots mr-1"></i>@Html.ActionLink(" 訊息管理", "Message", "User")</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="fas fa-heart mr-1"></i>@Html.ActionLink(" 購物車", "Favorite", "User")</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xl-9 my-3">
+            <div class="card">
+                <h3 class="m-3 p-0"><strong>訊息管理</strong></h3>
+                <div class="card-header p-0 bg-white">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link text-muted active" id="nav-first-tab" href="#nav-first" data-toggle="tab" aria-controls="#nav-first"><strong>訂單</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-muted" id="nav-second-tab" href="#nav-second" data-toggle="tab" aria-controls="#nav-second"><strong>行程詢問</strong></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="nav-first" aria-labelledby="#nav-first-tab">
+                            <form>
+                                <div class="row">
+
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade show" id="nav-second" aria-labelledby="#nav-second-tab">
+                            <form>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+}

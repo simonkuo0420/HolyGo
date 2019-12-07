@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using HolyGo.Models;
+using System.Configuration;
 
 namespace HolyGo
 {
@@ -18,6 +19,8 @@ namespace HolyGo
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
+            //增加角色的OwinContext <額外增加>
+            app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
 
             // 讓應用程式使用 Cookie 儲存已登入使用者的資訊
             // 並使用 Cookie 暫時儲存使用者利用協力廠商登入提供者登入的相關資訊；
@@ -54,15 +57,15 @@ namespace HolyGo
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+            appId: ConfigurationManager.AppSettings["FacebookappId"].ToString(),
+            appSecret: ConfigurationManager.AppSettings["FacebookappSecret"].ToString());
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = ConfigurationManager.AppSettings["GoogleClientId"].ToString(),
+                ClientSecret = ConfigurationManager.AppSettings["GoogleClientSecret"].ToString()
+            });
         }
     }
 }

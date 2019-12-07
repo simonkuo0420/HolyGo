@@ -10,7 +10,7 @@ using HolyGo.Models;
 
 namespace HolyGo.Controllers
 {
-    [Authorize]
+    [Authorize (Roles = "Admin")]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;

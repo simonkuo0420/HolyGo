@@ -1,0 +1,125 @@
+﻿@model IEnumerable<TravelListViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/flick/jquery-ui.css">
+<link rel="stylesheet" href="~/Assets/Css/TravelList/style.css" />
+
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-xl-3 mb-3">
+            <div class="filter-box my-3">
+                <ul class="list-group">
+                    <li class="list-group-item ">
+                            <strong class="text-center">選擇、探索國家</strong>
+                        </li>
+                        <li class="list-group-item list-group-item-action">
+                            <a href="@Url.Action("Index", "TravelList", new {id = "Taiwan"})" class="text-dark">
+                            <i class="fas fa-book mr-1"></i> 台灣
+                            </a>
+                        </li>
+                        <li class="list-group-item list-group-item-action">
+                            <a href="@Url.Action("Index", "TravelList", new {id = "Japan"})" class="text-dark">
+                                <i class="fas fa-map-marker-alt mr-1"></i> 日本
+                            </a>
+                        </li>
+                        <li class="list-group-item list-group-item-action">
+                            <a href="@Url.Action("Index", "TravelList", new {id = "Korea"})" class="text-dark">
+                                <i class="fas fa-pencil-alt mr-1"></i> 韓國
+                            </a>
+                        </li>
+                        <li class="list-group-item list-group-item-action">
+                            <a href="@Url.Action("Index", "TravelList", new {id = "Other"})" class="text-dark">
+                                <i class="far fa-file-alt mr-1"></i> 其他
+                            </a>
+                        </li>
+                </ul>
+            </div>
+            @*<div class="filter-box my-3">
+                <ul class="list-group">
+                    <li class="list-group-item ">
+                        <strong class="text-center">行程時間</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/ThirdUI/Index.html" class="text-dark">
+                            <i class="fas fa-book mr-1"></i> 0 - 4小時
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/ThirdUI/order.html" class="text-dark">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 4小時 - 1日
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/ThirdUI/message.html" class="text-dark">
+                            <i class="fas fa-pencil-alt mr-1"></i> 1日 - 2日
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/ThirdUI/favorite.html" class="text-dark">
+                            <i class="far fa-file-alt mr-1"></i> 2日以上
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="filter-box my-3">
+                <div>
+                    <p>
+                        <input type="hidden" name="Time" value="@ViewBag.Time" />
+                        <input type="hidden" name="Country" value="@ViewBag.Country" />
+                        <input type="hidden" id="MaxCost" name="MaxCost" value="" />
+                        <input type="hidden" id="MinCost" name="MinCost" value="" />
+                        <input type="text" class="sidebar-price" id="sidebar-price" readonly>
+                    </p>
+
+                    <div id="slider"></div>
+                    <button class="filter_button my-3" type="submit">篩選</button>
+                </div>
+            </div>*@
+        </div>
+        <div class="col-xl-9 my-3">
+            <div class="card">
+                <div class="product-list p-3">
+                    <strong>探索 新鮮事</strong>
+                </div>
+            </div>
+            @foreach (var emp in Model)
+            {
+                <div class="product-list">
+                    <a href="@Url.Action("Index", "Travel", new { Guid = @emp.Guid })" class="product-card">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="img-bg" style="background-image: url('@emp.Images');"></div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="product-detail">
+                                    <h3 class="h5">@emp.Title</h3>
+                                    <p class="product-content">
+                                        @emp.Contents
+                                    </p>
+                                    <div class="product-place">@emp.City</div>
+                                    <div class="product-time">行程 @emp.Time 小時</div>
+                                    <div class="product-footer">
+                                        <div class="float-left product-count">
+                                            <span class="d-inline">@emp.Country</span>
+                                        </div>
+                                        <div class="float-right product-price">
+                                            <span class="d-inline">TWD</span>
+                                            <h5 class="text-primary d-inline"> @emp.Cost</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script src="~/Assets/Js/TravelList/slider.js"></script>
+}

@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "Favorite";
+}
+
+<link rel="stylesheet" href="~/Assets/Css/User/style.css" />
+
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-xl-3 d-none d-xl-block my-3">
+            <div class="card card-primary">
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="member-img img-fluid rounded-circle" src="https://truth.bahamut.com.tw/s01/201207/28a8513919088d3328aaa40284c6b13e.PNG">
+                    </div>
+                    <h3 class="text-center">Guest</h3>
+                    <p class="text-muted text-center">@User.Identity.Name</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item text-center">
+                            <b>HolyGo 會員</b>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card my-3">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="fas fa-address-card mr-1"></i> @Html.ActionLink(" 帳號設定", "Index", "User")</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="fas fa-book mr-1"></i>@Html.ActionLink(" 訂單管理", "Order", "User")</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="fas fa-comment-dots mr-1"></i>@Html.ActionLink(" 訊息管理", "Message", "User")</strong>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <strong><i class="fas fa-heart mr-1"></i>@Html.ActionLink(" 購物車", "Favorite", "User")</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xl-9 my-3">
+            <div class="card">
+                <h3 class="m-3 p-0"><strong>我的購物車</strong></h3>
+                <div class="card-header p-0 bg-white"></div>
+                <div class="card-body">
+                    @using (Html.BeginForm("Favorite", "User"))
+                    {
+                        foreach (var item in ViewBag.getFavorite)
+                        {
+                            <form>
+                                <div class="product-list alert alert-danger alert-dismissible fade show aniShow">
+                                    <a href="@Url.Action("Index", "Travel", new { @item.Guid })" class="product-card">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="img-bg" style="background-image: url('@item.Images');"></div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="product-detail">
+                                                    <h3 class="h5">@item.Title</h3>
+                                                    <p class="product-content">
+                                                        @item.Contents
+                                                    </p>
+                                                    <div class="product-place">@item.Country</div>
+                                                    <div class="product-time">行程 @item.Time 小時</div>
+                                                    <div class="product-footer">
+                                                        <div class="float-left product-count">
+                                                            已加入購物車
+                                                        </div>
+                                                        <div class="float-right product-price">
+                                                            <span class="d-inline">TWD</span>
+                                                            <h5 class="text-primary d-inline"> @item.Cost</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <button class="close" data-dismiss="alert" value="@item.Guid"><i class="far fa-trash-alt fa-sm"></i></button>
+                                </div>
+                            </form>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+        $('.close').click(DelFavorite);
+            function DelFavorite() {
+                var DelValue = $(this).val();
+                //alert(DelValue);
+            $.ajax({
+                type: "post",
+                url: "@Url.Action("DelFavorite", "User")",
+                data: { FavoriteGuid : DelValue }
+            });
+        }
+    });
+    </script>
+}

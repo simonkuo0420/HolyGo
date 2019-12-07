@@ -1,0 +1,375 @@
+﻿body {
+    font-family: Noto Sans TC, 微软雅黑, Microsoft YaHei, sans-serif;
+    letter-spacing: .5px;
+}
+
+.product-banner {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 0;
+    margin: 0 -2px;
+    padding-bottom: 30%;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    cursor: pointer;
+}
+
+.product-wrap .product-info {
+    padding-top: 20px;
+}
+
+.product-name {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+    .product-name h1 {
+        flex-grow: 1;
+        margin: 2px 10px 0 0;
+        font-size: 1.5rem;
+    }
+
+.product-action {
+    white-space: nowrap;
+}
+
+#booking-bar {
+    width: 360px;
+    border-radius: 6px;
+}
+
+@media (max-width: 991px) {
+    #booking-bar {
+        position: static !important;
+        top: auto;
+        bottom: auto;
+        right: auto;
+        width: auto !important;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    #booking-bar {
+        width: 100%;
+    }
+}
+
+.product-abstract {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 25px;
+}
+
+.affix {
+    position: fixed;
+}
+
+.vue-affix {
+    position: relative;
+}
+
+.booking-bar-content {
+    margin-bottom: 10px;
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 6px;
+    transition: .3s;
+}
+
+    .booking-bar-content .lowest-price {
+        padding: 10px 12px 0;
+    }
+
+.product-pricing {
+    font-family: Arial Rounded MT Bold, Arial Rounded MT, sans-serif;
+    letter-spacing: 0;
+    text-align: right;
+}
+
+    .product-pricing span {
+        color: #999;
+        font-size: 1rem;
+    }
+
+    .product-pricing h2 {
+        font-size: 1.2rem;
+    }
+
+.view-option {
+    display: none;
+    border-bottom: 1px dashed #e1e1e1;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+}
+
+    .view-option .option-title {
+        width: 90%;
+        margin-bottom: 10px;
+        padding-left: 0;
+        font-size: 1.2rem;
+    }
+
+.booking-info span {
+    margin-right: 10px;
+    white-space: nowrap;
+    font-size: 0.8rem;
+}
+
+.booking-bar-content .btn-book-group {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 5px -4px 0;
+    padding: 0 12px;
+}
+
+    .booking-bar-content .btn-book-group .btn {
+        flex-grow: 1;
+        width: 50%;
+        margin: 4px;
+        padding: 10px;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+    opacity: 1;
+    background-color: #ddd;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+    .btn.disabled:hover,
+    .btn[disabled]:hover,
+    fieldset[disabled] .btn:hover {
+        opacity: 1;
+        background-color: #ddd;
+        color: #fff;
+        cursor: not-allowed;
+    }
+
+.booking-price {
+    display: none;
+    margin-top: 10px;
+    padding: 0 12px;
+}
+
+    .booking-price h5 {
+        font-size: 0.8rem;
+    }
+
+.btn-blue {
+    background-color: #64b3f4;
+    color: #fff;
+    box-shadow: none !important;
+}
+
+    .btn-blue:hover {
+        background-color: #489add;
+        color: #fff;
+    }
+
+.btn-primary {
+    color: #fff;
+    background-color: #22a7aa !important;
+    border: none;
+    box-shadow: none !important;
+}
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #22a7aa;
+        border-color: #22a7aa;
+    }
+
+.text-primary {
+    color: #26bec9 !important;
+}
+
+.booking-hint:not(:last-child) {
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.booking-hint {
+    padding: 12px;
+    color: #666;
+}
+
+.info-title {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.info-content {
+    padding-left: 20px;
+}
+
+    .info-content p {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+.critical-info {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #666;
+    padding-left: 25px;
+}
+
+.booking-hint .critical-info i {
+    color: #ccc;
+}
+
+.critical-info i:first-child {
+    display: inline-block;
+    margin-right: 5px;
+    width: 16px;
+    text-align: center;
+    margin-left: -25px;
+}
+
+.critical-info i {
+    vertical-align: middle;
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: Glyphicons Halflings;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Combo */
+
+.option-title {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.option-detail,
+.option-title {
+    width: 70%;
+}
+
+.option-section {
+    background-color: #f6f6f6;
+    padding: 30px 0;
+    margin-bottom: 40px;
+}
+
+.option-group {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0;
+    position: relative;
+}
+
+.option-item {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    padding: 10px 0;
+    margin: 10px 0;
+    min-height: 100px;
+    position: relative;
+}
+
+    .option-item .product-pricing {
+        top: 10px;
+        position: absolute;
+        right: 20px;
+    }
+
+    .option-item .not-available {
+        top: 50px;
+        color: #333;
+        text-align: right;
+    }
+
+    .option-item .select-option {
+        top: 45px;
+    }
+
+    .option-item .not-available,
+    .option-item .select-option {
+        position: absolute;
+        right: 20px;
+    }
+
+.detail-toggle {
+    color: #666;
+    padding-left: 20px;
+}
+
+    .detail-toggle:hover {
+        color: #777;
+        text-decoration: none;
+    }
+
+.option-detail {
+    display: none;
+    width: 70%;
+    margin-top: 10px;
+    padding: 0 20px;
+}
+
+    .option-detail ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .option-detail > ul li {
+        padding: 5px 0;
+        word-break: break-word;
+    }
+
+.btn-success {
+    color: #26bec9;
+    background-color: #fff !important;
+    border: 1.5px solid rgba(38, 190, 201, .7);
+    box-shadow: none !important;
+}
+
+    .btn-success:hover {
+        color: #22a7aa;
+        background-color: #e4f4f5;
+        border-color: #26bec9;
+    }
+
+    .btn-success:not(:disabled):not(.disabled):active {
+        color: #26bec9;
+        background-color: #fff;
+        border: 1.5px solid rgba(38, 190, 201, .7);
+    }
+
+.option-item > a.btn {
+    font-size: 0.8rem;
+    padding: 10px 24px;
+    font-weight: 400;
+    line-height: 1.6;
+    border-radius: 4px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear;
+    transition: border .25s linear, color .25s linear, background-color .25s linear;
+}
