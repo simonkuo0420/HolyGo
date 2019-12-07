@@ -9,13 +9,13 @@ $(function () {
 //-------------------Toggle-----------------------//
 // $(function() {
 //     $('.detail-toggle').on("click", function() {
-//         $('.option-detail').toggle("display", "block")
+//         $('.option-detail').toggle()
 //     });
 // });
 
 $(function () {
     $('.detail-toggle').on("click", function () {
-        $(this).next().toggle("display", "block");
+        $(this).next().toggle();
     });
 });
 
