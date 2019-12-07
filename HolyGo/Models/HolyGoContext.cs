@@ -8,7 +8,7 @@ namespace HolyGo.Models
     public partial class HolyGoContext : DbContext
     {
         public HolyGoContext()
-            : base("name=HolyGoContext")
+            : base("name=DefaultConnection")
         {
         }
 
