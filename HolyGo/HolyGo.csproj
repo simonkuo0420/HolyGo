@@ -227,6 +227,7 @@
     <Content Include="Assets\Css\About\Viedo\viedo.css" />
     <Content Include="Assets\Css\Account\Login\Login.css" />
     <Content Include="Assets\Css\BackStage\style.css" />
+    <Content Include="Assets\Css\Layout\Error.css" />
     <Content Include="Assets\Css\TravelList\style.css" />
     <Content Include="Assets\Css\Travel\style.css" />
     <Content Include="Assets\Css\User\style.css" />
