@@ -50,7 +50,7 @@
                         {
                             <form>
                                 <div class="product-list alert alert-danger alert-dismissible fade show aniShow">
-                                    <a href="@Url.Action("Index", "Travel", new { @item.Guid })" class="product-card">
+                                    <a href="@Url.Action("Index", "Travel", new { Guid = @item.Travel_guid })" class="product-card">
                                         <div class="row">
                                             <div class="col-lg-4">
                                                 <div class="img-bg" style="background-image: url('@item.Images');"></div>

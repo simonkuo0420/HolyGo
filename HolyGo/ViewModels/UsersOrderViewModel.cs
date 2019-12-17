@@ -18,6 +18,10 @@ namespace HolyGo.ViewModels
         [Display(Name = "Userid")]
         public string User_guid { get; set; }
         /// <summary>
+        /// 購物車Guid
+        /// </summary>
+        public Guid Travel_guid { get; set; }
+        /// <summary>
         /// 訂單下單時間
         /// </summary>
         [Display(Name = "下單時間")]
